@@ -21,13 +21,17 @@
     - Activity: Function Placemats 
 
     - 2.1 The tangent and velocity problems
+        * <https://activecalculus.org/single/sec-1-1-vel.html>
         * <http://math.hws.edu/~mitchell/Math130F16/tufte-latex/Day02.pdf>
         * <http://spot.pcc.edu/math/clm/chapter-rates-of-change.html>
         * <http://www.math.ubc.ca/~CLP/CLP1/clp_1_dc/exercises-2.html>
     - EWA 1.1 due tonight
 
     - 2.2 Limits
+        * <https://activecalculus.org/single/sec-1-2-lim.html>
         * <http://www.math.ubc.ca/~CLP/CLP1/clp_1_dc/subsection-4.html>
+        * <http://spot.pcc.edu/math/clm/section-limits.html>
+        * <https://www.youtube.com/watch?v=iZ_fCNvYa9U> [@Nai12]
     - EWA 1.2 due tonight
 
         > Difficulty level: Easy to moderate, assuming you have seen some intuitive concept of limits before.
@@ -43,10 +47,11 @@
     - Project 1 Modeling
     - EWA 1.3 due tonight
 
-    - 2.2 Limits
-    - EWA 2.1 due tonight
-
     > 2 Limits and Derivatives. The material on limits is motivated by a prior discussion of the tangent and velocity problems. Limits are treated from descriptive, graphical, numerical, and algebraic points of view. (The precise definition of a limit is provided in Appendix D for those who wish to cover it.) 
+
+    - 2.2 Limits
+        * <http://spot.pcc.edu/math/clm/section-difference-quotient.html>
+    - EWA 2.1 due tonight
 
 - Week 2
 
