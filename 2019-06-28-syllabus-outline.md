@@ -1,26 +1,52 @@
+
 - Week 1
 
-> 1 Functions and Models. From the beginning, multiple representations of functions are stressed: verbal, numerical, visual, and algebraic. A discussion of mathematical models leads to a review of the standard functions, including exponential and logarithmic functions, from these four points of view. Parametric curves are introduced in the first chapter, partly so that curves can be drawn easily, with technology, whenever needed throughout the text. This early placement also enables tangents to parametric curves to be treated in Section 3.4 and graphing such curves to be covered in Section 4.4.
+    > 1 Functions and Models. From the beginning, multiple representations of functions are stressed: verbal, numerical, visual, and algebraic. A discussion of mathematical models leads to a review of the standard functions, including exponential and logarithmic functions, from these four points of view. Parametric curves are introduced in the first chapter, partly so that curves can be drawn easily, with technology, whenever needed throughout the text. This early placement also enables tangents to parametric curves to be treated in Section 3.4 and graphing such curves to be covered in Section 4.4. [@Ste09]
 
+    > Things that students should get immediately: The concepts of function, domain, range, expression for function, table of values for a function, graph of a function, the notion of piecewise defined function, polynomials, rational functions, absolute value function, signum function, positive part function. 
+    >
+    > Things that students should get with effort: How to obtain a piecewise definition for a maximum or minimum of two functions, how to determine the domain and range of a function. [@Nai12] <http://files.vipulnaik.com/math-152/functionrapidreviewpart2.pdf>
+    
+    - prereqs
+        * <http://math.hws.edu/~mitchell/Math130F16/prereqs.pdf>
+        * <http://math.hws.edu/~mitchell/Math130F16/Answers01.pdf>
+        * <http://math.hws.edu/~mitchell/Math130F16/Day01.pdf>
     - 1.1 representing functions
-    * http://www.math.ubc.ca/~CLP/CLP1/clp_1_dc/sec_parsing.html
+        * <http://www.math.ubc.ca/~CLP/CLP1/clp_1_dc/section-4.html>
+        * <http://www.math.ubc.ca/~CLP/CLP1/clp_1_dc/sec_parsing.html>
     - 1.3 new functions from old
-    * http://educ.jmu.edu/~waltondb/MA2C/functions-construction.html
+        * <http://educ.jmu.edu/~waltondb/MA2C/functions-construction.html>
+        * <http://educ.jmu.edu/~waltondb/MA2C/functions-transformation.html>
+        * <http://educ.jmu.edu/~waltondb/MA2C/functions-and-intervals.html>
     - Activity: Function Placemats 
 
     - 2.1 The tangent and velocity problems
+        * <http://math.hws.edu/~mitchell/Math130F16/tufte-latex/Day02.pdf>
+        * <http://spot.pcc.edu/math/clm/chapter-rates-of-change.html>
+        * <http://www.math.ubc.ca/~CLP/CLP1/clp_1_dc/exercises-2.html>
     - EWA 1.1 due tonight
 
     - 2.2 Limits
+        * <http://www.math.ubc.ca/~CLP/CLP1/clp_1_dc/subsection-4.html>
     - EWA 1.2 due tonight
+
+        > Difficulty level: Easy to moderate, assuming you have seen some intuitive concept of limits before.
+        >
+        > Covered in class?: Probably not. We may go over some small part of this quickly before covering $\epsilon$ and $\delta$ definitions of limits.
+        >
+        > Things that students should definitely get: To define limits, you need to get really really close.
+        >
+        > There are two directions from which to approach a real number: left and right. The notation for limits and one-sided limits. The intuitive meaning of the existence of limits and of continuity, one-sided continuity, continuity on intervals. The notions of removable and jump discontinuity. 
+        >
+        > Things that students should hopefully get: The allusion to why taking limits for functions on a plane is harder because of multiple directions of approach. [@Nai12] <http://files.vipulnaik.com/math-152/informalintrotolimits.pdf>
 
     - Project 1 Modeling
     - EWA 1.3 due tonight
 
-> 2 Limits and Derivatives. The material on limits is motivated by a prior discussion of the tangent and velocity problems. Limits are treated from descriptive, graphical, numerical, and algebraic points of view. (The precise definition of a limit is provided in Appendix D for those who wish to cover it.) 
-
     - 2.2 Limits
     - EWA 2.1 due tonight
+
+    > 2 Limits and Derivatives. The material on limits is motivated by a prior discussion of the tangent and velocity problems. Limits are treated from descriptive, graphical, numerical, and algebraic points of view. (The precise definition of a limit is provided in Appendix D for those who wish to cover it.) 
 
 - Week 2
 
@@ -60,6 +86,14 @@
 - Week 4
 
     - review Exam 1
+
+> Difficulty level: Moderate if you remember derivatives to at least the AP Calculus level. Otherwise, hard. Some things are likely to be new.
+> 
+> Covered in class?: Yes, but we’ll go very quickly over most of the stuff that you would have seen at the AP level, and will focus much more on the conceptual interpretation and the algebraic-verbal-graphical-numerical nexus.
+> 
+> What students should definitely get: The definition of derivative as a limit. The fact that the left-hand derivative equals the left-hand limit and the right-hand derivative equals the right-hand limit. Also, the derivative is the slope of the tangent to the graph of the function. Graphical interpretation of tangents and normals. Finding equations of tangents and normals. Leibniz and prime notation. The sum rule, difference rule, product rule, and quotient rule. The chain rule for composition. Differentiation polynomials and rational functions.
+> 
+> What students should hopefully get: The idea of derivative as an instantaneous rate of change, the notion of difference quotient and slope of chord, and the fact that the definitions of tangent that we use for circles don’t apply for general curves. How to find tangents and normals to curves from points outside them. Subtle points regarding tangent lines. [@Nai15] <http://files.vipulnaik.com/math-152/introtoderivatives.pdf>
 
     - 2.7 The derivative function
     - Activity: The Derivative Function
