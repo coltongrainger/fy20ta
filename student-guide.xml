@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
 <docinfo>
     <macros>
     \newcommand{\indefiniteintegral}[2]{\int#1\,d#2} % comments get stripped
@@ -6,7 +7,7 @@
     <cross-references text="type-global" />
     <feedback>
         <url>mailto:colton.grainger@colorado.edu</url>
-        <text>send feedback</text> 
+        <text>Send feedback here.</text> 
     </feedback>
     <latex-image-preamble>
     <![CDATA[
@@ -16,51 +17,51 @@
 </docinfo>
 
 <book>
-    <title>Math 1300 Student's Guide</title>
-        <subtitle>Shared Notes from Open Textbooks</subtitle>
-        <frontmatter>
+<title>Math 1300 Student's Guide</title>
+
+<frontmatter>
     <titlepage>
         <author>
-            <personname>Various Authors</personname>
-            <department>Various Departments</department>
-            <institution>Various Institutions</institution>
+            <personname>Colton Grainger</personname>
             <email>colton.grainger@colorado.edu</email>
         </author>
+        <credit>
+            <title>
+                Compiled from six <pretext /> books, five sets of course notes, and the Open Problem Library.
+            </title>
+        </credit> 
         <date>
             <today/>
         </date>
     </titlepage>
+    <abstract>
+        <p><alert>Disclaimer.</alert> This document is adapted from the following sources: <a href="http://www.math.ubc.ca/~andrewr/CLP/clp_home.html">Active Calculus</a> by Matthew Boelkins, David Austin, and Steven Schlicker; <a href="http://www.math.ubc.ca/~andrewr/CLP/clp_home.html">CLP-1 Differential Calculus</a> by Joel Feldman, Andrew Rechnitzer, Elyse Yeager; <a href="http://spot.pcc.edu/math/clm/">Calculus Lab Manual</a> by Alex Jordan; <a href="http://math.hws.edu/~mitchell/Math130F16/Math130F16.php">Math 130 Course Notes</a> by Kevin Mitchell; <a href="https://github.com/COIMAPS/MAT102Functions">MAT 102 Functions</a> by Robin Cruz, Lynda Danielson, and Katherine Yoshiwara; and <a href="http://educ.jmu.edu/~waltondb/MA2C/">Calculus: A Modeling Approach</a> by D. Brian Walton. </p>
+
+        <p>As a derived work, this document is distributed with the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>). While I have attempted to indicate where I have made <em>verbatim</em> use of the sources above, it is safe to assume <q>the creativity is theirs and the mistakes are my own.</q></p>
+
+        <p>I compiled this document in the scope of my responsibilities as a graduate teaching assistant. Hence, there may be typos and failures of understanding. Kindly email me any questions, comments, complaints, or corrections.</p>
+    </abstract>
 </frontmatter>
 
-<chapter xml:id="chapter-0-preliminaries">
-    <title>Preliminaries</title>
-    <xi:include href="./set00_Preliminaries_102.mbx"/>
+<chapter xml:id="numbers">
+    <title>Numbers</title>
+    <introduction>
+        <p>
+            <q>A shout Loud as from <term>numbers</term> without number.</q> [Milton, 1667. Paradise Lost, iii.346.]
+        </p>
+    </introduction>
+    <!-- <xi:include href="set00_Preliminaries_102.mbx"/> -->
 </chapter>
-<chapter xml:id="chapter-1-function-fundamentals">
-    <title>Function Concepts, Notation, and Graphs</title>
 
-<xi:include href="./set1A-Function_Concepts.mbx"/>
-<xi:include href="./set1B-Function_Notation.mbx"/>
-<xi:include href="./set1C-Graphs_of_Functions.mbx"/>
+<chapter xml:id="sets-and-functions">
+    <title>Sets and Functions</title>
+    <introduction>
+        <p><q>'Til the time of Servius Tullius [575–535 BC], the Romans had no coined money, but made use of unstamped bars of copper, to purchase whatever they had occasion for. These rude bars, therefore, performed at this time the <term>function</term> of money.</q> [Adam Smith, 1776. Wealth of Nations, i.iv.I.25.]</p>
+
+        <p><q>The creation of <term>set theory</term> is generally credited to the German mathematician Georg Cantor, in the late nineteenth century. Previously, sets had seldom been regarded as entities worthy of study in their own right; but Cantor, originally motivated by a problem in Fourier analysis, developed an extensive theory. Among many other things, he showed that there are different sizes of infinity, proving, for instance, that there is no bijection between <m>\mathbb{R}</m> and <m>\mathbb{N}</m>.</q> [Leinster, 2016. Basic Category Theory.]</p>
+    </introduction>
+    <!-- <xi:include href="set00_Preliminaries_102.mbx"/> -->
 </chapter>
-<chapter xml:id="chapter-2-equations-intervals-inequalities">
-    <title>Linear Functions, Simultaneous Equations, and Applications</title>
-<xi:include href="./set2A-Linear_Functions.mbx"/>
-<xi:include href="./set2B-Simultaneous_Equations.mbx"/>
-<xi:include href="./set2C-Applications_102.mbx"/>
-</chapter><chapter xml:id="chapter-3-piecewise-polynomial-radical">
-    <title>Piecewise, Polynomial, and Radical Functions</title>
-<xi:include href="./set3A-Absolute_Value_and_Piecewise_Functions.mbx"/>
-<xi:include href="./set3B-Polynomial_Functions.mbx"/>
-<xi:include href="./set3C-Radical_Functions.mbx"/>
-</chapter>
-<chapter xml:id="chapter-4-exponential-and-log-functions">
-    <title>Exponential and Logarithmic Functions</title>
-<xi:include href="./set4A-Exponential_and_Logarithmic_Functions.mbx"/>
-<xi:include href="./set4B-Logarithm_Rules.mbx"/>
-<xi:include href="./set4C-Exponential_and_Logarithmic_Equations.mbx"/>
-</chapter>
-</book>
 
 <!-- > Things that students should get immediately: The concepts of function, domain, range, expression for function, table of values for a function, graph of a function, the notion of piecewise defined function, polynomials, rational functions, absolute value function, signum function, positive part function. --> 
 <!-- > -->
@@ -268,6 +269,7 @@
 <!--     - HW10 due -->
 <!--     - Project 10 Graphing with Analysis -->
 
+<!-- https://www.youtube.com/watch?v=OzdMYPRkALM&list=PL2nth7loxlLom-fObHRMy_hPusIYEC2cu -->
 <!--     - 4.5 Indeterminate forms and L'Hopital's Rule -->
 
 <!--     - Week 11 -->
@@ -363,4 +365,5 @@
 <!--     - Week 17 -->
 
 <!--     - Final Exam -->
+</book>
 </pretext>
