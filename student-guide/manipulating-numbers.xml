@@ -562,24 +562,26 @@
           <mrow>2^{3.14159} \amp =2^{\frac{314159}{100000}} =  \sqrt[100000]{2^{314159}} = 8.824962 \dots</mrow>
         </md>
         As we use more digits of <m>\pi</m>, the digits of the result begin to stabilize.  Note that after the last calculation the first four digits haven't changed: <m>8.824</m>. We won't ever get an exact value for <m>2^\pi</m> since <m>\pi</m>'s digits don't repeat, but we can get as accurate a number as we need by using enough digits to calculate <m>2^\pi</m>.</p>
-        <p>We now have the idea of the general power function:</p>
+      <!-- <assemblage> -->
+      <!--   <p>We now have the idea of the general power function:</p> -->
 
-        <p><term>General Power Function</term> A general power function is of the form
-        <mdn>
-        <mrow xml:id="power-function">f(x) = x^n</mrow>
-        </mdn>
-        where <m>n</m> is a real number.
-      </p>
-      <p>Of course, we can make new functions out of power functions. A recent example is the set of polynomials which are power functions with integer exponents which have been multiplied by numbers and added/subtracted together.</p>
-      <example xml:id="example-evaluate-radical-function">
-          <title>Evaluate Radical Function</title>
-          <p>Evaluate <m>f(x) = \sqrt[4]{x-2}</m> at the given points.
-          <ol label="a.">
-            <li><m>x = 5</m>: This is <m>f(5) = \sqrt[4]{5-2} = 3^{1/4} \approx 1.316074</m> using a calculator for the last step.</li>
-            <li><m>x = 1</m>: Here we have <m>f(1) = \sqrt[4]{1-2} = \sqrt[4]{-1}</m>, but no real number can multiply itself four times to get <m>-4</m>. <m>f(1)</m> is not defined.<m>\checkmark</m></li>
-          </ol>
-        </p>
-      </example>
+      <!--   <p><term>General Power Function</term> A general power function is of the form -->
+      <!--   <mdn> -->
+      <!--     <mrow xml:id="power-function">f(x) = x^n</mrow> -->
+      <!--   </mdn> -->
+      <!--     where <m>n</m> is a real number. -->
+      <!--   </p> -->
+      <!-- </assemblage> -->
+      <!-- <p>Of course, we can make new functions out of power functions. A recent example is the set of polynomials which are power functions with integer exponents which have been multiplied by numbers and added/subtracted together.</p> -->
+      <!-- <example xml:id="example-evaluate-radical-function"> -->
+      <!--     <title>Evaluate Radical Function</title> -->
+      <!--     <p>Evaluate <m>f(x) = \sqrt[4]{x-2}</m> at the given points. -->
+      <!--     <ol label="a."> -->
+      <!--       <li><m>x = 5</m>: This is <m>f(5) = \sqrt[4]{5-2} = 3^{1/4} \approx 1.316074</m> using a calculator for the last step.</li> -->
+      <!--       <li><m>x = 1</m>: Here we have <m>f(1) = \sqrt[4]{1-2} = \sqrt[4]{-1}</m>, but no real number can multiply itself four times to get <m>-4</m>. <m>f(1)</m> is not defined.<m>\checkmark</m></li> -->
+      <!--     </ol> -->
+      <!--   </p> -->
+      <!-- </example> -->
       </subsubsection>
     </subsection>
   <subsection>
