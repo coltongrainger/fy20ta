@@ -26,9 +26,9 @@ Recall that in-class participation, reading, problem sets count for about $3/10$
 --- | --- | --- | ---
 `reading points` | | |
 
-3. (6 points) Did you prepare solutions to any of the sections of the in-class hand-outs?^[If you were stumped/stuck/confused, did you go to the MARC or office hours to ask for help?] Please write 0 if you *did not try at all*, write $1$ if you *completed less than half of the problems*, write $2$ if you *completed more than half of the problems*.
+3. (6 points) Did you find solutions to any of the questions that I asked in class? Did you prepare solutions for the hand-outs?^[If you were stumped/stuck/confused, did you go to the MARC or office hours to ask for help?] Please write 0 if you *did not try at all*, write $1$ if you *tried less than a third of the problems in the handouts*, write $2$ if you *tried more than a third of the problems in the handouts*.
 
-` ` | elementary set theory | functions | numerical statistics
+` ` | set theory | functions | numerical statistics
 --- | --- | --- | ---
 `problem set points` | | | |
 
