@@ -1,0 +1,154 @@
+\documentclass{article}
+\usepackage{graphicx,color}
+
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+%To display answers, replace "white" with "red" here;
+\newcommand{\answer}[1]{\color{white}#1}
+
+\begin{document}
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics}
+
+\begin{center}
+\textbf{\underbar{In-class Worksheet 18}}
+\end{center}
+
+\begin{enumerate}
+
+
+%Section 8.1 #7
+
+\item If the $P$-value in a statistical test is less that or equal to the level of significance for the test, do we reject or fail to reject $H_0$? Does this imply that there IS or IS NOT enough evidence in the data (and the test being used) to justify the rejection of $H_0$? 
+
+	{\answer When the $P$-value is less than or equal to the level of significance, we REJECT the null hypothesis $H_0$. 
+	This means that there IS enough evidence in the data to justify the rejection of $H_0$ and choose the alternate hypothesis $H_1$...although it is NOT proof that $H_1$ is true beyond all doubt.}
+	 
+\vfill
+
+%Section 8.1 #17
+
+\item {\it Weatherwise} magazine is published in association with the American Meteorological Society. Volume~46, Number 6 has a rating system to classify Nor'easter storms that frequently hit New England states and can cause much damage near the ocean coast. A {\it severe} storm has an average peak wave height of~16.4 feet for waves hitting the shore. Suppose that a Nor'easter is in progress at the severe storm class rating.
+	\begin{enumerate}
+	\item Let us say that we want to set up a statistical test to see if the wave action (i.e., height) is dying down or getting worse. What would be the null hypothesis regarding average wave height? 
+	
+	{\answer $H_0 : \mu = 16.4$ feet.} 
+	 
+	
+	\item If you wanted to test the hypothesis that the storm is getting worse, what would you use for the alternate hypothesis? 
+	
+	{\answer $H_1: \mu > 16.4$ feet.}
+	 
+	
+	\item If you wanted to test the hypothesis that the waves are dying down, what would you use for the alternate hypothesis? 
+	
+	{\answer $H_1: \mu < 16.4$ feet.} 
+	 
+	
+	\item Suppose you do not know whether the storm is getting worse or dying out. You just want to test the hypothesis that the average wave height is {\it different} (either higher or lower) from the severe storm class rating. What would you use for the alternate hypothesis? 
+	
+	{\answer $H_1: \mu \neq 16.4$ feet.} 
+	 
+	
+	\item For each of the tests in parts (b), (c), and (d), would the area corresponding to the $P$-value be on the left, on the right, or on both sides of the mean? Explain your answer in each case. 
+	
+	{\answer (b) Right; (c) Left; (d) Both Sides.  
+	That is, for (b), we use a right-tailed test; for (c), we use a left-tailed test; and for (d), we use a two-tailed test.} 
+	 
+
+	\end{enumerate}
+
+\vfill
+
+\newpage
+%Section 8.1 #20
+\item Gentle Ben is a Morgan horse at a Colorado dude ranch. The mean glucose level for horses should be $\mu = 85$ mg/100 ml (Reference: {\em Merck Veterinary Manual}). Over the past 8 weeks, a veterinarian took weekly glucose readings from this horse (in mg/100 ml) and found the sample mean $\bar{x} = 93.8$ mg/100 ml. Do the data indicate that Gentle Ben has an overall average glucose level higher than 85 mg/100 ml?
+	\begin{enumerate}
+	\item State the appropriate null and alternate hypothesis for this test. Is this a left-tailed, right-tailed, or two-tailed test? 
+	
+	{\answer $H_0: \mu = 85$mg/100ml 
+	$H_1: \mu > 85$mg/100/ml 
+	This is a right-tailed test. } 
+	
+	\item If we assume that $x$ has a normal distribution and that we know from past experience that $\sigma = 12.5$, then the corresponding $P$-value is about $0.0232$. Verify this is correct using the appropriate statistical test. At the $\alpha = 0.05$ level, do these data indicate that Gentle Ben has an overall average glucose level higher than 85 mg/100 ml? Explain. 
+	
+	{\answer Using \texttt{Z-Test}, one verifies that the $P$-value is about $0.0232$. Since $P\leq \alpha$, at the $0.05$ significance level we choose to REJECT the null hypothesis. In other words, the data suggests (but do NOT prove) that Gentle Ben has an overall average glucose level higher than 85mg/100ml.} 
+	
+	\end{enumerate}
+
+\vfill
+
+%Section 8.1 #22
+\item The price-to-earnings (P/E) ratio is an important tool in financial work. A recent copy of the {\em Wall Street Journal} indicated that the P/E ratio of the entire S\&P 500 stock index is $\mu = 19$. A random sample of 14 large U.S. banks (J.P.\ Morgan, Bank of America, and others) had a sample mean of $\bar{x} \approx 17.1$. Do these data indicate that the P/E ratio of all U.S. bank stocks is less than 19?
+	\begin{enumerate}
+	\item State the appropriate null and alternate hypothesis for this test. Is this a left-tailed, right-tailed, or two-tailed test? 
+	
+	{\answer $H_0: \mu = 19$ 
+	$H_1: \mu <19$ 
+	This is a left-tailed test.} 
+	
+	\item If we assume that $x$ has a normal distribution and that the sample standard deviation is $s = 4.52$, then the corresponding $P$-value is about $0.0699$. Verify this is correct using the appropriate statistical test. At the $\alpha = 0.05$ level, do these data indicate that the P/E ratio of all U.S. bank stocks is less than 19? 
+	
+	{\answer Using \texttt{T-Test}, one verifies that the $P$-value is about $0.0699$. Since $P>\alpha$, at the $0.05$ significance level, we FAIL TO REJECT the null hypothesis. In other words, the data is not strong enough to suggest that the P/E ration of all U.S. bank stocks is less than 19.} 
+	\vspace{1cm}
+	
+	\end{enumerate}
+
+\vfill
+
+\newpage
+
+%Section 8.2 #20
+\item {\em USA Today} reported that the state with the longest mean life span is Hawaii, where the population mean life span is 77 years. A random sample of 20 obituary notices in the {\em Honolulu Advertizer} gave the following information about life span (in years) of Honolulu residents:
+	\begin{center}
+	72, 68, 81, 93, 56, 19, 78, 94, 83, 84  
+	77, 69, 85, 97, 75, 71, 86, 47, 66, 27 
+	\end{center}
+Assuming that the life span in Honolulu is approximately normal distributed, does this information indicate that the population mean life span for Honolulu residents is less than 77 years? Use a 5\% level of significance.
+	\begin{enumerate}
+	%
+	\item State the null and alternate hypothesis.  
+	
+	{\answer $H_0 : \mu = 77$  
+	$H_1: \mu < 77$}  
+	
+	\item What sampling distribution should be used? Explain.  
+	
+	{\answer Because the population standard deviation is not known for this data, the Student's $t$ distribution with $d.f.= 19$ is the more appropriate distribution. Note, the information is provided that $x$ is approximately normally distributed, so there is not a concern about the small sample size.}  
+	
+	\item Is this a right-tailed, a left-tailed, or two-tailed test? Find the $P$-value.  
+	
+	{\answer Because $H_1: \mu < 77$, this is a left-tailed test.  
+	Using \texttt{T-Test} with \texttt{Inpt: Data} and the above values entered in list $L_1$, $\mu_0: 77$, \texttt{Freq: 1}, and $\mu: < \mu_0$, we get $P = 0.1200213854$.}  
+	
+	\item Will you reject or fail to reject the null hypothesis? Explain and interpret this conclusion.  
+	
+	{\answer Because the $\alpha$-level was set at $\alpha = 0.05$, $P > \alpha$. Therefore, we fail to reject the null hypothesis. That is, at the 5\% level, the evidence is not strong enough to conclude that the population mean life span is less that 77 years.}  
+	
+	%
+	\end{enumerate}
+
+\vfill
+
+%Section 8.2 #11
+\item {\em Weatherize} is a magazine published by the American Meteorological Society. One issue gives a rating system used to classify Nor'easter storms that frequently hit New England and can cause much damage near the ocean. A severe storm has an average peak wave height of $\mu = 16.4$ feet for waves hitting the shore. Suppose that a Nor'easter is in progress at the severe storm class rating. Peak wave heights are usually measured from land (using binoculars) off fixed cement piers. Suppose that a reading of 36 waves showed an average wave height of $\bar{x} = 17.3$ feet. Previous studies of severe storms indicate that $\sigma = 3.5$ feet. Does this information suggest that the storm is (perhaps temporarily) increasing above the severe rating? Use $\alpha = 0.01$.  
+(Note that although this problem has not itemized out the steps, like the previous problems on this worksheet, a complete solution will include all such steps.)  
+
+{\answer $H_0: \mu = 16.4$  
+$H_1: \mu > 16.4$  
+Because $n=36 > 30$ and $\sigma$ is known, we can use the standard normal distribution with a right-tailed test.  
+Using \texttt{Z-Test} with $\mu_0 = 16.4$, $\sigma = 3.5$, $\bar{x} = 17.3$, $n=36$, and $\mu > \mu_0$, we get $z = 1.542857143$ and $P = 0.0614327356$.  
+At an $\alpha$-level of $0.01$, we fail to reject the null hypothesis.  That is, at the 1\% level, there is insufficient evidence to support the claim that the storm is increasing above the severe rating. }  
+
+\end{enumerate}
+
+\vfill
+
+\end{document}
+

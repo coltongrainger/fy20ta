@@ -1,0 +1,63 @@
+\documentclass{article}
+
+\usepackage[super]{nth}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+\begin{document}
+
+\section*{8.4 Paired Data}
+
+\begin{enumerate}
+
+    \item A discussion of dependent (paired) versus independent data will need to be had.  We treat paired data quite differently than independent data.
+    
+    \item One good guideline is the following: If you implement two distinct processes on \textbf{the same group} of individuals, then the data is paired.
+    
+    \item Another good guideline is to ask ``If I reordered the numbers of the second sample, would that alter the data set?" If the answer is yes, the data is then paired.
+    
+    \item When the data can be paired, the null hypothesis is always that the mean of the differences is 0 (there is no difference).
+    
+    \item They will need to created a ``new" data set that is the list of differences of the pairs. Then use T-Test to complete the test. By typing $L_1 - L_2$ in the label of the stats editor will generate a difference column.
+    
+\end{enumerate}
+
+\section*{8.5 Independent Populations}
+
+\begin{enumerate}
+
+    \item Here the null hypothesis is always that the difference of the means (or proportions) is 0 (there is no difference).
+    
+    \item The \texttt{2-SampZTest}, \texttt{2-SampTTest}, and \texttt{2-PropZTest} are the key calculator functions.
+    
+    \item Computations are easy with the calculator\ldots reading and deciphering which function does the job for a specific problem is the tough part.
+    
+\end{enumerate}
+
+\end{document}
+
+\section*{Project 2}
+
+
+%%%Project 2 Outline
+
+\begin{enumerate}
+
+    \item I think that simply stepping through the R Tutorial sheet (or similar exercises) is a good demo.
+    
+    \item Please announce that there are screencasts in D2L to help show them some of the key functions.
+    
+    \item It is the workspace (.RData) file that they need to submit. Not their code (.r file), not a picture of their code or a text version of their code\ldots we don’t need to see their code\ldots just the workspace containing the objects created from their code.
+    
+    \item A computer will be grading their workspace objects. This means that all required objects must be named exactly as written in the project or the grader will not see it. Note that extra objects will simply be ignored, so they can have MORE than what is required with no penalty. But changes in case, transposition of letters, or extraneous symbols in a required object’s name will appear to the grader as if the object simply does not exist. Partial credit may be possible on some objects, but NOT as a result of spelling/typing errors in the object name.
+    
+    \item Items 2-6 on the worksheet refer to values of objects in their workspace. To earn full credit on these items, the values on the worksheet must match the values in the workspace. Further, these particular objects will be randomly generated when the code is executed. So, rerunning their code can/will change the values of the workspace objects. Therefore, they should not attempt to complete those worksheet items until their workspace is finalized!!
+    

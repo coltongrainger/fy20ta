@@ -1,0 +1,258 @@
+\documentclass{ccg-notes}
+
+\institution{University of Colorado}
+\coursenum{MATH 2510}
+\coursename{Introduction to Statistics}
+\semester{Fall 2019}
+\teacher{Colton Grainger}
+\author{Colton Grainger}
+\date{\today}
+\email{colton.grainger@colorado.edu}
+
+\begin{document}
+\frontstuff
+
+\section{2019-09-15}
+    \input{}
+
+\end{document}
+\usepackage{graphicx, color}
+\usepackage{fullpage}
+
+%To display answers, replace "white" with "red" here;
+\newcommand{\answer}[1]{\color{white}#1}
+
+\begin{document}
+\begin{enumerate}
+Definition 1.2.1. (Random Experiments) A random experiment is an experiment whose
+outcome cannot be predicted with certainty. All other experiments are said to be determin-
+istic. The sample space of a random experiment is the set of all possible outcomes. The
+sample space plays the role of the universal set in problems involving the corresponding
+experiment, and it will be denoted by S. A single outcome of the experiment, that is, a sin-
+gle element of S, is called a simple event. A compound event is simply a subset of S. While
+simple events can be viewed as compound events of size one, we will typically reserve the
+phrase “compound event” for subsets of S with more than one element.
+Developing a precise description of the sample space of a random experiment is always
+the fi
+rst step in formulating a probability model for that experiment. In this chapter and the
+next, we will deal exclusively with “discrete problems,” that is, with problems in which the
+sample space is fi
+nite or, at most, countably infi
+nite. (A countably infi
+nite set is one that is
+infi
+nite, but can be put into one-to-one correspondence with the set of positive integers. For
+example, the set {2n : n = 1,2,3,...} is countably infi
+nite.) We postpone our discussion of
+%Section 4.1 #16
+\item Consider the experiment of rolling a single six-sided (fair) die and counting the number of dots on the top of the die. 
+	\begin{enumerate}
+	\item What is the sample space of all possible outcomes?  Are the outcomes equally likely? 
+	
+	{\answer The sample space is the set $\{1, 2, 3, 4, 5, 6\}$.  The outcomes are all equally likely to occur.} 
+	
+	\item Assign a probability to each of the outcomes in the sample space you just found.  Do your probabilities add up to 1?  Should they add up to 1?  Explain. 
+
+	{\answer The probability is $\frac{1}{6}$ for each of the six outcomes in the sample space.  They do and they should add up to 1, since they represent all possible distinct outcomes.} 
+
+	\item What is the probability of rolling a number less than 5 on a single throw? 
+
+	{\answer The event of ``less than 5" consists of the outcomes $\{1, 2, 3, 4\}$.  Therefore the probability of the event is $\frac{4}{6}=\frac{2}{3}$.} 
+
+    \item What is the probability of rolling an \textbf{odd} number?
+    
+    {\answer The probability is 0.5.}
+    
+	\end{enumerate}
+	
+\item Now consider the experiment of rolling TWO six-sided (fair) dice and recording the \textbf{sum} of the number of dots on the top of each die.
+	\begin{enumerate}
+	\item Using the chart below for assistance, find the sample space of all outcomes. Are the outcomes equally likely? 
+	
+	\begin{center}
+\begin{tabular}{|c||c|c|c|c|c|c|}
+\hline
+ & \hspace{.15in} 1 \hspace{.15in} & \hspace{.15in} 2 \hspace{.15in} & \hspace{.15in} 3 \hspace{.15in} & \hspace{.15in} 4 \hspace{.15in} & \hspace{.15in} 5 \hspace{.15in} & \hspace{.15in} 6 \hspace{.15in} \\
+ \hline
+ \hline
+ 1 & & & & & & \\
+ \hline
+ 2 & & & & & & \\
+ \hline
+ 3 & & & & & & \\
+ \hline
+ 4 & & & & & & \\
+ \hline
+ 5 & & & & & & \\
+ \hline
+ 6 & & & & & & \\
+ \hline    
+\end{tabular}
+\end{center}
+
+	{\answer The sample space is the set $\{2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\}$.  These outcomes are NOT equally likely to occur.  For example, there is only one way to roll a sum of 2, but there are three ways to roll a sum of 4.} 
+
+	\item Assign a probability to each of the outcomes in the sample space you just found.  Do your probabilities add up to 1?  Should they add up to 1?  Explain. 
+	
+	{\answer 
+		\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}
+		Outcome & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+		\hline
+		Probability & $\frac{1}{36}$ & $\frac{2}{36}$ & $\frac{3}{36}$ & $\frac{4}{36}$ & $\frac{5}{36}$ & $\frac{6}{36}$ & $\frac{5}{36}$ & $\frac{4}{36}$ & $\frac{3}{36}$ & $\frac{2}{36}$ & $\frac{1}{36}$ \\
+		\end{tabular} 
+		
+	They do and they should add up to 1, since they represent all possible distinct outcomes. } 
+
+    \item What is the most likely outcome of this experiment?
+    
+    {\answer{Rolling a ``7" is the most likely outcome}}
+    
+	\item What is the probability of rolling a sum less than 5 on a single throw? 
+	
+	{\answer The event of ``less than 5" consists of the outcomes $\{2, 3, 4\}$.  Therefore the probability of the event is $\frac{6}{36}=\frac{1}{6}$.} 
+	
+	
+	\item What is the probability of rolling an \textbf{odd} sum? Are you certain?
+	
+	{\answer{The probability of rolling an odd number is 0.5. Yes, as for each outcome of the first die, exactly half of the outcomes of the second die will yield an odd sum.}}
+	
+	\end{enumerate}
+
+\newpage
+
+\item \textbf{Sicherman Dice} There is in fact, one other way to mimic the above distribution with a pair of six-sided die without allowing blank faces or sides with ``negative" pip counts. One die is labeled $\{1,2,2,3,3,4\}$ and the other is $\{1,3,4,5,6,8\}$.
+
+	\begin{enumerate}
+	\item Using the chart below for assistance, find the sample space of all outcomes. Are the outcomes equally likely? 
+	
+	\begin{center}
+\begin{tabular}{|c||c|c|c|c|c|c|}
+\hline
+ & \hspace{.15in} 1 \hspace{.15in} & \hspace{.15in} 2 \hspace{.15in} & \hspace{.15in} 2 \hspace{.15in} & \hspace{.15in} 3 \hspace{.15in} & \hspace{.15in} 3 \hspace{.15in} & \hspace{.15in} 4 \hspace{.15in} \\
+ \hline
+ \hline
+ 1 & & & & & & \\
+ \hline
+ 3 & & & & & & \\
+ \hline
+ 4 & & & & & & \\
+ \hline
+ 5 & & & & & & \\
+ \hline
+ 6 & & & & & & \\
+ \hline
+ 8 & & & & & & \\
+ \hline    
+\end{tabular}
+\end{center}
+
+	{\answer The sample space is the set $\{2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\}$.  These outcomes are NOT equally likely to occur.  For example, there is only one way to roll a sum of 2, but there are three ways to roll a sum of 4.} 
+
+	\item Assign a probability to each of the outcomes in the sample space you just found.  Does this match with the normal pair of die? 
+	
+	{\answer 
+		\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}
+		Outcome & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+		\hline
+		Probability & $\frac{1}{36}$ & $\frac{2}{36}$ & $\frac{3}{36}$ & $\frac{4}{36}$ & $\frac{5}{36}$ & $\frac{6}{36}$ & $\frac{5}{36}$ & $\frac{4}{36}$ & $\frac{3}{36}$ & $\frac{2}{36}$ & $\frac{1}{36}$ \\
+		\end{tabular} 
+		
+	Amazingly enough, they do! } 
+
+    \item What is the most likely outcome of this experiment?
+    
+    {\answer{Rolling a ``7" is the most likely outcome}}
+    
+	\item What is the probability of rolling an \textbf{odd} sum? Are you certain?
+	
+	{\answer{The probability of rolling an odd number is 0.5. Yes, as for each outcome of the first die, exactly half of the outcomes of the second die will yield an odd sum.}}
+	
+	\end{enumerate}
+	
+\item What is the value of $P(A)$ if event $A$ is certain to occur?  What is the value of $P(A^c)$, in that case? 
+
+{\answer When the event $A$ is certain to occur, $P(A) = 1$.  In that case, $P(A^c) = 0$, since the complement must be impossible to occur.} 
+
+\newpage
+
+\item Although often used interchangeably in common language, there is a difference between the {\em probability} of an event $A$ and the {\em odds} in favor of an event $A$.  Whereas the probability of an event $A$ measures the likelihood of $A$ occurring out of all possible outcomes of an experiment, the odds in favor of an event $A$ measures the ratio of the likelihood of $A$ occurring compared to the likelihood that it does not. 
+
+For example, the probability that a flipped fair coin lands heads up is $\frac{1}{2}$ because there is one way for it to land heads and 2 total possible outcomes of the coin flip.  However, the odds in favor of the coin landing heads is 1 to 1, because there is one way for it to land heads and 1 way for it not to land heads.
+	\begin{enumerate}
+	%--
+	\item If you roll a (fair) six-sided die, what is the probability of rolling a 4? 
+	
+	{\answer When a six-sided die is rolled, there is ONE way to roll a 4 and SIX total outcomes.  Therefore, the probability of rolling a 4 is $\frac{1}{6}$. } 
+	
+	\item If you roll a (fair) six-sided die, what are the odds in favor of rolling a 4? 
+	
+	{\answer When a six-sided die is rolled, there is ONE way to roll a 4 and FIVE ways to not roll a 4.  Therefore, the odds in favor of rolling a 4 are 1 to 5. } 
+
+	\item If you pick a single random card from a deck of 52, what is the probability of drawing an ace? 
+	
+	{\answer In a standard deck of 52 cards, there are 4 aces and 52 total cards.  So, the probability of drawing an ace is $\frac{4}{52} = \frac{1}{13}$.} 
+	
+	\item If you pick a single random card from a deck of 52, what are the odds in favor of drawing an ace? 
+	
+	{\answer In a standard deck of 52 cards, there are 4 aces and 48 cards that are not the aces.  So, the odds in favor of drawing an ace are 4 to 48 or 1 to 12.} 
+	
+	\item If you hear an announcer state that the odds a certain basketball player makes a free throw shot are 3 to 5, then what is the probability that the player will make that shot?  
+	
+	{\answer Hearing that the odds in favor of making the shot are 3 to 5 tells us that on average, the player makes 3 shots for every 5 the player misses.  In other words, out of 8 shots, the player makes 3 (on average).  Therefore the probability that the player will make the shot is $\frac{3}{8} = 37.5\%$.} 
+
+    \end{enumerate}
+    
+\item The odds {\em against} an event are the reciprocal of the odds in favor of the event.  
+
+    \begin{enumerate}
+    
+    \item In a recent Kentucky Derby, the betting odds for (or equivalently, the odds {\em against}) the favorite horse, Point Given, winning were 9 to 5, then what was the probability that Point Given would \underbar{win} the race? 
+	
+	{\answer Since the odds against the horse winning are 9 to 5, the probability of the horse NOT winning is $\frac{9}{14}$.  This means that the probability that the horse will win is $\frac{5}{14} \approx 35.7\%$.} 
+	
+	
+	\item In the same race, the betting odds for the horse Monarchos were 6 to 1. What was the probability that Monarchos would win the race?
+	
+	{\answer The probability is $\frac{1}{7} \approx 14.3\%$.}
+	
+	
+	\item If the betting odds for Invisible Ink were 30 to 1, what was the probability that this horse would lose the race?
+	
+	
+	{\answer The probability was $\frac{30}{31} \approx 96.8\%$.}
+	
+	
+	\end{enumerate}
+
+\newpage
+
+\item In casinos, \textbf{payouts} are quite different from odds, even though the same notation is used. Often when people quote the ``odds of an event", they are actually stating payouts. The game of Roulette is a fine example of this.
+
+American Roulette is played by spinning a marble around a rotating wheel with slots for each number 1--36 and an additional slots marked 0 and 00. In number ranges from 1 to 10 and 19 to 28, odd numbers are red and even are black. In ranges from 11 to 18 and 29 to 36, odd numbers are black and even are red. Both 0 and 00 are colored green. Assume the wheel is unbiased and all outcomes are equally likely.
+
+    \begin{enumerate}
+    
+    \item The payout for betting on any single number is 35 to 1, meaning you \textbf{earn} \$35 for every \$1 wagered. What would the probability of a single number be \textbf{if these were the odds against} the single number being selected? How does this compare to the \textbf{actual} odds against and the probability of any given number being the winner?
+    
+    {\answer If the payout was the actual odds against, the probability of landing any single number would be $\frac{1}{36}$. In truth, the probability of any single number is $\frac{1}{38}$ and the odds against are 37 to 1.}
+    
+    \vfill
+    
+    \item The payout for betting on red (or black) is 1 to 1. If these were the odds against red, what would be the probability of landing on red? How does this compare to the \textbf{actual} odds against and the probability of the outcome being red slot on the wheel?
+    
+    {\answer If this were the odds against, the probability of landing on red would be $0.5$. In truth, the probability of landing on red is $\frac{18}{38}=\frac{9}{19}$ and the odds against are 10 to 9.}
+    
+    \vfill
+    
+    \item The payout for betting on even (or odd) is also 1 to 1. The slots 0 and 00 are not considered even, nor odd, in this game. How does this distinction affect the game? 
+    
+    {\answer The distinction gives similar probabilities to the previous question. The purpose of this consideration, and coloring them green, gives the house the edges. Note the payouts are the same as odds against if these spaces didn't exist.}
+    
+    \vfill
+    
+    \end{enumerate}
+    
+\end{enumerate}
+
+\end{document}
+

@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage{multicol}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+
+\begin{document}
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics }
+
+\begin{center}
+\textbf{\underbar{Project \#1 Grading Rubric}}
+\end{center}
+
+\renewcommand{\labelenumi}{\underbar{\hspace{1cm}}\theenumi.}
+\renewcommand{\labelenumii}{\underbar{\hspace{1cm}}\theenumii.}
+
+\begin{enumerate} 
+\item (10 points total) Worksheet responses including consistency with Excel spreadsheet results. (Do your response on the written worksheet reflect your results in your spreadsheet?)
+    \begin{enumerate}
+        \item (1 point) Most popular preferred color
+        \item (1 point) How many students are Sophomores
+        \item (2 points) Mean height of all versus average of female only and male only
+        \item (2 points) Standard Deviation of the heights of females
+        \item (2 points) Coin flip distribution
+        \item (2 points) Comparison and similarity of the two coin flip trials
+    \end{enumerate}
+
+\vfill
+
+\item (30 points) \textit{Completion} of all required tasks (Do you have an attempt at each required item in its designated location in the spreadsheet?)
+    \begin{enumerate}
+        \item (2 points) Color frequency table
+        \item (2 points) Bar charts
+        \item (2 points) Class standing frequency table
+        \item (2 points) Pie chart
+        \item (2 points) Mean Height
+        \item (2 points) Five-number summary
+        \item (2 points) Mean of all female heights
+        \item (2 points) Mean of all male heights
+        \item (2 points) Frequency table of female heights
+        \item (2 points) Sample standard deviation of female heights from defining formula
+        \item (2 points) Mean number of heads flipped
+        \item (2 points) Standard deviation of the number of heads flipped
+        \item (2 points) Chebyshev interval
+        \item (2 points) Binned frequency table of the number of heads flipped in both trials
+        \item (2 points) Ogive
+    \end{enumerate}
+
+ \newpage
+
+\item (30 points) \textit{Correctness} of all required tasks (Did your work in the spreadsheets yield the correct results?)
+    \begin{enumerate}
+        \item (2 points) Color frequency table
+        \item (2 points) Bar charts
+        \item (2 points) Class standing frequency table
+        \item (2 points) Pie chart
+        \item (2 points) Mean Height
+        \item (2 points) Five-number summary
+        \item (2 points) Mean of all female heights
+        \item (2 points) Mean of all male heights
+        \item (2 points) Frequency table of female heights
+        \item (2 points) Sample standard deviation of female heights from defining formula
+        \item (2 points) Mean number of heads flipped
+        \item (2 points) Standard deviation of the number of heads flipped
+        \item (2 points) Chebyshev interval
+        \item (2 points) Binned frequency table of the number of heads flipped in both trials
+        \item (2 points) Ogive
+    \end{enumerate}
+
+\vfill
+
+\item (30 points) \textit{Robustness} of all required tasks (If some of the data are changed, do your results adjust correctly?)
+    \begin{enumerate}
+        \item (2 points) Color frequency table
+        \item (2 points) Bar charts
+        \item (2 points) Class standing frequency table
+        \item (2 points) Pie chart
+        \item (2 points) Mean Height
+        \item (2 points) Five-number summary
+        \item (2 points) Mean of all female heights
+        \item (2 points) Mean of all male heights
+        \item (2 points) Frequency table of female heights
+        \item (2 points) Sample standard deviation of female heights from defining formula
+        \item (2 points) Mean number of heads flipped
+        \item (2 points) Standard deviation of the number of heads flipped
+        \item (2 points) Chebyshev interval
+        \item (2 points) Binned frequency table of the number of heads flipped in both trials
+        \item (2 points) Ogive
+    \end{enumerate}
+
+\end{enumerate}
+
+
+
+\end{document}
+

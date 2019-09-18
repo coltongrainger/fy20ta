@@ -1,0 +1,80 @@
+\documentclass{article}
+
+\usepackage[super]{nth}
+\usepackage{amsmath, amssymb}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+\DeclareMathOperator{\Var}{Var}
+
+\begin{document}
+
+\section*{5.1 Discrete Probability Distributions}
+
+\begin{enumerate}
+
+  \item Refer to the ``sum of two dice" exercise as an example of such a probability distribution.
+  
+  \item Discuss {\bf expected value} and {\bf standard deviation} of a probability distribution. Using the example of the two dice is helpful. Note that $E(X) = 7$, $\Var(X) = \frac{105}{18} \approx 5.83$, and $\sigma \approx 2.415$. 
+  
+    \begin{itemize}
+    
+      \item Point how the formulas are like the formulas we already know for mean, variance and standard deviation but also what makes them different.
+      
+      $$E(X) = \mu = \sum xP(X=x)$$
+      
+      $$\Var(x) = \sum (x-\mu)^2 P(X=x) = \sum x^2P(X=x) - \mu^2 = E(X^2) - E(x)^2.$$
+      
+      \item These last two formulas for variance are not in the book, but are easier to use if someone were to compute them by hand.
+      
+      \item Note that 1-Var Stats can still get the job done for us, like a weighted average or frequency table. Use the probabilities in the ``frequency table".
+      
+    \end{itemize}
+    
+  \item It is worth pointing out, just for completeness, that $E(X)$ is a linear function, meaning $E(\alpha X + \beta Y) = \alpha E(X) + \beta E(Y)$. Also, $\Var(\alpha X) = \alpha^2 \Var(X)$. It is not true that $\Var(X + Y) = \Var(X) + \Var(Y)$ in general, but it is true when $X$ and $Y$ are independent. Covariance is somewhat talked about in this class when we talk about linear correlation. Maybe it is worth mentioning off-hand that $\Var(X + Y) = \Var(X) + \Var(Y)$ whenever $X$ and $Y$ are uncorrelated.
+
+\end{enumerate}
+
+\section*{5.2 \& 5.3 Binomial Distribution}
+
+\begin{enumerate}
+
+  \item Describe the features of a binomial experiment. Begin with the example of flipping a coin 10 times in a row and counting the number of heads (which we consider a success).
+  
+    \begin{itemize}
+    
+      \item A \textbf{fixed number} $n$ of trials.
+      
+      \item Each trial is independent of all others.
+      
+      \item Each trial has two outcomes: a success (with probability $p$) and failure (with probability $1-p=q$).
+      
+      \item The goal is to count the number of successes $r$ in $n$ trials. 
+      
+    \end{itemize}
+    
+  \item Present the formula, $P(X=r) = \binom{n}{r}p^r(1-p)^{n-r} = \binom{n}{r}p^r q^{n-r}.$
+  
+     Because we didn’t cover Section 4.3 about counting, the reference to $C_{n,r}=\binom{n}{r}$ will be to state that it is the number of ways that the $r$ successes could have fallen in those $n$ trials. I do list all the ways to get 2 heads in 4 flips, just to emphasize the point.
+     
+  \item Note that the TI calcs have binompdf and binomcdf. Refer them to the screencasts if they don’t know how to use those functions already, but make a point to review them right before the worksheet next Wednesday.
+  
+   Specifically (on Wednesday) review the syntax and application of \texttt{binompdf(n,p,r)} which computes the probability of EXACTLY r successes out of n trials, $P(X=r)$, while \texttt{binomcdf(n,p,r)} computes the probability of at most r success out of n trials, $P(X\leq r)$. 
+   
+   \item Discuss how we can compute the probability of at least $r$ successes (say) when neither function is explicitly designed to do that by using compliments. Namely, $P(X>r) = 1-P(X\leq r)$.
+   
+   Drawing a chart and emphasizing the events and their compliments is very helpful. This is one of the more confusing topics for the students.
+   
+  \item A quick note of the formulas for expected value and standard deviation for a binomially distributed random variable. They won’t use 1-Var Stats, most likely, because the formulas are so much simpler.
+  $$E(X) = np$$
+  $$Var(x) = npq=np(1-p)$$
+  
+\end{enumerate}
+
+
+\end{document}

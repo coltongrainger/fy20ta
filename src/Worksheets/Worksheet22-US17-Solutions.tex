@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage{graphicx, color}
+\usepackage[super]{nth}
+\usepackage{amsmath, amssymb}
+
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+\newcommand{\answer}[1]{{\color{red}{\large \textbf{#1}}}}
+
+
+\begin{document}
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics}
+
+\begin{center}
+\textbf{\underbar{Mini-Midterm 2 Solutions}}
+\end{center}
+
+\begin{enumerate}
+
+\item \answer{A} Using the formula $z=\frac{x-\mu}{\sigma}$, we get $z = \frac{108-102}{7}=\frac{6}{7} \approx 0.8571429$
+
+\item \answer{D} We should create a $t$-interval to estimate the population mean, since there is to be no assumed value for the \textbf{population} standard deviation. Thus, 
+$$\texttt{TInterval}(110.96,8.3,47,0.95) \approx (108.52, 113.4).$$
+
+\item \answer{C} To use the central limit theorem, we need to have either a sample size $n\geq 30$ \textbf{or} sample from a normally distributed population. We satisfy the latter condition and so sample means, $\bar{x}$ will be normally distributed with $\mu_{\bar{x}} = 73$ and $\sigma_{\bar{x}} = 7.8/\sqrt{24}$. As the question asks for the probability that the mean of the sample is more than 71, they are asking for $P(\bar(x) \geq 71)$. Using the \texttt{normalcdf} function, we see
+$$\texttt{normalcdf}( 71, 1\texttt{E}99, 73, 7.8/\sqrt{24} ) \approx 0.8954689.$$
+Since the answer is multiple choice, we should choose the closest answer, which is C.
+
+\item \answer{C} When creating a confidence interval, we must either have a sample size $n\geq 30$ \textbf{or} sample from a normally distributed population. We satisfy the latter condition and so a confidence interval will be justfied. Since we are given the \textbf{population} standard deviation, we should use a standard normal distribution when computing the interval. It remains to find the critical $z$ value for a 98\% confidence interval. Since the 98\% confidence level indicates an area of 0.98 between $-z_c$ and $z_c$, the area to the left of $z_c$ is 0.99.
+$$z_c = \texttt{invnorm}(0.99,0,1) \approx 2.326348$$
+
+\item \answer{D} The question asks us to find $P(90 \leq x \leq 120)$, where $x$ is normally distributed with $\mu = 100$ and $\sigma = 15$. Using the \texttt{normalcdf} function, we see $$\texttt{normalcdf}(90, 120, 100, 15) \approx 0.6562962.$$ Since the answer is multiple choice, we should choose the closest answer, which is D.
+
+\item \answer{A} Since our random sample has more than 5 successes and more than 5 failures (the conditions $n\hat{p} >5$ and $n(1-\hat{p}) >5$ are both met), making a confidence interval for the population proportion $p$ is justified. Using the function $\texttt{1-PropZInt}(408, 865, .95)$ gives $(.43841, .50494)$.
+
+\item \answer{C} Since the confidence interval to be created will be an estimate of $\mu$, we use the formula $$n \geq \left(\frac{z_c \cdot \sigma}{E}\right)^2.$$
+In the problem they tell us that $\sigma = 6$ and we want our margin for error to be $4$ or less. Thus $E=4$ and it remains to find $z_c$, the critical $z$-value for a 99\% confidence interval. Using the same reasoning as in question 3, we find $$z_c = \texttt{invnorm}(0.995, 0, 1) \approx 2.575829.$$
+Thus, $$ n\geq \left( \frac{(2.575829)\cdot(6)}{4} \right)^2 \approx 14.92852.$$
+However, since $n$ is a sample size, it must be an integer. Thus, we \textbf{round up} to get $n=15$.
+
+\item \answer{A} The problem asks us to find a score such that the given right tail area is 0.0694. If we use the \texttt{invnorm} function to solve this problem, we much find the area to the \textbf{left} of the pictured z score. Since the total area under the curve is 1, the left tail area is therefore $1-0.0694 = 0.9306$. Hence, $$\texttt{invnorm}(0.9306, 0, 1) \approx 1.480275.$$
+
+\item \answer{D} This is very similar to the previous problem. $Q_3$ is the same as the \nth{75} percentile, a score which has the area to the left being 0.75. Thus,
+$$\texttt{invnorm}(0.75, 63.6, 2.5) \approx 65.28622.$$
+
+\item \answer{C} If the level of confidence increases, the value of $z_c$ or $t_c$ increases. All things being equal, this will cause the margin for error of a confidence interval to increase, thus resulting in a wider confidence interval.
+
+\item \answer{$\approx 43,100$} Since we want to cover no more that 10\% of all tires, we want to cover the 10\% of tires with the \textbf{lowest} mileage. Since mileage is approximately normally distributed, this can be solved with $$\texttt{invNorm}(0.1, 49500, 5000) \approx 43092.24.$$
+
+\item \begin{enumerate} \item[(a)] \answer{$\approx (6.0878, 17.312)$} We wish to create a confidence interval for $\mu_1 - \mu_2$, the difference of the two population means. Since we do not assume values for each \textbf{population} standard deviation, we will create a $t$-based interval. Thus, $$\texttt{2-SampTInt}(75.7, 4.5, 11, 64.0, 5.1, 9, 0.98, 0) \approx (6.0878, 17.312).$$
+Note the final zero in the above syntax sets \texttt{Pooled:No}
+
+\item[(b)] Since both numbers are positive, we can conclude that \answer{$\mu_1 > \mu_2$}, with a 98\% level of confidence. 
+\end{enumerate}
+
+\item \begin{enumerate}
+    \item[(a)] \answer{$\approx 0.8997$} Since we assume gestation time is normally distributed, we can use \texttt{normalcdf} to compute $$P(X \leq 298) = \texttt{normalcdf}(-1\texttt{E}99, 298, 266, 25) \approx 0.8997273665.$$
+    
+    \item[(b)] \answer{$\approx 0.0644$}Since we assume gestation time is normally distributed, we can use \texttt{normalcdf} to compute $$P(298 \leq X \leq 311) = \texttt{normalcdf}(298, 311, 266, 25) \approx 0.8997273665.$$
+    
+    \item[(c)] \answer{$\approx 1.553\texttt{E}-15$} By the central limit theorem, we may assume the mean gestation time of a sample of size 38 is normally distributed with $\mu_{\bar{x}} = 266$ and $\sigma_{\bar{x}} = \sigma/\sqrt{n} = 25/\sqrt{38}$. Thus, we can use \texttt{normalcdf} to compute \begin{align*}
+    P(298 \leq \bar{x} \leq 311) &= \texttt{normalcdf}(298, 311, 266, 25/\sqrt{38}) \\
+    &\approx \texttt{1.52024877E-15} \\
+    &\approx 0.00000000000000152 \end{align*}
+    
+    \item[(d)] \answer{Different.} Because the central limit theorem tells use that sample means will follow a different distribution than the population. Specifcally, the standard deviation will change when $n> 1$.
+    
+    \end{enumerate}
+    
+\end{enumerate}
+
+\end{document}

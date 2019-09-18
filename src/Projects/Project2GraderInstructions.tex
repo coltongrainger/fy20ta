@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+\textbf{
+{\large How to use the Project 2 Grader File}	
+ }
+\end{center}
+
+I am pretty sure this should not crash, unless the students did something very strange. If you come across a student project that doesn't work with the grader, send it to me and I will try to figure how what's wrong and adapt the grader file. I have put a screencast onto the drive made by Dee-Dee showing how this all works. I think her steps are in a slightly different order, but doesn't matter. Try it with your own .RData file or the sample one to get a feel for it.
+
+I assume you are using RStudio for this and in my opinion, makes the whole process faster.
+
+\begin{enumerate}
+
+\item Download all your sections' .RData file through D2L.
+
+\item Open the ``R\_Project\_Grader\_S18.R" source code by going to \textbf{File} $\rightarrow$ Open File \ldots in RStudio. This will open a Source window on your screen. What you are seeing is the code that makes the grader file work.
+
+\item Clear the workspace by going to \textbf{Session} $\rightarrow$ Clear Workspace \ldots and select Yes. Alternatively, there is a Broom icon in the upper right window under the ``Environment" tab that does the same thing.
+
+\item Load a group's workspace file by going to \textbf{Session} $\rightarrow$Load Workspace \ldots and selecting the .RData file you wish to grade. Alternatively, you can click on the file name in the lower right under the ``Files" tab.
+
+\item Run the grader by going to \textbf{Code} $\rightarrow$ Source or by clicking the Source icon in the grader code window. The grader code runs and the results are displayed in the Console window on your screen.
+
+\item The grader displays a breakdown of what is missing and objects with less than partial credit. It then states the workspace final score and you can fill out the first part of the rubric page for this group. I paste this output onto a group's D2L feedback window, but is not necessary.
+
+\item The answers for the worksheet portion are also displayed to grade the worksheet they turn in. Consult the rubric for worksheet, located on the drive folder. Assign a total score for the group on D2L.
+
+\item Repeat steps 3-7 for each group.
+
+\end{enumerate}
+
+I will be happy to give a walk-through for anyone who would like. E-mail me and we can set up a time. Once you get the hang of it, this project can be graded very quickly.
+
+\end{document}

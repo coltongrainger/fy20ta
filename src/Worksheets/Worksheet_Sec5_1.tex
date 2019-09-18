@@ -1,0 +1,149 @@
+\documentclass{article}
+\usepackage{graphicx,color}
+\usepackage[super]{nth}
+
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+\addtolength{\topmargin}{-0.25in}
+
+%To display answers, replace "white" with "red" here;
+\newcommand{\answer}[1]{\color{white}#1}
+
+\begin{document}
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics }
+
+\begin{center}
+\textbf{\underbar{In-class Worksheet 7}}
+\end{center}
+
+\begin{enumerate}
+	
+
+\item An urn contains 6 white marbles and 4 black marbles.  If two marbles are randomly selected from the urn without replacement.  Let $x$ be the random variable representing the number of white marbles selected.
+	\begin{enumerate}
+	\item What are the possible values of $x$? 
+	
+	{\answer $x=0$, $x=1$, $x=2$}
+	
+	\vspace{0.5cm}
+	
+	\item Is $x$ a continuous or discrete random variable? 
+	
+	{\answer Because the values of $x$ are the result of a count and are whole number values, $x$ is a discrete random variable.}
+	
+	\vspace{0.5cm}
+	
+	\item Create a probability distribution table for $x$.  (Do your probabilities add up to 1?) 
+	
+	\begin{tabular}{c|c|c|c|}
+	$x$ & \hspace{0.25cm} {\answer 0} \hspace{0.25cm} & \hspace{0.25cm} {\answer 1} \hspace{0.25cm} & \hspace{0.25cm} {\answer 2} \hspace{0.25cm} \\
+	\hline
+	$P(x)$ & {\answer  $\frac{2}{15}$} &  {\answer $\frac{8}{15}$} & {\answer $\frac{1}{3}$}  \\
+	\end{tabular}
+	\vspace{1cm}
+	
+	\item  Determine the mean (or expected value) of $x$. 
+	
+	{\answer $\mu = \sum xP(x) = 0\cdot \frac{2}{15} + 1\cdot \frac{8}{15} + 2\cdot \frac{1}{3} = 1.2$
+	} 
+	
+	\item Determine the standard deviation of $x$. 
+	
+	{\answer $\sigma = \sqrt{\sum(x-\mu)^2P(x)}$.  With $L_1$ as $x$ and $L_2$ as $P(x)$, 1-Var Stats $L_1$, $L_2$ yields $0.6531972647$.
+	} 
+	
+	\end{enumerate}
+	
+\item A local grocery store has determined that (to the nearest minute) 15\% of the customers take 1 minute to check out, 20\% take 2 minutes to check out, 30\% take 3 minutes to check out, 25\% take 4 minutes to check out, and the rest take 5 minutes to check out.
+
+	\begin{enumerate}
+	
+	\item What is the average number of minutes it takes for one of the customers of this store to check out? 
+	
+	{\answer With $L_1$ as time (that is, $x=1$, $x=2$, $x=3$, $x=4$, and $x=5$) and $L_2$ as probability (that is $P(1) = 0.15$, $P(2) = 0.20$, $P(3) = 0.30$, $P(4) = 0.25$, and $P(5) = 0.10$), 1-Var Stats $L_1$, $L_2$ yields $\bar{x} = 2.95$.  So, on average it takes a customer 2.95 minutes to check out.
+	} 
+	
+	\item If in a typical hour the store has 85 customers, how many check-out clerks would the store need to meet the demand? 
+	
+	{\answer If there are 85 customers, each taking 2.95 minutes to check out, then this requires $85\cdot 2.95 = 250.75$ worker-minutes per hour.  Since the greatest number of worker-minutes a single person can provide in one hour is 60, there would need to be a total of $\frac{250.75}{60} = 4.17916667$ workers per hour.  Since we cannot have a fraction of a person, we will need 5 total checkout clerk bodies per hour, although not all 5 will have to be working for the entire time.
+	} 
+	
+	\end{enumerate}
+
+\newpage
+
+%Section 5.1 #12
+\item {\em USA Today} reported that approximately 25\% of all state prison inmates released on parole become repeat offenders while on parole.  Suppose the parole board is examining five prisoners up for parole.  Let $x$ be the number of prisoners out of five on parole who become repeat offenders.
+
+	\begin{enumerate}
+	\item The probability distribution for $x$ is shown here. 
+	
+	\begin{tabular}{l|c|c|c|c|c|c}
+	\hline
+	$x$ & \hspace{0.25cm} 0 \hspace{0.25cm} & \hspace{0.25cm} 1 \hspace{0.25cm} & \hspace{0.25cm} 2 \hspace{0.25cm} & \hspace{0.25cm} 3 \hspace{0.25cm} & \hspace{0.25cm} 4 \hspace{0.25cm} &  \hspace{0.25cm} 5 \hspace{0.25cm} \\
+	\hline
+	$P(x)$ & $0.237$ & $0.395$ & $0.264$ & $0.088$ & $0.015$ & $0.001$ \\
+	\hline
+	\end{tabular} 
+
+		\begin{enumerate}
+		\item What is the probability that one or more of the five parolees will be repeat offenders?  
+		
+		(That is, what is $P(x \geq 1)$?) 
+		
+		{\answer $P(x\geq 1) = 0.395 + 0.264 + 0.088 + 0.015 + 0.001 = 0.763$.  So, there is a probability of 76.3\% that one or more of the five parolees will be a repeat offender.
+		} 
+		
+		\item What is the probability that fewer than 3 will be repeat offenders?  
+		
+		(That is, what is $P(x < 3)$?) 
+		
+		{\answer $P(x < 3) = 0.237 + 0.395 + 0.264 = 0.896$.  So, there is a probability of 89.6\% that fewer than 3 will be repeat offenders.
+		} 
+		
+		\item What is the expected number of repeat offenders out of five? 
+		
+		{\answer $\mu = \sum xP(x)$.  With $L_1$ as $x$ and $L_2$ as $P(x)$, 1-Var Stats yields $\bar{x} = 1.252$.
+		} 
+		%--
+		\end{enumerate}
+	\end{enumerate}
+
+%Section 5.1 #16
+\item Sara is a 60-year-old Anglo female in reasonably good health.  She wants to take out a \$50,000 term (that is, straight death benefit) life insurance policy until she is 65.  The policy will expire on her 65th birthday.  (So, if she dies before her 65th birthday, the policy will pay out \$50,000.  Otherwise, it expires and pays out nothing.) 
+
+The probability of death in a give year is provide by the Vital Statistics Section of the {\em Statistical Abstract of the United States}. 
+
+\begin{tabular}{l||ccccc}
+\hline
+$x=\textnormal{ age }$ & 60 & 61 & 62 & 63 & 64 \\
+\hline
+Probability of death & $0.00756$ & $0.00825$ & $0.00896$ & $0.00965$ & $0.01035$ \\
+\hline
+\end{tabular}
+
+	\begin{enumerate}
+	%--
+	\item Sara is applying to Big Rock Insurance Company for her term insurance policy.  What is the total expected cost to Big Rock Insurance over the years 60 through 64?  (Again, in the case that Sara does not die, the cost to the insurance company is \$0.) 
+	
+	{\answer To compute the expected cost (value) we can use $\mu = \sum xP(x)$ where $x$ is either \$50000 or \$0.  Since multiplying by $0$ yields $0$, we really only need consider the cases when $x = 50000$. 
+	
+	So, the expected cost is $50000*0.00756 + 50000*0.00825 + 50000*0.00965 + 50000*0.01035 = 2238.50$. That is, the expected cost to the insurance company is \$2238.50.}
+	
+	\item If Big Rock Insurance Company charges \$5000 for the policy, then what is the expected profit for this policy? 
+	
+	{\answer Because the expected cost is \$2238.50 and the known revenue is \$5000, the expected profit is $5000-2238.50 = 2761.50$ dollars. 
+	}
+	%--
+	\end{enumerate}
+
+	
+\end{enumerate}
+\end{document}
+

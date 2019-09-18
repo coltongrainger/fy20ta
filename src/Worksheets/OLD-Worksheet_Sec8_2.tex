@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage{graphicx, color}
+
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+%To display answers, replace "white" with "red" here;
+\newcommand{\answer}[1]{\color{red}#1}
+
+\begin{document}
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics }
+
+\begin{center}
+\textbf{\underbar{In-class Worksheet 19}}
+\end{center}
+
+
+\begin{enumerate}
+
+%Section 8.2 #12
+\item Let $x$ be a random variable that represents the pH of arterial plasma (i.e., acidity of the blood). For healthy adults, the mean of the $x$ distribution is $\mu = 7.4$ (Reference:{\em Merck Manual}). A new drug for arthritis has been developed. However, it is thought that this drug may change blood pH. A random sample of 31 patients with arthritis took the drug for 3 months. Blood tests showed that $\bar{x} = 8.1$ with sample standard deviation $s=1.9$. Use a 5\% level of significance to test the claim that the drug has changed (either way) the mean level of the blood.
+
+	\begin{enumerate}
+	%
+	\item State the null and alternate hypothesis.  
+	
+	{\answer $H_0 : \mu = 7.4$  
+	$H_1: \mu \neq 7.4$} 
+	 
+
+	\item What sampling distribution should be used? Explain.  
+	
+	{\answer Because the population standard deviation is not known for this data, the Student's $t$ distribution with $d.f.=30$ is the more appropriate distribution. Note, since we are not told that $x$ has a normal distribution, the fact that $n \geq 30$ is relevant too.}  
+	
+	\item Is this a right-tailed, a left-tailed, or two-tailed test? Find the $P$-value.  
+	
+	{\answer Because $H_1: \mu \neq 7.4$, this is a two-tailed test.  
+	Using \texttt{T-Test} with $\mu_0: 7.4$, $\bar{x}: 8.1$, $S_x: 1.9$, $n=31$, and $\mu: \neq \mu_0$, we get $P = 0.0490600753$.} 
+	 
+	
+	\item Will you reject or fail to reject the null hypothesis? Explain and interpret this conclusion.  
+	
+	{\answer Because the $\alpha$-level was set at $\alpha = 0.05$, $P \leq \alpha$. Therefore, we reject the null hypothesis. That is, at the 5\% level, the evidence is sufficient to say that the drug has changed the mean pH level.} 
+	 
+	%
+	\end{enumerate}
+
+
+%Section 8.2 #20
+\item {\em USA Today} reported that the state with the longest mean life span is Hawaii, where the population mean life span is 77 years. A random sample of 20 obituary notices in the {\em Honolulu Advertizer} gave the following information about life span (in years) of Honolulu residents:
+	\begin{center}
+	72, 68, 81, 93, 56, 19, 78, 94, 83, 84  
+	77, 69, 85, 97, 75, 71, 86, 47, 66, 27 
+	\end{center}
+Assuming that the life span in Honolulu is approximately normal distributed, does this information indicate that the population mean life span for Honolulu residents is less than 77 years? Use a 5\% level of significance.
+	\begin{enumerate}
+	%
+	\item State the null and alternate hypothesis.  
+	
+	{\answer $H_0 : \mu = 77$  
+	$H_1: \mu < 77$}  
+	
+	\item What sampling distribution should be used? Explain.  
+	
+	{\answer Because the population standard deviation is not known for this data, the Student's $t$ distribution with $d.f.= 19$ is the more appropriate distribution. Note, the information is provided that $x$ is approximately normally distributed, so there is not a concern about the small sample size.}  
+	
+	\item Is this a right-tailed, a left-tailed, or two-tailed test? Find the $P$-value.  
+	
+	{\answer Because $H_1: \mu < 77$, this is a left-tailed test.  
+	Using \texttt{T-Test} with \texttt{Inpt: Data} and the above values entered in list $L_1$, $\mu_0: 77$, \texttt{Freq: 1}, and $\mu: < \mu_0$, we get $P = 0.1200213854$.}  
+	
+	\item Will you reject or fail to reject the null hypothesis? Explain and interpret this conclusion.  
+	
+	{\answer Because the $\alpha$-level was set at $\alpha = 0.05$, $P > \alpha$. Therefore, we fail to reject the null hypothesis. That is, at the 5\% level, the evidence is not strong enough to conclude that the population mean life span is less that 77 years.}  
+	
+	%
+	\end{enumerate}
+
+%Section 8.2 #11
+\item {\em Weatherize} is a magazine published by the American Meteorological Society. One issue gives a rating system used to classify Nor'easter storms that frequently hit New England and can cause much damage near the ocean. A severe storm has an average peak wave height of $\mu = 16.4$ feet for waves hitting the shore. Suppose that a Nor'easter is in progress at the severe storm class rating. Peak wave heights are usually measured from land (using binoculars) off fixed cement piers. Suppose that a reading of 36 waves showed an average wave height of $\bar{x} = 17.3$ feet. Previous studies of severe storms indicate that $\sigma = 3.5$ feet. Does this information suggest that the storm is (perhaps temporarily) increasing above the severe rating? Use $\alpha = 0.01$.  
+(Note that although this problem has not itemized out the steps, like the previous problems on this worksheet, a complete solution will include all such steps.)  
+
+{\answer $H_0: \mu = 16.4$  
+$H_1: \mu > 16.4$  
+Because $n=36 > 30$ and $\sigma$ is known, we can use the standard normal distribution with a right-tailed test.  
+Using \texttt{Z-Test} with $\mu_0 = 16.4$, $\sigma = 3.5$, $\bar{x} = 17.3$, $n=36$, and $\mu > \mu_0$, we get $z = 1.542857143$ and $P = 0.0614327356$.  
+At an $\alpha$-level of $0.01$, we fail to reject the null hypothesis.  That is, at the 1\% level, there is insufficient evidence to support the claim that the storm is increasing above the severe rating. }  
+
+
+\end{enumerate}
+\vfill
+
+\end{document}
+

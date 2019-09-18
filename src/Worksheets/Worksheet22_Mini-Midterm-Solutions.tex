@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage{graphicx, color}
+\usepackage{amsmath, amssymb}
+\usepackage[super]{nth}
+
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+\newcommand{\answer}[1]{{\color{red}{\large \textbf{#1}}}}
+
+
+\begin{document}
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics}
+
+\begin{center}
+\textbf{\underbar{Mini-Midterm 2 Solutions}}
+\end{center}
+
+\begin{enumerate}
+
+\item \answer{D} The critical $z$ value for a 93\% confidence interval is $z_c \approx 1.8119$. Using the formula $$n \geq \frac{1}{4} \left(\frac{z_c}{E}\right)^2$$ with $E=0.012$ gives $n \geq 5699.6$. Rounding up and selecting the closest option yields D. Note if one used $z_c = 1.81$, one would get 5688 for $n$. 
+
+\item \answer{B} The critical $z$ value for a 99\% confidence interval is $z_c \approx 2.5758$. Using the formula $$n \geq \hat{p}\left(1-\hat{p}\right) \left(\frac{z_c}{E}\right)^2$$ with $E=0.04$ gives $n \geq 437.9$. Rounding up yields B. 
+
+\item \answer{C} First, the number of ``successes'' in the sample is $0.1846 * 260 \approx 48$. Thus the number of successes in the sample is greater than 5, the number of failures $260-48=212 > 5$ and so using a confidence interval based on the standard normal distribution is justified. Using \texttt{1-PropZInt} with $x=48, n=260$ and $\texttt{C-Level} = 0.9$ gives $(.14504, .22419)$.
+
+\item \answer{C} When creating a confidence interval for $\mu$, we must either have a sample size $n\geq 30$ \textbf{or} sample from a normally distributed population. We shall assume the latter condition and so a confidence interval will be justified. Since we are \textbf{not} given the \textbf{population} standard deviation, we should use a $t$-distribution when computing the interval. Using \texttt{TInterval} with $\bar{x} = 76.2, s=21.4, n=27$ and $\texttt{C-Level} = .95$ gives $(67.734, 84.666)$.
+
+\item \answer{B} The critical $z$ value for a 95\% confidence interval is $z_c \approx 1.96$. Using the formula $$n \geq \left(\frac{z_c\cdot \sigma}{E}\right)^2$$ gives $n\geq 61.0111$. Rounding up gives B.
+
+\item \answer{A} When creating a confidence interval for $\mu$, we must either have a sample size $n\geq 30$ \textbf{or} sample from a normally distributed population. The latter condition is met and so a confidence interval will be justified. Since we are \textbf{not} given the \textbf{population} standard deviation, we should use a $t$-distribution when computing the interval. Using \texttt{TInterval} with $\bar{x} = 192, s=8, n=14$ and $\texttt{C-Level} = .98$ gives $(186.33, 197.67)$.
+
+\item \answer{D} When creating a confidence interval for $\mu$, we must either have a sample size $n\geq 30$ \textbf{or} sample from a normally distributed population. The former condition is met and so a confidence interval will be justified. Since we are \textbf{not} given the \textbf{population} standard deviation, we should use a $t$-distribution when computing the interval. Using \texttt{TInterval} with $\bar{x} = 29.5, s=5.2, n=59$ and $\texttt{C-Level} = .9$ gives $(28.368, 30.632)$.
+
+\item \answer{C} When testing a claim about a single proportion, one must check if the sample size is ``large enough''. As the null hypothesis is $\text{H}_0: p = 0.34$, we see that $0.34*225 = 76.5 > 5$ and $(1-0.34)*225 = 148.5 > 5$, the sample size is indeed large enough. Using \texttt{1-PropZTest} with $p_0 = .34, x=97, n=225$ and $\texttt{prop} > p_0$ gives the $P$-value as approximately $0.001957$.
+
+\newpage
+
+\item \answer{Fail to Reject $\text{H}_0$.} This will be a hypothesis test with $\text{H}_0: p_1 = p_2$ and $\text{H}_1: p_1 \neq p_2$. We first deterimine if the sample sizes are ``large enough''. The pooled proportion is $$\bar{p}=\frac{31+22}{1000+1200} \approx 0.0241.$$ As $0.0241 * 1000 = 24.1 >5$, all the other conditions $(1-\bar{p})n_1 > 5$, $\bar{p}\cdot n_2 > 5$, and $(1-\bar{p})n_2 > 5$ must also be met. Hence our sample sizes are large enough and we may proceed using \texttt{2-PropZTest}. Using $x1 = 31, n1 = 1000, x2=22, n2=1200$ and $p1 \neq p2$, we obtain the $P$-value as approximately $0.0537$. Since $P > \alpha = 0.05$, we fail to reject the null hypothesis and there is not sufficient evidence to support the claim that the proportion of persons who stop to help a person with car trouble is different between these two groups.
+
+\item \answer{Reject $\text{H}_0$.} Since we are testing a claim about a population mean $\mu$, we must either have a sample size $n\geq  30$ \textbf{or} sample from a normally distributed population. We meet the latter condition and since we are \textbf{not} given the \textbf{population} standard deviation, we should use a $t$-distribution when performing the statistical test. Using $\text{H}_0: \mu = 160$ and $H_1: \mu > 160$ for the null and alternate hypothesis, we use \texttt{T-Test} with $\mu_0 =160$, $\bar{x} = 183$, $Sx = 12$, $n=25$, and $\mu: > \mu_0$ to find that the $P$-value is approximately $5.60591 \texttt{E}{-10}$. Note that the $P$-value is therefore
+$$P \approx 0.00000000560591.$$
+Thus we may reject $\text{H}_0$ and support the claim that the mean score for job applicants from this large university is greater than 160.
+
+\item \answer{Not a valid method.} The researcher should treat his data as though the samples were \textbf{independent samples}. This is because the samples were taken from \textbf{two separate schools} with no single student presumably taking the test at both schools and it is unlikely for there to be any significant correlation between the two schools. Using a hypothesis test for matched pairs would be viable if say the researcher \textbf{had the same group of students take both tests.}
+
+A more reasonable approach would be to perform a 2-Sample Test, likely a T-test as there is no assumed values for the population standard deviations. If he were to use a calculator function, it would likely be \texttt{2-SampTTest}.
+
+\item \answer{Fail to Reject $\text{H}_0$.} The null hypothesis is $\text{H}_0: \mu = 26$ and the alternate is $\text{H}_1: \mu < 26.$. As there is no given population standard deviation, we shall perform a $t$-Test as the age of prisoners is assumed to be normally distributed. Using $\texttt{TTest}$ with $\mu_0 = 26$, $\bar{x}= 24.4$, $Sx = 9.2$, $n=25$ and $\mu < \mu_0$, we get the test-statistic and P-value as 
+\begin{gather*}
+t\approx -0.8696 \\
+P \approx 0.1966
+\end{gather*}
+As the level of significance $\alpha = 0.05$, we fail to reject $H_0$. Thus there is insufficient evidence to support the claim that the mean prison age of this one city is less that 26 years. Do not be concerned with ``finding the critical value(s)''.
+
+\item \answer{Reject $\text{H}_0$} This will be a paired $t$-test (or matched pairs test). Using $\mu_D$ as the average difference of the ``before'' minus the ``after'' scores, the null and alternate hypothesis will be $\text{H}_0: \mu_D = 0$ and $\text{H}_1: \mu_D \neq 0$. Putting the before scores into $\texttt{L}_1$ and the after scores into $\texttt{L}_2$, we set $\texttt{L}_3 = \texttt{L}_1 - \texttt{L}_2$. Then, using $\texttt{TTest}$ with the \texttt{Data} option and $\mu_0 = 0$, $\texttt{List} = \texttt{L}_3$, $\texttt{Freq}=1$, $\mu \neq \mu_0$, we find the $P$-value is approximately 0.0422.
+
+Thus we reject $\text{H}_0$ and have sufficient evidence to support the claim that completing the formal logic course does affect one's score on this test of abstract reasoning.
+
+\item \answer{Fail to Reject $\text{H}_0$.} Since the samples are independent and there is no given values for the population standard deviations, we shall use \texttt{2-SampTTest}. This is justified for it is assumed that the populations in question follow a normal distribution. By not assuming that ``the population standard deviations are equal'', we shall perform an unpooled test.
+
+Using \texttt{2-SampTTest} with $\bar{x}1 = 73, Sx1 = 10.9, n1=16$, $\bar{x}2=68.4, Sx2=8.2, n2=12$, $\mu_1 > \mu2$ and $\texttt{Pooled}: \texttt{No}$, we get the $P$-value as approximately $0.1069$. Thus we fail to reject $\text{H}_0$ and we have insufficient evidence to conclude that persons who exercise regularly have a lower resting pulse, (or heart), rate.
+
+\item \answer{D} As the sample size $n=20$ is smaller than 30, one needs to assume this random sample came from a population that is normally distributed.
+
+\item \answer{B} As the samples are independent and as we assume the number of hours of television watched follows a normal distribution, we shall create a confidence interval using the $t$-distribution, for there is no assumed value for the population standard deviations.
+
+Using \texttt{2-SampTInt} with $\bar{x}1 = 12.6, Sx1 = 3.9, n1=14$, $\bar{x}2=14, Sx2=5.2, n2=17$, $\texttt{C-Level}=0.99$ and $\texttt{Pooled}: \texttt{No}$, we get the interval $(-5.912, 3.1122)$.
+
+\item \answer{No, a hypothesis test cannot be performed.} We first find the pooled proportion $\bar{p}$. The total number of successes between the two samples is $0.015 * 400 + 0.035 * 200 = 11$ and so $\bar{p} = \frac{11/600} \approx 0.0217$. When we check if the sample sizes are ``large enough'', we see that $n_2 * \bar{p} \approx 4.3 < 5$. Thus, a hypothesis test cannot be performed with these samples.
+
+\item \answer{A} The null hypothesis will be that $p=0.20$. Since $0.20 * 108 = 21.6 > 5$ and $0.80*108 = 86.4 > 5$, a hypothesis test using a sample of size 108 is appropriate.
+
+\item \answer{Yoga exercises can be recommended as a method to reduce blood pressure.} Since we have independent samples and each sample size is greater than 30, using a confidence based on the $t$-distribution is appropriate. 
+
+Using \texttt{2-SampTInt} with $\bar{x}1 = 178, Sx1 = 35, n1=100$, $\bar{x}2=193, Sx2=37, n2=100$, $\texttt{C-Level}=0.90$ and $\texttt{Pooled}: \texttt{No}$, we get the interval $(-23.42, -6.583)$. Since this interval contains all negative numbers, we would be 90\% confident that the difference $\mu_1 - \mu_2$ is some negative number. That is, $\mu_1 < \mu_2$ and so it would appear that persons who perform yoga exercises have a lower average blood pressure.
+
+\item \answer{D} Since each sample has more than 5 successes and more than 5 failures, using \texttt{2-PropZInt} is appropriate to estimate the difference of population proportions.
+
+Using \texttt{2-PropZInt} with $x1 = 250$, $n1=1000$, $x2=195$, $n2=1200$ and $\texttt{C-Level}=0.98$, we get the interval $(.04715, .12785).$. 
+
+Even though it was not asked, because this interval contains only positive numbers, we would be 98\% confident that the difference $p_1-p_2$ is positive, i.e., $p_1 > p_2$.
+
+\end{enumerate}
+
+\end{document}

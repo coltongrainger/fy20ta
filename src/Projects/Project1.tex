@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage{graphicx}
+
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+
+\begin{document}
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics}
+
+\begin{center}
+\textbf{\underbar{Project 1 - Due Thursday, March 8}}
+\end{center}
+
+The focus of this project is to expose you to some of the features in Microsoft Excel that can be used to create some of the objects and to compute some of the values that we have seen in Chapters 1-3 of our text. In particular, in this project you will be asked to create various charts, like a frequency table, a bar chart, an ogive, and a pie chart. Additionally, you will be asked to compute the mean, median, mode, and standard deviation for a set of data.
+
+Although Microsoft Excel is certainly not the only application available (and perhaps is far from the best), it is one of the more common tools used in the "real-world". So, an exposure to some of its computing and displaying capacity can be valuable.
+
+Note that Microsoft Excel is available in computer labs campus-wide. If you do not have a computer with Excel installed, please plan to complete this project in one of the labs or use Microsoft 365 now available for free for CU Boulder students through OIT. 
+
+The project is due by class on Thursday, March 8. There are two components: A worksheet which you will complete using your results from Excel, and an Excel workbook containing all required components. The worksheet is to be handed in class. The Excel workbook will need to be submitted via the D2L Dropbox.
+
+You must work in groups of 2 or 3, handing in one worksheet and submitting one Excel worksheet for the group. On Tuesday, February 20, you will be asked to specify your group members. A single Dropbox in D2L will be created for your group. You will need to upload your Excel worksheet to D2L by classtime on Thursday, March 8. You will hand in the worksheet in class on that date, as well.
+
+For those of you unfamiliar with Excel, useful screencasts will be provided in D2L. There are also many resources online for help and tutorials on the tasks required of you in this project.
+
+{\em To begin}, go to the Projects folder in the Content Browser of D2L. In the folder for Project 1, you should find an Excel file for your section. Download the file to your computer. The data sheet contains the data that you will analyze. The data highlighted in green should NOT be altered in anyway. Changing values or even sorting the data may result in inaccurate results later. 
+
+Additionally, the explicit locations for the placement of each of the items you are instructed to create/compute are labeled and highlighted in yellow. You are welcome to use other space in your data sheet if needed (for intermittent computations or analysis), but to earn credit for the required components, they must be in their specified location. Do NOT relocate any of these cells. Even adding a row or column to the data set can result in a loss of points.
+
+Lastly, all objects and computations completed in the Excel file should be done {\em robustly}, meaning that when any of the original data values are changed, the objects and values that you designed will update accordingly. Part of your grade for this project will be based on the required components updating when some of the data is changed. Use cell references rather than hard-coding any numeric values into your formulas to achieve this robustness.
+
+\newpage
+The data in the spreadsheet are responses from 700 students collected for MATH 2510.
+
+\begin{enumerate}
+	\item Complete the frequency table for the PREFERRED COLOR responses from the sample of 700 respondents in the data sheet. \{Hint: COUNTIF\} 
+	\item Create a Bar chart to display the distribution of preferred colors. Make sure to label the Bar chart properly.
+	\item Complete the frequency table for the CLASS STANDING responses from the sample of 700 respondents in the data sheet. \{Hint: COUNTIF\}
+	\item Create a Pie chart to display the distribution of class standings. Make sure to label the Pie chart properly.
+	\item Compute the mean height	 of the sample of 700 respondents in the data sheet. \{Hint: AVERAGE\}
+	\item Determine the five-number summary of the heights of the sample of 700 respondents in the data sheet. \{Hint: QUARTILE\}
+	\item Compute the mean height of \underbar{only the female} respondents in the sample of 700 respondents in the data sheet. \{Hint: AVERAGEIF\}
+	\item Compute the mean height of \underbar{only the male} respondents in the sample of 700 respondents in the data sheet. \{Hint: AVERAGEIF\}
+	\item Complete the FREQUENCY column in the frequency table for the heights of \underbar{only the female} respondents in the sample of 700 respondents in the data sheet. \{Hint: COUNTIFS\}
+	\item Unfortunately, there is not (yet) a function called STDEVIF. So, in order to compute the standard deviations for the heights of \underbar{only the female} respondents in the sample of 700 respondents in the data sheet, please use the defining formula and the following steps.
+	\begin{enumerate}
+		\item Complete the column in the frequency table containing the values of $x-\bar{x}$. You have already computed $\bar{x}$, so simply reference the cell containing that value.
+		\item Now complete the column containing the values $(x-\bar{x})^2$.
+		\item Taking in consideration the frequencies of each height, determine the sample variance.
+		\item Lastly, use the sample variance to determine the sample standard deviation.
+	\end{enumerate}
+	\item Compute the mean number of coin flips that landed heads as reported by these 700 students. \{Hint: AVERAGE\}
+	\item Compute the sample standard deviation for the number of coin flips that landed heads as reported by this sample of 700 students. \{Hint: STDEV\}
+	\item Determine the upper and lower bounds of the 75\% Chebyshev interval for the number of heads, and then determine what percentage of the outcomes that actually lie within that range. (If it is not 75\% or greater, something is wrong.) \{Hint: COUNTIFS\}
+	\item Complete the binned frequency table with 10 bins \{ `1 to 5', `6 to 10', `11 to 15', ..., `46 to 50'\} for the number of heads flipped as reported by this sample. Then add to the table values for Relative Frequency, Cumulative Frequency, and Relative Cumulative Frequency. (Be mindful of your class boundaries and how to correctly communicate this to the Excel function.) \{Hint: COUNTIFS\}
+	\item In a \textbf{single graph}, create an Ogive for the number of heads flipped in each trial into a \textbf{single graph}.
+\end{enumerate}
+	
+\newpage
+		
+Use the information found in the Excel workbook you just created to answer the questions on the following worksheet. Bring the worksheet to class on Thursday, March 8 to turn in. Upload your Excel workbook to the D2L Dropbox by classtime on that same day.
+
+\begin{center}
+\textbf{\underbar{Project 1 Worksheet - Due Thursday, March 8}}
+\end{center}
+
+NAME 1:{\underbar{\hspace{4in}} \\ \\
+NAME 2: {\underbar{\hspace{4in}} \\ \\
+NAME 3: {\underbar{\hspace{4in}}
+
+	\begin{enumerate}
+	\item What was the most popular answer to the ``Which of the following colors do you most prefer?" question? How many survey respondents answered with that color?
+	\vfill
+	\item How many students responded that they are Sophomores? Is the sampling method used to collect the data likely a good method to infer the proportion of all students at CU that are Sophomores? Why or why not?
+	\vfill
+	\item What is the mean female height? What is the mean male height? You should find that the mean height of all 700 students is not exactly equal to the average of the female and male means. Explain why this is the case.
+	\vfill
+	\newpage
+	\item What is the standard deviation of the heights of the \underbar{female} respondents in the sample? Explain whether the standard deviation of the heights of all 700 respondents is likely to be greater than or less than the standard deviation for the female respondents alone and why. (You need not compute the standard deviation of the entire 700 students to answer this, but if you do, then an explanation like ``It is greater, because the computed value is larger'' is not sufficient. Your explanation should relate that you understand what the standard deviation measures.)
+	\vfill
+	\item Although you were not asked to create a histogram for the coin flip data, what does the frequency table indicate about the shape of the distribution? (unimodal, bimodal, symmetric, skewed) How does the ogive also illustrate the shape of the distribution? \\
+	\vfill
+	\item If you compare the number of heads flipped in each trial, do you notice any similarities about the frequency tables and ogives? Give an explanation to any of these similarities you notice. It may be beneficial to review the original survey sheet.
+	\vfill
+	\end{enumerate}
+
+\end{document}
+

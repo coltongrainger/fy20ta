@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage{graphicx, color}
+
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+%To display answers, replace "white" with "red" here;
+\newcommand{\answer}[1]{\color{white}#1}
+
+\begin{document}
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics}
+
+\begin{center}
+\textbf{\underbar{In-class Worksheet 16}}
+\end{center}
+
+
+\begin{enumerate}
+
+%Section 7.3 #8
+\item Consider $n=200$ binomial trials with $r=80$ successes.
+	\begin{enumerate}
+	%--
+	\item Is it appropriate to use a normal distribution to approximate the $\hat{p}$ distribution? Explain. 
+	
+	{\answer We estimate $p$ by the sample point estimate $\hat{p} = \frac{r}{n} = \frac{80}{200} = 0.4$. 
+	Since $n\hat{p} = (200)(0.4) = 80$ and $n\hat{q} = (200)(0.6) = 120$ are both greater than 5, it is appropriate to use a normal approximation to the binomial.
+	} 
+	
+	\item Find a 95\% confidence interval for the population proportion of successes $p$. 
+	
+	{\answer Using \texttt{1-PropZInt} with $x=80$, $n=200$, and $\texttt{C-Level} = .95$, we get $(0.3321, 0.4679)$. That is, we are 95\% confident that the interval from 33.21\% to 46.79\% is one that contains the true population proportion.
+	} 
+	%--
+	\end{enumerate}
+	
+%Section 7.3 #12	
+\item In a random sample of 519 judges, it was found that 285 introverts.
+	\begin{enumerate}
+	%--
+	\item Let $p$ represent the proportion of all judges who are introverts. Find a point estimate for $p$. 
+	{\answer We estimate $p$ by the sample point estimate $\hat{p} = \frac{r}{n} = \frac{285}{519} \approx 0.5491329$.
+	} 
+	
+	\item Are the conditions $n\hat{p} >5$ and $n\hat{q}>5$ satisfied in this problem? 
+	
+	{\answer $n\hat{p} \approx 285$ and $n\hat{q} \approx 234$, so the conditions are satisfied.
+	} 
+	
+	\item Find a 99\% confidence interval for $p$. Give a brief interpretation of this interval. 
+	
+	{\answer Using \texttt{1-PropZInt} with $x=285$, $n=519$, and $\texttt{C-Level} = .99$, we get $(0.49287, 0.60539)$. 
+	
+	That is, we are 99\% confident that the interval from 49.287\% to 60.539\% is one that contains the true population proportion.
+	} 
+	%--
+	\end{enumerate}
+
+%Section 7.3 #22
+\item A {\em New York Times}/CBS poll asked the question, ``What do you think is the most important problem facing this country today?'' Nineteen percent of the respondents answered, ``Crime and violence." The margin of sampling error was plus or minus 3 percentage points. Following the convention that the margin of error is based on a 95\% confidence interval, find a 95\% confidence interval for the percentage of the entire population that would respond ``Crime and violence" to the question asked by the pollsters. 
+
+{\answer Since we are following the convention that the margin of error creates a 95\% confidence interval, that interval would simply be $19-3= 16$ to $19+3=22$. So, we are 95\% confident that the interval 16\% to 22\% is one that contains the true population percentage.
+} 
+
+\vfill
+\pagebreak
+
+%Section 7.3 #20
+\item In a marketing survey, a random sample of 1001 supermarket shoppers revealed that 273 always stock up on an item when they find that item at a real bargain price. 
+	\begin{enumerate}
+	%--
+	\item Let $p$ represent the proportion of all supermarket shoppers who always stock up on an item when they find a real bargain. Find point estimate for $p$. 
+	
+	{\answer We estimate $p$ by the sample point estimate $\hat{p} = \frac{r}{n} = \frac{273}{1001} \approx 0.2727272$.
+	} 
+	
+	\item Find a 95\% confidence interval for $p$. Give a brief explanation of this interval. 
+	
+	{\answer Using \texttt{1-PropZInt} with $x=273$, $n=1001$, and $\texttt{C-Level} = .95$, we get $(0.24514, 0.30032)$.  
+	That is, we are 95\% confident that the interval from 24.514\% to 30.032\% is one that contains the true population proportion.
+	} 
+	%--
+	\end{enumerate}
+
+%Section 7.3 #26
+\item The National Council of Small Businesses in interested in the proportion of small businesses that declared Chapter 11 bankruptcy last year. Since there are so many small businesses, the National Council intends to estimate the proportion from a random sample. Let $p$ be the proportion of small businesses that declared Chapter 11 bankruptcy last year.
+	\begin{enumerate}
+	%--
+	\item If no preliminary sample is take to estimate $p$, how large a sample is necessary to be 95\% sure that a point estimate $\hat{p}$ will be within a distance of $0.10$ from $p$? 
+	
+	{\answer With no preliminary estimate, we essentially use the ``safe" guess that $p= \frac{1}{2}$.  
+	So, by the sample size formula, $n = \hat{p}(1-\hat{p})\left(\frac{z_c}{E}\right)^2 = \left(\frac{1}{2}\right)\left(\frac{1}{2}\right)\left(\frac{\texttt{InvNorm}(0.975,0,1)}{0.01}\right)^2 = 96.03647066$.  
+	This implies that the sample size must be at least 97 small businesses.
+	} 
+	
+	\item On the other hand, suppose that in a preliminary random sample of 38 small businesses, it was found that six had declared Chapter 11 bankruptcy. How many small businesses should be included in a sample to be 95\% sure that a point estimate $\hat{p}$ will be within a distance of $0.10$ from $p$? 
+	
+	{\answer Since we have a preliminary estimate, we can use it instead.  
+	So, by the sample size formula, $n = \hat{p}(1-\hat{p})\left(\frac{z_c}{E}\right)^2 = \left(\frac{6}{38}\right)\left(\frac{32}{38}\right)\left(\frac{\texttt{InvNorm}(0.975,0,1)}{0.01}\right)^2 = 51.07756888$.  
+	This implies that a sample size must be at least 52 total small businesses, which would mean 14 more over the 38.
+	} 
+	%--
+	\end{enumerate}
+
+\end{enumerate}
+
+\vfill
+
+\end{document}
+

@@ -1,0 +1,194 @@
+\documentclass{article}
+\usepackage{graphicx,color}
+\usepackage{multirow}
+
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+%To display answers, replace "white" with "red" here;
+\newcommand{\answer}[1]{\color{white}#1}
+
+\begin{document}
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics }
+
+\begin{center}
+\textbf{\underbar{In-class Worksheet 6}}
+\end{center}
+
+\begin{enumerate}
+
+\item Consider the following events for a college student selected at random: 
+\begin{center}
+\begin{tabular}{lll}
+\hspace{2cm} $A$ & = & student is female \\
+\hspace{2cm} $B$ & = & student is majoring in business \\
+\end{tabular}
+\end{center}
+	\begin{enumerate}
+	\item Describe with an English phrase, what quantity each of the following expressions describes.
+		\begin{enumerate}
+		\item $P(A\ |\ B)$ 
+		
+		{\answer $P(A\ |\ B)$ is the probability that the student is a female given that we know they are majoring in business.} 
+		
+		\item $P(A \textnormal{ and } B)$ 
+		
+		{\answer $P(A \textnormal{ and } B)$ is the probability that the student is both a female and majoring in business.} 
+		
+		\item $P(A \textnormal{ or } B^c)$ 
+		
+		{\answer $P(A \textnormal{ or } B^c)$ is the probability that the student is either a female or is not majoring in business.} 
+		
+		\item $P(A^c \textnormal{ and } B)$
+		
+		{\answer $P(A^c \textnormal{ and } B)$ is the probability that the student is a male business major.}
+		
+		\end{enumerate}
+		
+	\item Given the following contingency table, compute the value of each of the following expressions. 
+	
+	\begin{center}
+	\begin{tabular}{rccc|c}
+	& \multicolumn{3}{c}{\em{MAJOR}} \\\cline{2-4} 
+	{\em GENDER} \hfill\vline & Business & Biology & Psychology & Row Total\\
+	\hline
+	Female \hfill\vline & 30 & 47 & 50 & 127 \\
+	Male \hfill\vline & 41 & 45 & 20 & 106 \\
+	\hline
+	Column Total \hfill \vline & 71 & 92 & 70 & 233 \\
+	\end{tabular}
+	\end{center}
+	
+		\begin{enumerate}
+		\item $P(A\ |\ B)$ 
+		
+		{\answer $P(A\ |\ B)$ can be computed by looking at the females WITHIN the business majors and so $$P(A\ |\ B) = \frac{30}{71}.$$} 
+		
+		\item $P(A \textnormal{ and } B)$ 
+		
+		{\answer  $P(A \textnormal{ and } B)$ can be computed by looking at the female business majors in the whole class, $$P(A \textnormal{ and } B) = \frac{30}{233}.$$} 
+		
+		\item $P(A \textnormal{ or } B^c)$ 
+		
+		{\answer $P(A \textnormal{ or } B^c)$ can be computed by first counting all the females and then adding to that set any male non-business majors.  In other words, count everyone EXCEPT the male business majors. $$P(A \textnormal{ or } B^C) = \frac{127+45+20}{233} = \frac{192}{233}.$$} 
+
+ 		\item $P(A^c \textnormal{ and } B)$
+ 		
+ 		{\answer $P(A^c \textnormal{ and } B)$ can be counted by finding the number of male business majors, so	$$P(A^c \textnormal{ and } B)= \frac{41}{233}.$$}
+ 		
+		\end{enumerate}
+	\end{enumerate}
+	
+	
+\vfill
+\pagebreak
+
+\item In a sales effectiveness seminar, a group of sales representatives tried two approaches to selling a customer a new automobile: the aggressive approach and the passive approach.  For 1160 customers, the following record was kept. 
+
+\begin{center}
+\begin{tabular}{l|cc|c}
+& Sale \hfill & No Sale \hfill & Row Total \\
+\hline
+Aggressive & 270 & 310 & 580 \\
+Passive & 416 & 164 & 580 \\
+\hline
+Column Total & 686 & 474 & 1160 \\
+\end{tabular} 
+\end{center}
+
+Suppose that a customer is selected at random from the 1160 participating customers.  Let us use the following notation for events: $A = $ the aggressive approach, $Pa = $ the passive approach, $S = $ sale, and $N = $ no sale.
+	\begin{enumerate}
+	\item Compute the probability that a sale was made to the customer, $P(S)$. 
+	
+	{\answer $P(S)$ can be computed by looking at the total sales and the total number of customers. 
+	$$P(S) = \frac{686}{1160} \approx 59.1\%$$} 
+	
+	\item Compute the probabilities $P(S\ |\ A)$ and $P(S\ |\ Pa)$. 
+	
+	{\answer $P(S\ |\ A)$ can be computed by looking at the number of sales WITHIN the aggressive category, and $P(S\ |\ Pa)$ can be computed by looking at the number of sales WITHIN the passive category. 
+	
+	$P(S\ |\ A) = \frac{270}{580} \approx 46.6\%$ and $P(S\ |\ Pa) = \frac{416}{580} \approx 71.7\%$} 
+	
+	\item Are the events $S = $ sale and $Pa = $ passive approach independent?  Explain. 
+	
+	{\answer These events are not independent.  If they were independent, then $P(S)$ would equal $P(S\ |\ Pa)$ because the fact that the passive approach was used would not change the probability of a sale.  However, according to the probabilities computed above, they are not equal.  So, apparently, the fact that a passive approach was used does affect the probability of a sale.} 
+	
+	\item Compute the probability $P(A \textnormal{ and } S)$. 
+	
+	{\answer  $P(A \textnormal{ and } S)$ can be computed by counting all the aggressive approach sales in all the total sales. 
+	$$P(A \textnormal{ and } S) = \frac{270}{1160}  \approx 23.3\%$$} 
+	
+	\item Compute the probability $P(A \textnormal{ or } S)$. 
+	
+	{\answer $P(A \textnormal{ or } S)$ can be computed by first counting all the aggressive approaches and then add to that the sales with the passive approach.  In other words, count every customer EXCEPT the passive approach, no sales. 
+	
+	$$P(A \textnormal{ or } S) = \frac{580 + 416}{1160} = \frac{996}{1160} \approx 85.9\%$$} 
+	
+	\end{enumerate}
+
+\newpage
+	
+\item You draw two cards from a standard deck of 52 cards \textbf{without} replacing the first one before drawing the second.
+
+    \begin{enumerate}
+    
+        \item Are the outcomes on the two cards independent? Why?
+        
+        {\answer No because sampling without replacement always yields dependent events. This is because the denominator will always change in computing the probabilities.}
+        
+        \item Find $P(3 \textnormal{ on the 1st card } and\; 10 \textnormal{ on the 2nd})$.
+        
+        {\answer $=\frac{4}{52}\cdot \frac{4}{51} = \frac{4}{663}$.}
+        
+        \item Find $P(10 \textnormal{ on the 1st card } and\; 3 \textnormal{ on the 2nd})$.
+        
+        {\answer $=\frac{4}{52}\cdot \frac{4}{51} = \frac{4}{663}$.}
+        
+        \item Find the probability of drawing a 10 \textit{and} a 3 in either order.
+        
+        {\answer By adding the previous two computations, we yield the appropriate answer of $\frac{8}{663}$.}
+        
+    \end{enumerate}
+
+\medskip
+
+\item Suppose you have a standard deck of 52 cards from which you are drawing cards at random (without replacement).
+	\begin{enumerate}
+	\item How many cards must you draw so that the probability of drawing ``at least one ace'' is 1? 
+	
+	{\answer Since there are 4 aces and 48 non-aces, we must have drawn 49 cards to be CERTAIN that we have drawn an ace.  Drawing any fewer could still leave the 4 aces in the stack of untouched cards.} 
+	
+	\item What is the probability that if you draw 5 cards that you have NO aces? 
+	
+	{\answer One way to approach this is to think that the first card is NOT an ace, and then the second card is NOT an ace, and then the third card is NOT an ace... 
+	
+	$\frac{48}{52} \times \frac{47}{51} \times \frac{46}{50} \times \frac{45}{49} \times \frac{44}{48} = 0.6588419983$.} 
+
+	\end{enumerate}
+
+\medskip
+
+\item Suppose for two events $A$ and $B$ we know that $P(A) = 0.67$ and $P(B) = 0.5$.
+	\begin{enumerate}
+	\item Can events $A$ and $B$ be mutually exclusive?  Explain. 
+	
+	{\answer Because $P(A)+P(B) >1$, there must be some overlap in the events.  That is, some outcomes are being double-counted.  So, it is not possible for them to be mutually exclusive.} 
+	
+	\item If we further know that $A$ and $B$ are independent, compute $P(A \textnormal{ and } B)$ and $P(A \textnormal{ or } B)$. 
+	
+	{\answer If $A$ and $B$ are independent, then $P(A \textnormal{ and } B) = P(A)\cdot P(B) = 0.67\cdot 0.5 = 0.335$. 
+	
+	Then $P(A \textnormal{ or } B) = P(A)+P(B)- P(A \textnormal{ and } B) = 0.67 + 0.5 - 0.335 = 0.835$. \\ Note that the $0.335$ is representative of the overlap in this case.} 
+	
+	\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+

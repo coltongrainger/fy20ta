@@ -1,0 +1,121 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx, color}
+\usepackage{amsmath, amssymb}
+
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+
+\begin{document}
+%To display answers, replace "white" with "red".
+\newcommand{\answer}[1]{\color{red}#1}
+
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics}
+
+\begin{center}
+\textbf{\underbar{In-class Worksheet 24}}
+\end{center}
+
+\begin{enumerate}
+
+%Chapter 9, Chapter Review #8
+\item A sociologist is interested in the relation between $x =$ number of job changes and $y =$ annual salary (in thousands of dollars for people living in the Nashville area.  A random sample of 10 people employed in Nashville provided the following information: 
+
+\begin{tabular}{l||rrrrrrrrrr}
+\hline
+$x$ (Number of job changes) & 4 & 7 & 5 & 6 & 1 & 5 & 9 & 10 & 10 & 3 \\
+\hline
+$y$ (Salary in \$1000) & 33 & 37 & 34 & 32 & 32 & 38 & 43 & 37 & 40 & 33 \\
+\hline
+\end{tabular}
+
+%Note that with $L_1 = x$ and $L_2 = y$, \texttt{2-Var Stat\{$L_1$, $L_2$\}} yields $\bar{x} = 6$, $\sum x = 60$, $\sum x^2 = 442$, $s_x = 3.01846$, $n = 10$, $\bar{y}=35.9$, $\sum y = 359$, $\sum y^2 = 13013$, $s_y = 3.7253$, and $\sum xy = 2231$.
+
+	\begin{enumerate}
+	%
+	\item Determine the least-squares line of best fit and the corresponding sample correlation coefficient. 
+	
+	{\answer With $L_1 = x$ and $L_2 = y$, \texttt{LinReg(a+bx)\{$L_1$, $L_2$\}} yields $\hat{y}=30.2659 +0.9390x$ and $r=0.76086$.} 
+	
+	\item If someone had $x=2$ job changes, what does the least-squares line predict for $y$, and what is a 90\% confidence interval for the annual salary for an individual with $x=2$ job changes? 
+	
+	{\answer For $x=2$, $\hat{y} = 30.2659+0.9390(2) = 32.14$ thousand dollars. 
+	
+	Further, because by \texttt{LinRegTInt\{$L_1$, $L_2$, Freq = 1, C-Level = 0.9\}} yields $s = 2.5641$ and \texttt{invT(0.95,8)} yields $t_{90} = 1.85955$, we have 
+	
+	\begin{align*}
+	E = (1.85955)(2.5641)\sqrt{ 1 + \frac{1}{10} + \frac{10(2 - 6)^2}{10(442)-(60)^2}} = 5.4262.
+	\end{align*}
+
+	So, a 90\% confidence interval is of $32.14 - 5.4262$ to $32.14 + 5.4262$ or equivalently from 26.71 to 37.57 thousand dollars.} 
+	
+	\item Without computing it explicitly, will the 90\% confidence interval for $x=8$ be wider or narrower than the one just calculated?  Explain. 
+	
+	{\answer Because $x=8$ is closer to the mean $\bar{x}=6$ than the $x=2$ value, we would expect the confidence interval to be narrower.  For $x$ closer to $\bar{x}$, the confidence intervals for $y$ are narrower.} 
+	
+	\item Test the claim that the population correlation coefficient $\rho$ is positive at a 5\% level of significance.  Interpret your result in terms of the number of job changes and the annual salary. 
+	
+	{\answer $H_0: \rho=0$ and $H_1: \rho >0$.  Then, \texttt{LinRegTTest\{$L_1$, $L_2$, Freq =1, $\beta$ \& $\rho >0$\}} yields $P = 0.0053$.  
+	
+	Because $P \leq 0.05$, we reject the null hypothesis and conclude that there is sufficient evidence to support the claim that there is a positive correlation between the number of jobs and annual salary in the Nashville area.} 
+	
+	\item Determine a 90\% confidence interval for $\beta$ and interpret its meaning in terms of number of job changes and annual salary. 
+	
+	{\answer \texttt{LinRegTInt\{$L_1$, $L_2$, Freq = 1, C-Level = 0.9\}} yields $(0.41249, 1.4656)$.  This means that we are 90\% confident that for each job change, the annual salary change is between 0.41 and 1.47 thousand dollars.}
+	%
+	\end{enumerate}
+
+\newpage
+
+%Section 9.3, #9
+\item What is the optimal amount of time for a scuba diver to be on the bottom of the ocean?  That depends on the depth of the dive.  The U.S.Navy has done a lot of research on this topic.  The Navy defines ``optimal time" to be the time at each depth for the best balance between length of work period and decompression time after surfacing.  Let $x =$ depth of dive in meters, and let $y =$ optimal time in hours.  A random sample of divers gave the following data (based on information taken from {\em Medical Physiology} by A.C. Guyton, M.D.).
+
+\begin{tabular}{l||rrrrrrrrrr}
+\hline
+$x$  & 14.1 & 24.3 & 30.2 & 38.3 & 51.3 & 20.5 & 22.7 \\
+\hline
+$y$ & 2.58 & 2.08 & 1.58 & 1.03 & 0.75 & 2.38 & 2.20 \\
+\hline
+\end{tabular}
+
+%Note that with $L_1 = x$ and $L_2 = y$, \texttt{2-Var Stat\{$L_1$, $L_2$\}} yields $\bar{x} = 28.77$, $\sum x = 201.4$, $\sum x^2 = 6735.46$, $s_x = 12.52$, $n = 7$, $\bar{y}=1.8$, $\sum y = 12.6$, $\sum y^2 = 25.607$, $s_y = 0.69845$, and $\sum xy = 311.292$.
+
+	\begin{enumerate}
+	%
+	\item Determine the least-squares line of best fit and the corresponding sample correlation coefficient. 
+	
+	{\answer With $L_1 = x$ and $L_2 = y$, \texttt{LinReg(a+bx)\{$L_1$,$L_2$\}} yields $\hat{y}=3.36649 -0.054446x$ and $r=-0.97617$.} 
+	
+	\item If the depth of the dive is $x=18$ meters, what is the optimal time in hours predicted by the line of best fit? What is a 80\% confidence interval for the $y$ when $x=18$ meters? 
+	
+	{\answer For $x=18$, $\hat{y} = 3.36649-0.054446(18) = 2.38646$ hours. 
+	
+	Further, because by \texttt{LinRegTTest\{$L_1$, $L_2$\}} yields $s = 0.166034$ and \texttt{invT(0.90,5)} yields $t_{80} = 1.475884$, we have 
+	
+	$$E = (1.475884)(0.166034)\sqrt{1 + \frac{1}{7}+\frac{7(18 - 28.87)^2}{7(6735.46)-(201.4)^2}} =0.2755595.$$
+	
+	So, a 80\% confidence interval is $2.38646 - 0.2755595$ to $2.38646 + 0.2755595$ or equivalently from $2.11$ to $2.66$ hours.} 
+	
+	\item Test the claim that the population correlation coefficient $\rho$ is negative at a 1\% level of significance.  Interpret your result in terms of the depth of the dive and optimal time. 
+	
+	{\answer $H_0: \rho=0$ and $H_1: \rho <0$.  Then, \texttt{LinRegTTest\{$L_1$, $L_2$, Freq =1, $\beta$ \& $\rho < 0$\}} yields $P = 0.000083$. 
+	
+	Because $P \leq 0.01$, we reject the null hypothesis and conclude that there is sufficient evidence to support the claim that there is a negative correlation between the depth of the dive and the optimal time.  In other words, at the 1\% level of significance, the data supports the claim that the greater the depth, the shorter the optimal time.} 
+	
+	\item Determine a 90\% confidence interval for $\beta$ and interpret its meaning in terms of the depth of the dive and the optimal time. 
+	
+	{\answer \texttt{LinRegTInt\{$L_1$, $L_2$, Freq = 1, C-Level = 0.9\}} yields $(-0.0654, -0.0435)$.  This means that we are 90\% confident that for each meter that the depth increases, the optimal time of the dive decreases between 0.0654 to 0.0435 hours.} 
+	%
+	\end{enumerate}
+
+\end{enumerate}	
+
+\vfill
+
+\end{document}

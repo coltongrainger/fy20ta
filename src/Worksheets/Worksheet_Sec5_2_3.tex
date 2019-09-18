@@ -1,0 +1,144 @@
+\documentclass{article}
+\usepackage{graphicx, color,amsmath}
+
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.4in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+%To display answers, replace "white" with "red" here;
+\newcommand{\answer}[1]{\color{red}#1}
+
+\begin{document}
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics }
+
+\begin{center}
+\textbf{\underbar{In-class Worksheet 8}}
+\end{center}
+
+\begin{enumerate}
+
+\item Consider a binomial experiment with $n=25$ trials and the probability of success on each trial is $p = 20\%$.  Compute the indicated probability.
+
+	\begin{enumerate}
+	%--
+	\item The probability of exactly 4 successes. 
+	
+	{\answer $P(r = 4) = \texttt{binompdf}(25, 0.20, 4) = 0.18668105$
+	} 
+	
+	\item The probability of at most 4 successes. 
+	
+	{\answer $P(r \leq 4) = \texttt{binomcdf}(25, 0.20, 4) = 0.42067431$
+	} 
+	
+	\item The probability of at least 4 successes. 
+	
+	{\answer $P(r \geq 4) = 1- \texttt{binomcdf}(25, 0.20, 3) = 0.76600674$
+	} 
+	
+	
+	\item The probability of more than 4 successes. 
+	
+	{\answer $P(r > 4) = 1 - \texttt{binomcdf}(25, 0.20, 4) = 0.57932569$
+	} 
+	
+	\item The probability of fewer than 4 successes. 
+	
+	{\answer $P(r < 4) = \texttt{binomcdf}(25, 0.20, 3) = 0.23399326$
+	}
+	%--
+	\end{enumerate}
+
+\item In a certain casino game, a player can {\em win}, {\em lose} or {\em tie} the dealer.  In a single instance of the game, the probability that the player wins is $0.35$, the probability that the player loses is $0.55$, and the probability that the player ties is $0.10$.  Suppose the player participates in 10 games and the outcome of each game is independent of all other games. 
+
+	\begin{enumerate}
+	%--
+	\item Can we use the binomial experiment model to determine the probability of exactly 6 losses?  If so, what are the relevant values of $n$, $r$, $p$, and $q$?  If not, explain why. 
+	
+	{\answer Since problem is posed as a simple distinction between {\em losses} (success in this case) and {\em not losses} (failure in this case), we can us the binomial experiment model.  Specifically, $n = 10$ trials at the game, $r=6$ losses, $p=0.55$ the probability of a {\em loss}, and $q=0.45$ the probability of {\em not loss}.   Specifically, the answer is \texttt{binompdf(n,p,r) = 0.23836665}.
+	} 
+
+	\item Can we use the binomial experiment model to determine the probability of 3 wins, 6 losses, and 1 tie?  If so, what are the relevant values of $n$, $r$, $p$, and $q$?  If not, explain why. 
+	
+	{\answer In this case, we can not use the binomial experiment model, because the problem is asking us to distinguish between 3 distinct outcomes and the binomial experiment is exclusively for two outcomes: {\em success} and {\em failure}.
+	} 
+
+	\end{enumerate}
+
+%Section 5.2 #20
+\item	A research team at Cornell University conducted a study showing that approximately 10\% of all businessmen who wear ties wear them so tightly that they actually reduce blood flow to the brain, diminishing cerebral functions (Source: {\em Chances: Risk and Odds in Everyday Life}, by James Burke).  At a board meeting 20 businessmen, all of whom wear ties, what is the probability that
+
+	\begin{enumerate}
+	%--
+	\item at least one tie is too tight?  (That is, $P(r\geq 1)$.) 
+	
+	{\answer This can be solve as a binomial experiment, where success is marked as wearing a tie to tightly.  So, $p=0.10$ is the probability of success.  There are $n=20$ trials for which we are trying to compute the probability of $r = 1$ or more.\\
+	For this problem, the complement rule is relevant in that $P(r\geq 1) = 1-P(r=0)$.
+	
+	So, $P(r\geq 1) = 1-P(r=0)=1-\texttt{binompdf(20, 0.10, 0)} = 0.87842335$.
+	} 
+	
+	\item fewer than 6 ties are too tight? (That is, $P(r< 6)$.) 
+	
+	{\answer In this case, we are looking for the probability of 6 or fewer successes out of 20 trials.  So, we can use the cumulative probability function \texttt{binomcdf}.  However, remember that this calculator function will compute ``$r$ or fewer''...so for FEWER THAN 6, we must use $r=5$ as the argument in the function.  
+	
+	Specifically, $P(r<6) = \texttt{binomcdf(20, 0.10, 5)} = 0.98874687$.
+	} 
+	%--
+	\end{enumerate}
+	
+
+%Section 5.3 #10
+\item The quality-control inspector of a production plant will reject an entire batch of syringes if two or more defective syringes are found in a random sample of eight syringes taken from the batch.  Suppose that the batch actually contains 1\% defective syringes.
+	\begin{enumerate}
+	%--
+	\item Find the mean of the probability distribution, $\mu$. 
+	
+	{\answer $\mu = np = 8(0.01) = 0.08$
+	}
+	
+	\item Find the standard deviation of the probability distribution, $\sigma$. 
+	
+	{\answer $\sigma = \sqrt{npq} = \sqrt{8 (0.01)(0.99)} = 0.2814249456$
+	} 
+	
+	\item What is the probability that the batch will be accepted? 
+	
+	{\answer The batch will be rejected if two or more defective syringes are found in the random sample of eight.  Equivalently, the batch of syringes will be ACCEPTED if fewer than 2 defective syringes are found.  The probability is $P(r < 2) = P(r\leq 1) = \texttt{binomcdf(8, 0.01, 1)} = 0.9973099223$.  So, there is about a 99.73\% probability that the batch will be accepted.
+	} 
+	%--
+	\end{enumerate}
+
+\vfill
+
+%Section 5.3 #22
+\item A large bank vault has several automatic burglar alarms.  The probability is $0.55$ that a single alarm will detect a burglar.
+	\begin{enumerate}
+	%--
+	\item What is the minimum number of such alarms that should be installed to provide 99\% certainty that a burglar trying to enter the vault is detected by at least one alarm? 
+	
+	{\answer This is an example of a quota problem.  Specifically, we are looking for the smallest value of $n$ so that $P(r \geq 1)$ is 99\% (or higher). 
+	
+	Since $P(r \geq 1) = 1- P(r = 0)$ and $P(r = 0) = \texttt{binompdf(n, 0.55, 0)}$, we need to find $n$ so that $1-\texttt{binompdf(n, 0.55, 0)} = 0.99$ (or higher). 
+	
+	Using the \texttt{TABLE} function on the TI-84 with \texttt{$Y_1$=1-binompdf(X,0.55,0)}, we see that for $n=5$, $Y_1 = 0.98155$ and for $n=6$, $Y_1 = 0.9917$.  Therefore, there must be a minimum of 6 alarms to reach that 99\% certainty that at least one will detect the burglar.
+	} 
+	
+	\item If, in fact, the bank decides to install 9 such alarms, then what is the expected number of alarms that will detect a burglar? 
+	
+	{\answer With $p=0.55$ that each single alarm will detect a burglar and $n=9$ alarms, the expected number of alarms that will detect a burglar is $np=9(0.55) = 4.95$ alarms.  So, on average about 5 alarms will detect the burglar.
+	} 
+	%--
+	\end{enumerate}
+
+\vfill
+
+\end{enumerate}
+
+\end{document}
+

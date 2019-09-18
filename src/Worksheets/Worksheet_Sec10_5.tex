@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage{graphicx, color, multicol}
+
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+
+\begin{document}
+%To display answers, replace "white" with "red".
+\newcommand{\answer}[1]{\color{red}#1}
+
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics }
+
+\begin{center}
+\textbf{\underbar{In-class Worksheet 26}}
+\end{center}
+
+\begin{enumerate}
+
+\item The test statistic for a one-way \texttt{ANOVA} test is the ratio of two variances: the variance {\em between} the groups and the variance {\em within} the groups.  That is, $$ F = \frac{\textnormal{Variance between samples}}{\textnormal{Variance within samples}}.$$ 
+	\begin{enumerate}
+	%
+	\item If the {\em null} hypothesis (the population means are all equal) is true, then to what value do we expect $F$ to be approximately equal? 
+	
+	{\answer In this case, we expect the variance between the samples to be close to the variance seen within the samples themselves, as all means being equal would imply that there isn't much additional variance overall than what we are already seeing within the samples themselves.  Since the numerator and denominator are approximately equal to one another, we expect $F \approx 1$. } 
+	
+	\item If we were to reject the null hypothesis, what can be said about the value of $F$? 
+	
+	{\answer Values of $F$ that are ``significantly" greater than 1 suggest that we should reject the null hypothesis because the variance between samples is significantly larger than that within the samples...so it must a difference between populations causing this. 
+	
+	Of course, HOW MUCH greater than 1 the value of $F$ needs to be will depend on other variables such as sample sizes and significance level of the test.} 
+	
+	\item In the case that the conclusion of a one-way \texttt{ANOVA} test is to reject the null hypothesis (so we have evidence to support that one or more of the populations is different than the others), is there any indication which of the included populations is different? 
+	
+	{\answer The \texttt{ANOVA} test does not provide any indication of which or even how many of the population means are different than the others in the test.  It simply indicates that there is at least one population mean that is significantly different than all the others in the test.} 
+	%
+	\end{enumerate}
+
+%Section 10.5 #4
+\item A random samples of companies in electric utilities (I), financial services (II) and food processing (III) gave the following information regarding annual profits per employee (units in thousands of dollars). (Source: {\em Forbes Top Companies}, edited by J.T.Davis, John Wiley and Sons). 
+
+\begin{center}
+\begin{tabular} {ccc}
+I & II & III \\
+49.1 & 55.6 & 39.0 \\
+43.4 & 25.0 & 37.3 \\
+32.9 & 41.3 & 10.8 \\
+27.8 & 29.9 & 32.5 \\
+38.3 & 39.5 & 15.8 \\
+36.1 & & 42.6 \\
+20.2 & & \\
+\end{tabular}
+\end{center}
+
+	\begin{enumerate}
+	%
+	\item In order to test the claim that there is a difference in population mean annual profits per employee in each of the three types of companies, what are the appropriate null and alternate hypotheses? 
+	
+	{\answer $H_0: \mu_1 = \mu_2 = \mu_3$.  That is, all population means are equal. 
+	
+	$H_1:$ Not all the population means are equal.  At least one population mean is different. } 
+	
+	\item At the 1\% level of significance, shall we reject or fail to reject the null hypothesis? What is the conclusion of the test? 
+	
+	{\answer Using \texttt{ANOVA($L_1$, $L_2$, $L_3$)}, we see $F= 0.8162571638$ and $P=0.460786926$.  Because $P > 0.01$, we fail to reject the null hypothesis. 
+	
+	That is, at the 1\% level of significance, there is insufficient evidence to conclude that at least one of the population means is different.} 
+	%
+	\end{enumerate}
+
+%Section 10.5 #9
+\item A sociologist studying New York City ethnic groups wants to determine if there is a difference in income from immigrants from four different countries during their first year in the city.  She obtained the data in the following table from a random sample of immigrants from these countries (incomes in thousands of dollars).  State the null and alternate hypotheses and then use a 0.05 level of significance to test the claim that there is a difference in the earnings of immigrants from the four different countries. 
+
+\begin{center}
+\begin{tabular}{cccc}
+Country I & Country II & Country III & Country IV \\
+12.7 & 8.3 & 20.3 & 17.2 \\
+9.2 & 17.2 & 16.6 & 8.8 \\
+10.9 & 19.1 & 22.7 & 14.7 \\
+8.9 & 10.3 & 25.2 & 21.3  \\
+16.4 & & 19.9 & 19.8 \\
+\end{tabular}
+\end{center}
+
+{\answer $H_0: \mu_1 = \mu_2 = \mu_3 = \mu_4$.  That is, all population means are equal. 
+
+$H_1:$ Not all the population means are equal.  At least one population mean is different. 
+
+Using \texttt{ANOVA($L_1$, $L_2$, $L_3$, $L_4$)}, we see $F= 4.610690787$ and $P=0.0177197924$.  Because $P \leq 0.05$, we reject the null hypothesis. 
+
+That is, at the 5\% level of significance, there is sufficient evidence to conclude that at least one of the population means is different from the others, although which one that might be or if there is more than one is not at all indicated here.}	
+\end{enumerate}
+\vfill
+
+\end{document}
+

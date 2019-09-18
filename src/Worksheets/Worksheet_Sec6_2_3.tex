@@ -1,0 +1,208 @@
+\documentclass{article}
+\usepackage{graphicx, color}
+\usepackage[super]{nth}
+
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+%To display answers, replace "white" with "red" here;
+\newcommand{\answer}[1]{\color{red}#1}
+
+\begin{document}
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics }
+
+\begin{center}
+\textbf{\underbar{In-class Worksheet 10}}
+\end{center}
+
+\begin{enumerate}
+
+%Section 6.2 #8
+%\item Raul earned a score of 80 on a history test for which the class mean was 70 with standard deviation 10.  He earned a score of 75 on a biology test for which the class mean was 70 with standard deviation 2.5.  If we assume that the scores of both tests follow a normal distribution, then on which test did Raul do better relative to the rest of the class?  Explain. \\
+%{\answer For the history test, Raul's score was $z = \frac{80-70}{10} = 1$ standard deviation above the mean.  On the biology test, Raul's score was $ = \frac{75-70}{2.5} = 2$ standard deviations above the mean.  This implies that Raul did better on the biology test relative to the rest of the class. \\
+
+%Looking at the area under the normal curve, we can translate these $z$-values to the percentage of the class that Raul scored higher than.  In the history class, where $z=1$, Raul scored higher than about 84.1\% of the students in the class.  However, for the biology class, where $z=2$, Raul scored higher than about 97.7\% of the students in the class.}
+
+%Section 6.2 #9
+\item The college physical education department offered an advanced first aid course last semester.  The scores on the comprehensive final exam were normally distributed, and the $z$ scores for some of the students are shown below:
+	\begin{center}
+	\{Robert,  $1.10$\}  \{Juan, $1.70$\}  \{Susan, $-2.00$\}  \{Joel, $0.00$\}  \{Jan, $-0.80$\}  \{Linda, $1.60$\} 
+	\end{center}
+	
+%	\begin{enumerate}
+%	\item List the students that scored above the mean. \\
+%	{\answer Because their $z$-scores are positive, Robert, Juan, and Linda scored above the mean.} \\
+%	\item List the students that score below the mean. \\
+%	{\answer Because their $z$-scores are negative, Susan and Jan scored below the mean.} \\
+If the mean score was $\mu = 150$ with standard deviation $\sigma = 20$, what was the final exam score for each student? 
+
+	{\answer Robert: $z= 1.10$, so the raw score is $1.10\cdot 20 + 150 = 172$.  \\
+	Juan: $z= 1.70$, so the raw score is $1.70\cdot 20 + 150 = 184$.  \\
+	Susan: $z= -2.00$, so the raw score is $-2.00\cdot 20 + 150 = 110$.  \\
+	Joel: $z= 0.00$, so the raw score is $0.00\cdot 20 + 150 = 150$.  \\
+	Jan: $z= -0.80$, so the raw score is $-0.80\cdot 20 + 150 = 134$.  \\
+	Linda: $z= 1.60$, so the raw score is $1.60\cdot 20 + 150 = 182$.  
+	} 
+%	\end{enumerate}
+
+%Section 6.2 #32, 36, 40, 44
+\item Let $z$ be a random variable with a {\em standard} normal distribution.  Find the indicated probability.
+	\begin{enumerate}
+	\item $P(z \geq 0)$ 
+	
+	{\answer This is simply 50\% because $z=0$ sits at the mean, and 50\% of the area is above the mean.
+	} 
+	
+	\item $P(z \leq 3.20)$  
+	
+	{\answer $\texttt{normalcdf(-1E99,3.20,0,1)} = 0.9993127979 \approx 99.93\%$
+	} 
+	
+	\item $P(z \geq -1.50)$ 
+	
+	{\answer  $\texttt{normalcdf(-1.50,1E99,0,1)} = 0.9331927713 \approx 93.32\%$
+	} 
+	
+	\item $P(-1.78 \leq z \leq 1.40)$ 
+	
+	{\answer  $\texttt{normalcdf(-1.78,1.40,0,1)} = 0.8817053583 \approx 88.17\%$
+	} 
+	\end{enumerate}
+
+
+\item Let $x$ be a random variable with a normal distribution with mean $\mu = 15$ and standard deviation $\sigma = 4$.  Find the indicated probability.
+
+	\begin{enumerate}
+	\item $P(x \leq 12)$ 
+	
+	{\answer $\texttt{normalcdf(-1E99,12,15,4)} =  0.2266272794 \approx 22.66\%$
+	} 
+	
+	\item $P(x > 10)$ 
+	
+	{\answer $\texttt{normalcdf(10,1E99,15,4)} =  0.894350161 \approx 89.44\%$
+	} 
+	
+	\item $P(15 \leq x \leq 20)$ 
+	
+	{\answer $\texttt{normalcdf(15,20,15,4)} =  0.3943501605 \approx 39.44\%$
+	} 
+	
+	\item $P(8 < x < 22)$ 
+	
+	{\answer $\texttt{normalcdf(8,22,15,4)} =  0.9198817729 \approx 91.99\%$
+	} 
+	\end{enumerate}
+
+\newpage
+
+\item Find the $z$-value described.
+
+	\begin{enumerate}
+	
+	\item Find $z$ such that 5.2\% of the standard normal curve lies to the left of $z$.  
+	
+	{\answer This is a left-tail area, so $z = \texttt{invNorm(0.052, 0, 1) = -1.625763385}$.
+	} 
+
+	\item Find $z$ such that 5\% of the standard normal curve lies to the right of $z$.  
+	
+	{\answer Since this is a right-tail area, we can first translate this to a left-tail area by equating ``5\% to the right of $z$" with ``95\% to the left of $z$."  
+	
+	Then $z = \texttt{invNorm(0.95,0,1)} = 1.644853626$. 
+	
+	Note that alternatively, symmetry can be used with  $\texttt{invNorm(0.05,0,1) = -1.644853626}$ to conclude $z=1.644853626$.
+	} 
+
+	\item Find $z$ such that 95\% of the standard normal curve lies between $-z$ and $+z$. 
+	
+	{\answer To use \texttt{invNorm}, we must first translate this to a left-tail area problem.  If 95\% of the area lies {\em between} $-z$ and $+z$, then we can equate this to 97.5\% lies to the left of $+z$.  
+	Then $z = \texttt{invNorm(0.975, 0, 1)} = 1.959963986$, and $-z = -1.959963986$.
+	} 
+	
+	%--
+	\end{enumerate}
+	
+\item Suppose that the scores for a Chemistry midterm had a normal distribution with mean $\mu = 71.4$ and a standard deviation of $\sigma = 8.3$.
+
+	\begin{enumerate}
+	
+	\item Find the exam score for a student that scored in the \nth{80} percentile. 
+	
+	{\answer The \nth{80} percentile refers to the score where 80\% of the class earned that score or below.  That is, the left-tail area related to this score is 80\%. So, $x = \texttt{invNorm(0.80, 71.4, 8.3)} = 78.38545624 \approx 78.4$.
+	} 
+	
+	\item Find the exam score for a student that scored in the $25^{th}$ percentile. 
+	
+	{\answer The $25^{th}$ percentile refers to the score where 25\% of the class earned that score or below.  That is, the left-tail area related to this score is 25\%. So, $x = \texttt{invNorm(0.25, 71.4, 8.3)} = 65.80173508 \approx 65.80$.
+	} 
+	
+	\item Find the exam score for a student who score lower than 60\% of the class. 
+	
+	{\answer Scoring lower than 60\% of the class implies that the right-tail area related to this score is 60\%.  However, since the \texttt{invNorm} function requires the left-tail area as its input, we must first translate this problem to the left-tail area of 40\%.	Then,  $x = \texttt{invNorm(0.40, 71.4, 8.3)} = 69.29721906 \approx 69.30$.
+	} 
+	\end{enumerate}
+
+\pagebreak
+	
+
+\item Suppose the distribution of heights of American men (20 years of age and older) is approximately normal with a mean of 69.4 inches and a standard deviation of 3 inches.
+
+	\begin{enumerate}
+	
+	\item What is the $z$ value for a height of 6 feet? 
+	
+	{\answer First we convert 6 feet to 72 inches. Then $z = \frac{72-69.4}{3} = 0.86666667.$}
+	
+	\item What percentage of American men (20 years of age and older) are shorter than 6 feet?
+	
+	{\answer   We can use \texttt{normalcdf}.  
+	$$P(z < 0.86666667) = \texttt{normalcdf(-1E99, 0.86666667, 0, 1)} = 0.8069377087 \approx 80.69\%$$}
+	
+	\item What is the $z$ value for a height of 6 feet 4 inches?
+	
+	{\answer First we convert 6 feet 4 inches to 76 inches.	Then $z = \frac{76-69.4}{3} = 2.2$.} 
+	
+	\item What percentage of American men (20 years of age and older) are taller than 6 feet 4 inches?
+	
+	{\answer  We can use \texttt{normalcdf}. $$P(z > 2.2) = \texttt{normalcdf(2.2, 1E99, 0, 1)} = 0.0139033989 \approx 1.39\%$$}
+	
+%	\item If we were to choose a random sample of 10 American men (20 years of age and older), what is the probability that at two or more of them are taller than 6 feet? \\
+%	{\answer  Because the population of American men is so large, we can use the binomial experiment model to answer this question with $n = 10$, $r= 2$, and $p = 1 - 0.8069374216 =0.1930625784$ (as we just found in part (a)).  $$P(r \geq 2) = 1 - P(r\leq 1) = 1 - \texttt{binomcdf(10, 0.1930625784, 1)} =0.6028789926 \approx 60.29\%$$}
+%	\item How many American men (20 years of age and older) do you need in your sample to be 99\% certain that you have at two or more who are taller than 6 feet? \\
+%	{\answer This is a quota problem, where we are looking for $P(r \geq 2) \geq 0.99$.  So, we want $$1 - \texttt{binomcdf(n, 0.1930625784, 1)} = 0.99.$$  Using the \texttt{TABLE} of the TI-84, we can see that $n=32$ is the minimum sample size we need to reach that 99\% probability.}
+	\vspace{0.5cm}
+	\end{enumerate}
+
+%Section 6.3 #30
+\item Accrotime is a manufacturer of quartz crystal watches. Accrotime researchers have shown that the watches have an average life of 28 months before certain electronic components deteriorate, causing the watch to become unreliable.  The standard deviation of watch lifetimes is 5 months, and the distribution of lifetimes is normal.
+
+	\begin{enumerate}
+	
+	\item If Accrotime guarantees a full refund on any defective watch for 2 years, what percentage of total production will the company expect to replace? 
+	
+	{\answer First we need to make sure all time intervals are measured in the same units.  So, we are looking for the percentage of watches that are expected to fail in 24 months or fewer. 
+	
+	$P(x\leq 24) = \texttt{normalcdf(-1E99, 24, 28, 5)} = 0.2118553337$.  This means that the company should expect to replace about 21.19\% of its watches.
+	} 
+
+	\item If Accrotime does not want to make refunds on more than 12\% of the watches it makes, how long should the guarantee period be (to the nearest month)? 
+	
+	{\answer Certainly, it is shorter than 24 months, since that led to 21.19\% replaced.  To determine a more precise number of months, we can use \texttt{invNorm} where we are looking for a left-tailed area equal to $0.12$. 
+	
+	$\texttt{invNorm(.12, 28, 5)} = 22.12506604$.  This implies that the guarantee period should be 22 months.
+	} 
+
+	\end{enumerate}
+
+\end{enumerate}
+
+
+\end{document}
+

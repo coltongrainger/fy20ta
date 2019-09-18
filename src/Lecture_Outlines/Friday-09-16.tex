@@ -1,0 +1,102 @@
+\documentclass{article}
+
+\usepackage[super]{nth}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+\begin{document}
+
+\section*{5.1 Discrete Probability Distributions}
+
+\begin{enumerate}
+
+    \item Refer to the ``sum of two dice" exercise as an example of such a probability distribution.
+    
+    \item Discuss {\bf expected value} and {\bf standard deviation} of a probability distribution. 
+    
+        \begin{itemize}
+        
+            \item Point how the formulas are like the formulas we already know for mean, variance and standard deviation but also what makes them different.
+            
+            $$E(X) = \mu = \sum xP(x)$$
+            
+            $$Var(x) = \sum (x-\mu)^2p(x) = \sum x^2P(x) - \mu^2 = E(X^2) - E(x)^2.$$
+            
+            \item These last two formulas for variance are not in the book, but are easier to use if someone were to compute them by hand.
+            
+            \item Note that 1-Var Stats can still get the job done for us, like a weighted average or frequency table. Use the probabilities in the ``frequency table".
+            
+        \end{itemize}
+        
+    \item As far as the linear combination stuff, we don’t do much with this topic. I plan to skip this, since the Excel discussion will be of more value. Mention it and tell them to read it carefully.
+
+\end{enumerate}
+
+\section*{5.2 \& 5.3 Binomial Distribution}
+
+\begin{enumerate}
+
+    \item  Describe the features of a binomial experiment. Begin with the example of flipping a coin 10 times in a row and counting the number of heads (which we consider a success).
+    
+        \begin{itemize}
+        
+            \item A \textbf{fixed number} $n$  of trials.
+            
+            \item Each trial is independent of all others.
+            
+            \item Each trial has two outcomes: a success (with probability $p$) and failure (with probability $1-p=q$).
+            
+            \item The goal is to count the number of successes $r$ in $n$ trials. 
+            
+        \end{itemize}
+        
+    \item Present the formula, $P(X=r) = \binom{n}{r}p^r(1-p)^{n-r} = \binom{n}{r}p^r q^{n-r}.$
+    
+         Because we didn’t cover Section 4.3 about counting, the reference to $C_{n,r}=\binom{n}{r}$ will be to state that it is the number of ways that the $r$ successes could have fallen in those $n$ trials.
+         
+    \item Note that the TI calcs have binompdf and binomcdf. Refer them to the screencasts if they don’t know how to use those functions already, but make a point to review them right before the worksheet next Wednesday.
+    
+     Specifically (on Wednesday) review the syntax and application of \texttt{binompdf(n,p,r)} which computes the probability of EXACTLY r successes out of n trials, $P(X=r)$, while \texttt{binomcdf(n,p,r)} computes the probability of at most r success out of n trials, $P(X\leq r)$.  Discuss how we can compute the probability of at least $r$ successes (say) when neither function is explicitly designed to do that by using compliments.
+     
+    \item A quick note of the formulas for expected value and standard deviation for a binomially distributed random variable.  They won’t use 1-Var Stats, most likely, because the formulas are so much simpler.
+    $$E(X) = np$$
+    $$Var(x) = npq=np(1-p)$$
+    
+\end{enumerate}
+
+\section*{Excel Intro}
+
+    \begin{enumerate}
+    
+        \item Use the ``Excel for Friday" file.  There is a Highlights sheet that has some key ideas to cover as a point of reference for you to plan, a DATASHEET sheet with the some data set up to demonstrate to computations, and an Answer Key sheet.  (If you aren’t sure what to do, practice by referring to the ``Answer Key".)
+        
+        \item Also, tell them to download the Excel Sheet in D2L \textbf{before} class on Friday if they plan to bring their laptops. I found it is more beneficial for them if they can follow along on their own.
+        
+        \item The idea is to give a student who has little or no experience with Excel a quick look at how to enter a basic formula or function to complete a computation on the DATASHEET page.
+        
+        \item The dataset is small so after using the function to compute the result, a quick visual verification can be done. The dataset for the project is much larger and hand verification is unrealistic.
+        
+        \item Also, another item to stress as you do the demo is the idea of robustness, which is accomplished through cell referencing. So, for example, when you compute \% Heads, you will use the cell reference as \texttt{=A3/B1} rather than \textbf{hard coding} in as \texttt{=31/50}.  That way, WHEN new data is entered to overwrite the original data, the \% will update automatically.
+        
+            \begin{itemize}
+            
+                \item Note that part of the grading process will be to actually paste a new set of data over their original data set to see if the objects they created update and adjust to the new data set. So, it is important that they understand this expectation.
+                
+                \item As an example, after having coded in the robust functions, like =MIN(A3:A22) to see LOW value, go into the data and overwrite the low value with a LOWER one so that the students can see the outcome for the formula change.
+                
+            \end{itemize}
+            
+    \end{enumerate}
+    
+
+I am happy to provide a brief tutorial on Excel, if you need it.  Just let me know and we will figure out a time to meet.
+
+\end{document}

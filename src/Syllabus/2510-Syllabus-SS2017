@@ -1,0 +1,464 @@
+
+%###############################################################################
+
+ \documentclass[11pt]{article}
+ \usepackage{url, longtable}
+ \usepackage{hyperref}
+ % \addtolength{\topmargin}{-0.50in}
+ \addtolength{\textheight}{2\baselineskip}
+ \setlength{\oddsidemargin}{-20pt}
+ \setlength{\evensidemargin}{0pt}
+ \setlength{\textwidth}{6.5in}
+ \setlength{\textheight}{11in}
+ \setlength{\parindent}{0pt}
+ \setlength{\leftmargini}{0pt}
+% \renewcommand{\baselinestretch}{1.1}
+
+ \pagestyle{myheadings}
+ \markright{\sc MATH 2510 -- Spring 2017 }
+
+%###############################################################################
+
+\begin{document}
+
+%###############################################################################
+
+\thispagestyle{plain}
+
+\addtolength{\topmargin}{-1.0in}
+\centerline{
+ \framebox{\parbox{4.0in}{
+  \vspace{6pt}
+   \begin{centering}
+       \Large    \bf S~T~A~T~I~S~T~I~C~S       \\
+       \normalsize \bf (~M~A~T~H~~~~2~5~1~0~) \\[1pt]
+       \normalsize \bf S~P~R~I~N~G~~~2~0~1~7        \\[1pt]
+   \end{centering}
+  \vspace{6pt}
+ }}
+}
+
+\vspace{10pt}
+
+%===============================================================================
+
+\normalsize
+\small
+
+\begin{longtable}{lp{5.2in}}
+%
+\textbf{Instructor:}
+   & {\bf Name:}     %\hspace{8.00ex} Rachel Benefiel
+   \\
+   & {\bf Office:}    %\hspace{8.25ex} MATH~364
+   \\
+   & {\bf Office Hours:} %\hspace{.20ex} See OPEN OFFICE HOURS in D2L News
+   \\
+   & {\bf Email:}    %\hspace{8.00ex} rachel.benefiel@colorado.edu
+   \\[6pt]
+%
+%\textbf{Course Webpage:}& Desire2Learn: \url{http://learn.colorado.edu}
+%   \\[6pt]
+
+\textbf{Class Meetings:}
+   &  %ECCR 155
+   \\
+   &  %MWF 8:00\/AM -- 8:50\/AM 
+  \\[6pt]
+
+\textbf{Text:}
+   & \textbf{\textsl{Understandable Statistics}\/, 10th Edition}
+     by Brase and Brase
+     Brooks/Cole, 2012.
+     ISBN 0-8400-4838-6.
+     Chapters 1-9, and 10 (as time allows)
+   \\
+   & $\triangleright$~Topics to be included:
+   \\
+   & $\circ\;$ Introduction to experimental design - including simulations and sampling methods
+   \\
+   & $\circ\;$ Organizing data - including frequency distributions, histograms, stem-and-leaf, circle graphs, and time-series
+   \\
+   & $\circ\;$ Describing data - including central tendency, variation, and percentiles
+   \\
+   & $\circ\;$ Probability theory - including compound events, conditional probability, trees, counting techniques, and the binomial probability distribution
+   \\
+   & $\circ\;$ Normal curves and sampling distributions - including areas under a normal curve and the Central Limit Theorem
+   \\
+   & $\circ\;$ Confidence intervals - including the mean when sigma is known or unknown, proportions, and differences of means or proportions
+   \\
+   & $\circ\;$ Hypothesis testing - including the mean, a proportion, paired data, and differences of means or proportions
+   \\
+   & $\circ\;$ Correlation and regression - including the best fit line, and inferences for correlation and regression parameters
+   \\
+   & $\circ\;$ (As time allows) Chi-square and $F$ distributions - including tests for independence, goodness-of-fit, testing variance, and ANOVA
+   \\[6pt]
+%
+%
+\textbf{Grading:}
+   & $\triangleright$~Your course grade will be computed from:
+   \\
+   & $\circ\;$
+    \makebox[6cm][s]{
+    {\bf In-class Participation}
+    \dotfill}
+    {\bf $10 \%$}
+    \dotfill {\bf $10 \%$}
+   \\   
+   & $\circ\;$
+    \makebox[6cm][s]{
+    {\bf Reading Assignments}
+    \dotfill}
+    {\bf $10 \%$}
+    \dotfill {\bf $10 \%$}
+   \\
+   & $\circ\;$
+    \makebox[6cm][s]{
+    {\bf Chapter Reviews}
+    \dotfill}
+    {\bf $10 \%$}
+    \dotfill {\bf $10 \%$}
+   \\      
+   & $\circ\;$
+    \makebox[6cm][s]{
+    {\bf Projects}
+    \dotfill}
+    {\bf $10 \%$}
+    \dotfill {\bf $10 \%$}
+   \\
+   & $\circ\;$
+    \makebox[6cm][s]{
+    {\bf Quizzes}
+    \dotfill}
+    {\bf $10 \%$}
+    \dotfill {\bf $10 \%$}
+   \\
+   & $\circ\;$
+    \makebox[6cm][s]{
+    {\bf 2 Midterm Exams}
+    \dotfill}
+    {\bf $15\%$ each }
+    \dotfill {\bf $30 \%$}
+   \\
+   & $\circ\;$
+    \makebox[6cm][s]{
+    {\bf Final Exam}
+    \dotfill}
+    {\bf $20 \%$}
+    \dotfill {\bf $20 \%$}
+   \\[8pt]
+%
+%
+\textbf{Calculators:}
+	& A calculator is required for this course. {\bf We recommend that you purchase a TI-84 Plus graphing calculator for this course.} You will be permitted to use other calculators (provided they do not have access to the internet), however, they may not have the full library of functions to which we will refer.
+	\\[8pt]
+
+\textbf{WebAssign:}
+	& We will be using WebAssign to administer online assessments for Reading Assignments and Chapter Reviews. If you were registered or waitlisted for this course as of the Friday before classes began then you should already be enrolled in the WebAssign course. You will need to purchase an access code for continued access throughout the semester. Details on accessing WebAssign is posted in the D2L News feed. Note that within the WebAssign course is a complete e-book version of the textbook along with video resources.
+	\\[8pt]
+	
+%
+\newpage
+%
+	
+\textbf{Participation:}
+	& Much of our in-class time will be spent engaged in active learning components. These components may include worksheets, discussion, student presentations of solutions, etc. Your attendance and contribution are critical for the success of these learning tools, and, as such, a part of your grade in this course will be based on your participation. As long as you come to class prepared, on a regular basis, and make your best effort to complete the in-class activities and homework, then you should do well in this part of your grade.
+	\\[8pt]
+    
+
+\textbf{\parbox[t][1.0in][t]{1.0in}{Reading Assignments:}}
+   & Preparing for class meetings by reading the textbook and watching video supplements to expose yourself to the concepts and examples in the material to be explored in class is an important step in the format of this class. Towards that end, you will be given specific reading assignments in WebAssign consisting of questions from the textbook due before class on most Mondays and Wednesdays throughout the semester. {\bf Because these assignments are meant to compel you to prepare for class on a given day, no make-up Reading Assignments are allowed. However, a 24 extension may be requested within 24 hours of a deadline at a penalty of 50\% of unearned points.}
+    \\[8pt]
+
+\textbf{\parbox[t][1.0in][t]{1.0in}{Chapter Reviews:}}
+   & As we conclude the exploration of the material in a chapter of the textbook, a set of problems will be assigned in WebAssign. These assignments will be due by 11pm on Friday about one week after the completion of the material in class. If you fail to complete a Chapter Review assignment by the deadline, you will be able to request a 24-hour extension within 72 hours of the deadline through WebAssign. {\bf A 50\% late penalty will be assessed on any problems completed after the deadline.}
+    \\[8pt]
+
+\textbf{Projects:}    
+    & In an attempt to expose you to tools used for statistical computations and analysis, you will be assigned two projects which require the application of a software package. The first project will involve the use of Excel and the second will involve the use of the programming language R. You will be required to work in coordination with other students in the class on these projects. {\bf A late penalty of 25\% per weekday will be assessed for any project submission received after the announced due date.}
+    \\[8pt]
+
+\textbf{Quizzes:}
+   & Individual, in-class quizzes will be administered every Friday (during weeks for which there is not a Midterm scheduled). {\bf No make-up quizzes will be permitted, but the lowest two scores will be dropped.}
+   \\[8pt]
+%
+\textbf{Exams:}
+   & $\triangleright$~\textbf{Midterm Exams}.\/
+    \newline
+    The two exams will be given in class on the following days:
+    \newline
+    \textbf{1st}: \textsl{Wednesday, February~22},
+    \newline
+    \textbf{2nd}: \textsl{Wednesday, April~19}
+   \\
+   \\
+   & $\triangleright$~\textbf{Final Exam}.\/
+    \newline
+    	%{\underbar{Section 001}}:   \textsl{Tuesday, December 13 7:30\/PM -- 10:00\/PM}
+  \\
+  \\
+  & There are no makeup midterm exams for any reason. If you miss an exam your final exam grade will be substituted for your grade on the missed exam. In general, if your final exam grade is better than one of your midterm grades it will substitute for the low grade. 
+  \\[20pt]
+
+%
+\textbf{\parbox[t][1.0in][t]{1.0in}{Important Dates:}}
+   & \begin{tabular}{lr}
+   	Last day to drop without a ``W" & February 1 \\
+   	Deadline for final exam change with 3 or more finals & March 24 \\
+   	Last day to drop course in MyCUInfo (``W'' recorded) & March 24 \\
+   	Spring Break & March 27--31 \\
+   	Last Day of Classes & May 5 \\
+    \end{tabular}
+  \\
+
+\end{longtable}
+
+%-----------------------------------------------------------------------------
+
+\newpage
+\normalsize
+
+\textbf{\normalsize STUDENTS WITH DISABILITIES}
+
+\small
+If you qualify for accommodations because of a disability, please
+submit a letter from Disability Services in a timely manner so
+that your needs December be addressed. (For exam accommodations provide your letter at least one week prior to the exam.) Disability Services determines
+accommodations based on documented disabilities. Contact Disability 
+Services at 303-492-8671 or by e-mail at \url{dsinfo@colorado.edu}.
+If you have a temporary medical condition or injury, see Temporary Injuries under Quick Links at
+Disability Services website {\footnotesize \url{http://disabilityservices.colorado.edu/}} and discuss your needs with your professor.
+
+%-----------------------------------------------------------------------------
+
+\bigskip
+
+\textbf{\normalsize RELIGIOUS OBLIGATIONS}
+
+
+
+Campus policy regarding religious observances requires that faculty
+make every effort to reasonably and fairly deal with all students
+who, because of religious obligations, have conflicts with scheduled
+exams, assignments or required attendance. See full
+details at
+
+{\footnotesize \noindent \url{http://www.colorado.edu/policies/observance-religious-holidays-and-absences-classes-andor-exams} }
+
+%-----------------------------------------------------------------------------
+
+\bigskip
+
+\textbf{\normalsize CLASSROOM AND COURSE-RELATED BEHAVIOR}
+
+Students and faculty each have responsibility for maintaining an
+appropriate learning environment. Students who fail to adhere to
+such behavioral standards may be subject to discipline. Faculty have
+the professional responsibility to treat all students with
+understanding, dignity and respect, to guide classroom discussion
+and to set reasonable limits on the manner in which they and their
+students express opinions. Professional courtesy and sensitivity
+are especially important with respect to individuals and topics
+dealing with differences of race, culture, religion, politics,
+sexual orientation, gender variance, and nationalities. Class
+rosters are provided to the instructor with the student's legal
+name. I will gladly honor your request to address you by an
+alternate name or gender pronoun. Please advise me of this
+preference early in the semester so that I may make appropriate
+changes to my records. See polices at
+
+{\footnotesize \url{http://www.colorado.edu/policies/student-classroom-and-course-related-behavior} } 
+
+and at
+
+\noindent
+{\footnotesize\url{http://www.colorado.edu/osc/sites/default/files/attached-files/osc_handbook_2015-16.pdf}. }
+
+%-----------------------------------------------------------------------------
+
+\bigskip
+\textbf{\normalsize DISCRIMINATION AND HARASSMENT}
+
+The University of Colorado Boulder (CU-Boulder) is committed to maintaining a positive learning, working, and living environment. CU-Boulder will not tolerate acts of discrimination or harassment based upon Protected Classes or related retaliation against or by any employee or student. For purposes of this CU-Boulder policy, "Protected Classes" refers to race, color, national origin, sex, pregnancy, age, disability, creed, religion, sexual orientation, gender identity, gender expression, veteran status, political affiliation or political philosophy. Individuals who believe they have been discriminated against should contact the Office of Institutional Equity and Compliance (OIEC) at 303-492-2127 or the Office of Student Conduct and Conflict Resolution (OSC) at 303-492-5550. Information about the OIEC, the above referenced policies, and the campus resources available to assist individuals regarding discrimination or harassment can be found at 
+
+\noindent {\footnotesize \url{http://www.colorado.edu/institutionalequity/}}. 
+
+The full policy on discrimination and harassment contains additional information and can be found at 
+
+\noindent {\footnotesize \url{http://www.colorado.edu/policies/discrimination-and-harassment-policy-and-procedures}.}
+
+%-----------------------------------------------------------------------------
+
+\bigskip
+\textbf{\normalsize UNIVERSITY'S HONOR CODE}
+
+All students of the University of Colorado at Boulder are
+responsible for knowing and adhering to the academic integrity
+policy of this institution. Violations of this policy may include:
+cheating, plagiarism, aid of academic dishonesty, fabrication,
+lying, bribery, and threatening behavior. All incidents of academic
+misconduct shall be reported to the Honor Code Council
+(honor@colorado.edu; 303-725-2273). Students who are found to be in
+violation of the academic integrity policy will be subject to both
+academic sanctions from the faculty member and non-academic
+sanctions (including but not limited to university probation,
+suspension, or expulsion). Other information on the Honor Code can
+be found at 
+
+\noindent {\footnotesize \url{http://www.colorado.edu/policies/student-honor-code-policy} } 
+
+and at
+
+\noindent {\footnotesize \url{http://honorcode.colorado.edu/}.}
+
+%=============================================================================
+\newcommand{\lect}[2]
+{\parbox[t]{2.0in}{\textbf{#1:} \\ \hspace*{0.25in} \parbox[t]{2.5in}{\footnotesize{ #2}} \\ }}
+%\newcommand{\lect}[3]
+%{\parbox[t]{2.0in}{\textbf{#1:} \\ \hspace*{0.25in} \parbox[t]{2.5in}{#2 \\ \footnotesize{\em #3}} \\ }}
+
+\newpage
+\normalsize
+
+\begin{tabular}{|l||l||l|}
+\multicolumn{3}{c}{\textbf{Tentative Schedule}} \\
+\hline
+\parbox{2.0in}{\begin{center}\textbf{MONDAY} \\ \end{center}} &
+\parbox{2.0in}{\begin{center}\textbf{WEDNESDAY} \\ \end{center}} &
+\parbox{2.0in}{\begin{center}\textbf{FRIDAY} \\ \end{center}} \\
+
+\hline
+{\lect{January 16}{No Class}} & 
+{\lect{January 18}{Welcome to 2510}} &  
+{\lect{January 20}{}} \\
+
+\hline
+{\lect{January 23}{Due: Reading Ch 1}} & 
+{\lect{January 25}{Due: Reading Ch 2}} & 
+{\lect{January 27}{Quiz 1 (Ch 1 \& 2) \\ Due: Chapter Review Ch 1}}  \\
+
+\hline
+{\lect{January 30}{Due: Reading Sec 3.1}} & 
+{\lect{February 1}{Due: Reading Sec 3.2-3.3}} & 
+{\lect{February 3}{Quiz 2 (Sec 3.1-3.3) \\ Due: Chapter Review Ch 2}}  \\
+
+\hline
+{\lect{February 6}{Due: Reading Sec 4.1}} & 
+{\lect{February 8}{Due: Reading Sec 4.2}} & 
+{\lect{February 10}{Quiz 3 (Sec 4.1-4.2) \\ Due: Chapter Review Ch 3}}  \\
+
+\hline
+{\lect{February 13}{Due: Reading Sec 5.1}} & 
+{\lect{February 15}{Due: Reading Sec 5.2-5.3}} & 
+{\lect{February 17}{Quiz 4 (Sec 5.1-5.3) \\ Due: Chapter Review Ch 4}}  \\
+
+\hline
+{\lect{February 20}{Due: Project 1}} & 
+{\lect{February 22}{Midterm 1}} & 
+{\lect{February 24}{Due: Chapter Review Ch 5}}  \\
+
+\hline
+{\lect{February 27}{Due: Reading Sec 6.1}} & 
+{\lect{March 1}{Due: Reading Sec 6.2-6.3}} & 
+{\lect{February March 3}{Quiz 5 (Sec Sec 6.1-6.3)}}  \\
+
+\hline
+{\lect{March 6}{Due: Reading Sec 6.4}} & 
+{\lect{March 8}{Due: Reading Sec 6.5}} & 
+{\lect{March 10}{Quiz 6 (Sec 6.4-6.5)}}  \\
+
+\hline
+{\lect{March 13}{Due: Reading Sec 7.1}} & 
+{\lect{March 15}{Due: Reading Sec 7.2}} & 
+{\lect{March 17}{Quiz 7 (Sec 7.1-7.2) \\ Due: Chapter Review Ch 6}}  \\
+
+\hline
+{\lect{March 20}{Due: Reading Sec 7.3}} & 
+{\lect{March 22}{Due: Reading Sec 7.4}} & 
+{\lect{March 24}{Quiz 8 (Sec 7.3-7.4)}}  \\
+
+\hline
+{\lect{March 27}{No Class}} & 
+{\lect{March 29}{No Class}} & 
+{\lect{March 31}{No Class}}  \\
+
+\hline
+{\lect{April 3}{Due: Reading Sec 8.1}} & 
+{\lect{April 5}{Due: Reading Sec 8.2}} & 
+{\lect{April 7}{Quiz 9 (Sec 8.1-8.2) \\ Due: Chapter Review Ch 7}}  \\
+
+\hline
+{\lect{April 10}{Due: Reading Sec 8.3}} & 
+{\lect{April 12}{Due: Reading Sec 8.4-8.5}} & 
+{\lect{April 14}{Quiz 10 (Sec 8.3-8.5)}}  \\
+
+\hline
+{\lect{April 17}{Due: Project 2}} & 
+{\lect{April 19}{Midterm 2}} & 
+{\lect{April 21}{Due: Chapter Review Ch 8}}  \\
+
+\hline
+{\lect{April 24}{Due: Reading Sec 9.1-9.2}} & 
+{\lect{April 26}{Due: Reading Sec 9.3}} & 
+{\lect{April 28}{Quiz 11 (Sec 9.1-9.3)}}  \\
+
+\hline
+{\lect{May 1}{Due: Reading Sec 10.2}} & 
+{\lect{May 3}{Due: Reading Sec 10.5}} & 
+{\lect{May 5}{Quiz 12 (Sec 10.2, 10.5) \\ Due: Chapter Review Ch 9}}  \\
+
+\hline
+\end{tabular}
+
+%###############################################################################
+
+\newpage
+
+\thispagestyle{empty}
+
+\begin{center}
+{\Huge WebAssign Acknowledgement}
+\end{center}
+\vskip.5in
+
+\begin{enumerate}
+
+\item I understand I must purchase WebAssign access for this class. I understand this may be done directly from WebAssign upon logging in, from Cengage at \url{http://www.cengagebrain.com/course/1214566} or from the University Book Store.
+
+\medskip
+
+\item I understand there are two components to WebAssign, Chapter Reviews and Reading Assignments.
+
+\medskip
+
+\item I understand Reading Assignments are due \textbf{BEFORE MY SCHEDULED CLASS MEETING} on the scheduled days.
+
+\medskip
+
+\item I understand I can get 24 hour automatic extensions \textbf{WITHIN 24 HOURS} of a due date on Reading Assignments.
+
+\medskip
+
+\item I understand Chapter Reviews are due \textbf{11pm} on the scheduled Fridays.
+
+\medskip
+
+\item I understand I can get a 24 hour automatic extension \textbf{WITHIN 72 HOURS} of a due date on Chapter Reviews.
+
+\medskip
+
+\item I have verified I have access to WebAssign for this course or have emailed math-help@colorado.edu to request access to my WebAssign course.
+
+\end{enumerate}
+
+\vspace{2in}
+
+{\large \textsc{PRINT your name:}}
+\vskip.75in
+
+
+{\large \textsc{Signature}} \hrulefill
+
+\end{document}
+
+%###############################################################################

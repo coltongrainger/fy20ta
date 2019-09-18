@@ -1,0 +1,237 @@
+\documentclass{article}
+\usepackage{graphicx, color}
+
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.75in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+%To display answers, replace "white" with "red" here;
+\newcommand{\answer}[1]{\color{red}#1}
+
+
+\begin{document}
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics}
+
+\begin{center}
+\textbf{\underbar{In-class Worksheet 21}}
+\end{center}
+
+On each of the following problems,
+	\begin{itemize}
+	\item State the null and alternate hypothesis.
+	\item Determine if it is a left-tailed, a right-tailed, or a two-tailed test.
+	\item Determine which sampling distribution should be used and explain why.
+	\item Determine the $P$-value for the test.
+	\item Draw a conclusion on whether you will reject or fail to reject the null hypothesis.
+	\item Interpret and explain what that conclusion tells you within the context of that data.
+	\end{itemize}
+Note that you will first need to determine whether you are looking at paired data or independent samples.
+
+\begin{enumerate}
+
+%Section 8.5 #16
+\item Based on information from {\em The Denver Post}, a random sample of $n_1 = 12$ winter days in Denver gave a sample mean pollution index of $\bar{x}_1= 43$.  Previous studies show that $\sigma_1 = 21$. For Englewood (a suburb of Denver), a random sample of $n_2=14$ winter days gave a sample mean pollution index of $\bar{x}_2 = 36$.  Previous studies show that $\sigma_2 = 15$.  Assume the pollution index is normally distributed in both Englewood and Denver.  Do these data indicate that the mean population pollution index of Englewood is different (either way) from that of Denver in the winter?  Use a 1\% level of significance.  
+	
+{\answer 
+$H_0: \mu_1 = \mu_2$  
+$H_1: \mu_1 \neq \mu_2$  or $H_1: \mu_1 - \mu_2 \neq 0$ 
+This is a two-tailed test.  
+	
+The standard normal distribution can should be used here because $x_1$ and $x_2$ are normally distributed and we know $\sigma_1$ and $\sigma_2$.  
+
+2-SampZTest\{$\sigma_1 = 21$, $\sigma_2 = 15$, $\bar{x}_1 = 43$, $n_1 = 12$, $\bar{x}_2 = 36$, $n_2 = 14$, $\mu_1 \neq \mu_2$\} yields $P = 0.3354733034$.  
+
+Because $P > \alpha$, we fail to reject the null hypothesis. That is, at a 1\% level of significance, the evidence is insufficient to indicate that there is a difference in the mean population pollution index for Englewood and Denver.  
+} 
+\vfill 
+
+\newpage
+
+\item A study of fox rabies in southern Germany gave the following information about different regions and the occurrence of rabies in each region (B. Sayers et al., ``A Pattern Analysis Study of a Wildlife Rabies Epizootic,'' {\it Medical Informatics}, Vol. 2, pp. 11-34). Based on information from this article, a random sample of $n_1=16$ locations in region I gave the following information about the number of cases of fox rabies near that location.
+\begin{center} $x_1$: {\bf Region I Data} $\qquad$ 1 8 8 8 7 8 8 1 3 3 3 2 5 1 4 6 \end{center}
+A second random sample of $n_2=15$ locations in region II gave the following information about the number of cases of fox rabies near that location.
+\begin{center}$x_2$: {\bf Region II Data} $\qquad$ 1 1 3 1 4 8 5 4 4 4 2 2 5 6 9 \end{center}
+Does this information indicate that there is a difference (either way) in the mean number of cases of fox rabies between the two regions? Use a 5\% level of significance. (Assume the distribution of rabies cases in both regions is mound-shaped and approximately normal.)
+	\begin{enumerate}
+	%
+	\item Find the values of $\overline{x}_1$ and $s_1$ for Region I and the values of $\overline{x}_2$ and $s_2$ for Region II.  
+	
+	{\answer $\overline{x}_1=4.75$, $s_1\approx 2.82$, $\overline{x}_2\approx 3.93$, $s_2\approx 2.43$.}  
+	
+	\vfill
+	
+	\item  State the null and alternate hypotheses.  
+	
+	{\answer $H_0: \mu_1=\mu_2$; $H_1: \mu_1 \neq \mu_2$.}  
+	
+	\vfill
+	
+	\item What sampling distribution should be used, and why?  
+	
+	{\answer The Student's $t$ distribution can should be used here because $x_1$ and $x_2$ are mound-shaped, approximately normal and we do not know $\sigma_1$ or $\sigma_2$.}  
+	
+	\vfill
+	
+	\item Determine the $P$-value. 
+	
+	{\answer With $L_1 = x_1$ and $L_2 = x_2$,  2-SampTTest\{List1 = $L_1$, List2 = $L_2$, Freq1 = 1, Freq2 = 1, $\mu_1 \neq \mu_2$, Pooled: No\} yields $P = 0.3940208045$.}  
+	
+	\vfill
+	
+	\item According to your result, will you reject or fail to reject the null hypothesis?  Explain and interpret what the result then tells you.  
+	
+	{\answer Because $P>\alpha$, we do not reject the null hypothesis. At the 5\% level of significance, the evidence is insufficient to indicate that there is a difference in the mean number of cases of fox rabies between the two regions.}  
+	
+	\vfill
+	
+	\end{enumerate}
+	
+\newpage
+
+%Section 8.4 #20
+\item The following data are based on information from the Regis University Psychology Department.  In an effort to determine if rats perform certain tasks more quickly if offered large rewards, the following experiment was performed: 
+
+--On day 1, a group of three rats was given a reward of one food pellet each time they ran a maze.  A second group of rats was given five food pellets each time they ran the maze.  
+
+--On day 2, the groups were reversed, so the first group now got five food pellets for running the maze and the second group got only one pellet for running the same maze. 
+
+The average time in seconds for each rat to run the maze 30 times are shown in the following table.  Do these times indicate that rats receiving larger rewards tend to run the maze in less time?  Use a 5\% level of significance.  
+
+\begin{center}
+\begin{tabular}{l|cccccc}
+Rat & A & B & C & D & E & F  \\
+\hline
+Time with one food pellet & 3.6 & 4.2 & 2.9 & 3.1 & 3.5 & 3.9  \\
+\hline
+Time with five food pellets & 3.0 & 3.7 & 3.0 & 3.3 & 2.8 & 3.0  \\
+\end{tabular}
+\end{center}
+
+{\answer 
+$H_0: \mu_d = 0$  
+$H_1: \mu_d > 0$ (where $d$ is ``Time with one food pellet" minus ``Time with five food pellets."  
+This is a right-tailed test.
+	
+Assuming that the distribution of differences is approximately normal, we should use the Student's $t$ distribution because $\sigma$ is unknown.   	
+	
+With $L_3 = \textnormal{``Time with one food pellet"} - \textnormal{``Time with five food pellets"}$, \texttt{T-Test} with $\mu_0 = 0$, List $=L_3$, Freq = 1, $\mu: > \mu_0$ yields $P = 0.040003429$.   
+	
+Because $P \leq \alpha$ ($\alpha= 0.05$), we reject the null hypothesis. That is, at the 5\% level of significance, the evidence is sufficient to claim that the population mean time for rats receiving larger rewards to run the maze is less. 
+}
+ 
+\vfill
+
+%Section 8.5 #35
+\item Generally speaking, would you say that most people can be trusted? A random sample of $n_1=250$ people in Chicago ages 18--25 showed that $r_1=45$ said yes. Another random sample of $n_2=280$ people in Chicago ages 35--45 showed that $r_2=71$ said yes (based on information from the {\it National Opinion Research Center}, University of Chicago). Does this indicate that the population proportion of trusting people in Chicago is higher for the older group? Use $\alpha = 0.05$.  
+
+{\answer 
+$H_0: p_1=p_2$  
+$H_1: p_1 < p_2$  or $H_1: p_1 - p_2 < 0$ 
+This is a left-tailed test.  
+	
+The standard normal distribution can should be used here because $n_1\bar{p}$, $n_2\bar{p}$, $n_1\bar{q}$, and $n_2\bar{q}$ are all greater than 5 (where $\bar{p} = \frac{45+71}{250+280}$ and $\bar{q} = 1-\bar{p}$).  
+
+ 2-PropZTest\{$x_1 = 45$, $n_1 = 250$, $x_2 = 71$, $n_2 = 280$, $p_1 < p_2$\}  yields $P = 0.0204334741$.  
+
+Because $P \leq \alpha$, we reject the null hypothesis. That is, at a 5\% level of significance, there is sufficient evidence to conclude that the population proportion of trusting people in Chicago is higher for the older group.  
+} 
+ 
+\vfill
+
+\newpage
+
+%Section 8.5 #26
+\item In her book {\em Red Ink Behaviors}, Jean Hollands reports on leading Silicon Valley companies. An ``intimidator" is an employee who tries to stop communication, sometimes sabotages others, and, above all, likes to listen to him- or herself talk. Let $x_1$ be a random variable representing productive hours per week lost by peer employees of an intimidator. A ``stressor" is an employee with a hot temper that leads to unproductive tantrums in corporate society.  Let $x_2$ be a random variable representing productive hours per week lost by peer employees of a stressor. Assume that population distributions of time lost due to intimidators and time lost due to stressors are each (approximately) normally distributed. 
+Assuming that the variables $x_1$ and $x_2$ are independent, do the data indicate that the population mean time lost due to stressors is greater than the population mean time lost due to intimidators?  Use a 5\% level of significance.
+\begin{center} 
+\begin{tabular}{l|cccccccc}
+$x_1$  (intimidator)    & 8 & 3 & 6  & 2 & 2 & 5 & 2 & 7 \\
+\hline
+$x_2$  (stressor)       & 3 & 3 & 10 & 7 & 6 & 2 & 5 & 8 
+\end{tabular}
+\end{center}
+
+
+{\answer
+ $H_0: \mu_1 = \mu_2$ and $H_1: \mu_1 < \mu_2$ or  $H_1: \mu_1 - \mu_2 < 0$. This is a left-tailed test.   
+	
+The Student's $t$ distribution can should be used here because $x_1$ and $x_2$ are mound-shaped, symmetric and we do not know $\sigma_1$ or $\sigma_2$.  
+
+With $L_1 = x_1$ and $L_2 = x_2$,  2-SampTTest\{List1 = $L_1$, List2 = $L_2$, Freq1 = 1, Freq2 = 1, $\mu_1 < \mu_2$, Pooled: No\} yields $P \approx 0.20231$.  
+	
+Because $P > \alpha$, we fail to reject the null hypothesis.  That is, at a 5\% level of significance, the evidence is insufficient to indicate that population mean time lost due to stressors is greater than that lost due to intimidators.  
+} 
+ 
+
+
+\end{enumerate}
+\vfill
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%Extra questions not used on worksheet%%%%%%%%%%%%%%%%%%%%%
+
+%Section 8.4 #8
+\item For a random sample of 20 data pairs, the sample mean of the difference was 2.  The sample standard deviation of the differences was 5.  Assume that the distribution of the differences is (approximately) normally distributed.  At the 1\% level of significance, test the claim that the population mean of the differences is positive.
+	\begin{enumerate}
+	%
+	\item Why is it appropriate to use a Students' $t$ distribution for the sample test statistic?   What degrees of freedom are used? 
+	
+	{\answer Because the distribution is (approximately) normally distributed, we can use the Student's $t$ test despite the small sample size.  Further, because $\sigma$ is unknown, the $t$-distribution is more appropriate than the $z$-distribution.  
+	Degrees of freedom are $n-1 = 19$} 
+	 
+	
+	\item State the null and alternate hypotheses for this test.  
+	
+	{\answer $H_0 : \mu_d = 0$  
+	$H_1: \mu_d > 0$} 
+	 
+	
+	\item Compute the $P$-value.  
+	
+	{\answer Using \texttt{T-Test} with $\mu_0 = 0$, $\bar{x} = 2$, $s_x = 5$, $n = 20 $, and $\mu: > \mu_0$, we get $P = 0.0447972557$.} 
+	 
+	
+	\item Does the $P$-value indicate that we reject or fail to reject the null hypothesis?  Explain and interpret what the result then tells you.  
+	
+	{\answer Because $P>\alpha$ ($\alpha= 0.01$), we fail to reject the null hypothesis.  That is, at the 1\% level of significance and a sample size of 20, the sample mean of the difference is not sufficiently greater than $0$ to reject $H_0$ .}
+	 
+	%
+	\end{enumerate}
+	
+
+%Section 8.5, #15
+\item REM (rapid eye movement) sleep is sleep during which most dreams occur. Each night a person has both REM and non-REM sleep. However, it is thought that children have more REM sleep than adults ({\it Secrets of Sleep}, Dr. A. Borbely). Assume that REM sleep time is normally distributed for both children and adults. A random sample of $n_1=10$ children (9 years old) showed that they had an average REM sleep time of $\overline{x}_1=2.8$ hours per night. From previous studies, it is known that $\sigma_1=0.5$ hour. Another random sample of $n_2=10$ adults showed that they had an average REM sleep time of $\overline{x}_2=2.1$ hours per night. Previous studies show that $\sigma_2=0.7$ hour. Do these data indicate that, on average, children tend to have more REM sleep than adults? Use a 1\% level of significance.  
+
+	\begin{enumerate}
+	\item State the null and alternate hypotheses.  
+	
+	{\answer $H_0: \mu_1 = \mu_2$  
+	$H_1: \mu_1 > \mu_2$}
+	 
+
+	\item What sampling distribution should be used, and why?  
+	
+	{\answer The standard normal distribution can should be used here because $x_1$ and $x_2$ are normally distributed and we know $\sigma_1$ and $\sigma_2$.}
+	 
+
+	\item Determine the $P$-value.  
+
+	{\answer 2-SampZTest\{$\sigma_1 = 0.5$, $\sigma_2 = 0.7$, $\bar{x}_1 = 2.8$, $n_1 = 10$, $\bar{x}_2 = 2.1$, $n_2 = 10$, $\mu_1 > \mu_2$\} yields $P = 0.005037432 $.}
+	 
+
+	\item  According to your result, will you reject or fail to reject the null hypothesis?  Explain and interpret what the result then tells you.  
+	
+	{\answer Because $P < \alpha$, we reject the null hypothesis.  That is, at the 1\% level of significance, the evidence is sufficient to indicate that the population mean REM sleep time for children is more than that for adults.}
+	 
+
+	\end{enumerate}
+
+
+

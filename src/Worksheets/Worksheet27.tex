@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage{graphicx, color, multicol}
+\usepackage{hyperref}
+
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+\newcommand{\calcfunc}[1]{\mbox{\texttt{#1}}}
+
+\begin{document}
+%To display answers, replace "white" with "red".
+\newcommand{\answer}[1]{{\color{red}#1}}
+
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics }
+
+\begin{center}
+\textbf{\underbar{In-class Worksheet 27 - Mini-Final Solutions}}
+\end{center}
+
+\begin{enumerate}
+
+\item \answer{C} To find $P(X\geq 6)$, we use the compliment rule and note the compliment to $X\geq 6$ is the event $X\leq 5$. Thus
+$$P(X\geq 6) = 1-P(X\leq 5) = 1-\calcfunc{binomcdf}(10,0.7,5) \approx 0.849732.$$
+
+\item \answer{A} Since we fail to reject $H_0$, (which occurs when the P value is greater than $\alpha$), we have insufficient evidence to support the claim made in $H_1$. Thus we should conclude in this example \textbf{there is insufficient evidence to support the claim $\mu > 54.4$}.
+
+\item \answer{A} We are asked to compute a confidence interval for a population mean and we have do not have knowledge of $\sigma$, the population standard deviation. This means we must either assume we are sampling from a normal distribution \textbf{OR} have a sample size of 30 or more to use a $t$-based interval.
+
+After inputting the sample data into $\calcfunc{L}_1$, we can use \texttt{TInterval} with \texttt{Inpt} set to \texttt{Data} we have our confidence interval of $(3.3882, 6.0118)$.
+
+\item \answer{D} We are asked to find a necessary sample size for a confidence interval about a population mean. This means we should use the formula $$n\geq \left( \frac{z_c \cdot \sigma}{E} \right)^2.$$
+
+Using $\calcfunc{invNorm}(0.95,0,1)$ to find the critical $z$-value, we see $$z_c \approx 1.644853626.$$
+
+Combining this with the information given we have $$n \geq \left(\frac{1.644853626\cdot 27}{2.8}\right)^2 \approx 251.57413.$$
+
+Since $n$ must be an integer and greater than $251.57413$, $n$ must be 252 or larger. Note rounding $z_c$ to an insufficient decimal place may give an incorrect final result.
+
+\item \answer{A} A 94\% confidence interval corresponds to a left tail area of $0.94 + \frac{1}{2}\left(1-.94\right)=0.97$ for $z_c$. Thus
+$$z_c = \calcfunc{invNorm}\left(0.97,0,1\right)\approx 1.88079.$$
+
+\item \answer{C} By the Central Limit Theorem, the standard deviation of sample means from samples of size 50 is $22/\sqrt{50}$. Thus $$P(X\leq 200) = \calcfunc{normalcdf}\left(-1\calcfunc{E}99, 200, 196, 22/\sqrt{50}\right) \approx 0.900717.$$
+
+\item \answer{B} We are asked to find a conditional probability. The known condition is ``manager is rated as fair" and there are 87 such managers. This will be the denominator of the probability we are asked to compute. The number of \textbf{fair} managers with \textbf{no college background} is 1. This is the numerator of the probability we are asked to compute.  Thus
+$$P\left(\mbox{no college background} | \mbox{fair rating} \right) = \frac{1}{87}.$$
+An alternative method is to use the formula given in the book for conditional probabilities.
+
+\item \answer{C} A $z$-score corresponds to the number of standard deviations a score is away from the mean. A positive $z$-score is indicative of a score larger than the mean. Thus the exam score is 
+$$70 + 2.33\cdot 5 = 81.65.$$
+
+\item \answer{B} We are given a 95\% confidence interval for $\beta$, the slope of the population least-squares line. In particular, we note the lower bound is positive which means as $x$ increases, $y$ should also be increasing. So if $x$ increases by 1 unit, then $y$ will increase by some amount dictated by the confidence interval.
+
+To be precise, we can state: \textbf{We are 95\% confident that if sales revenue increases by \$1 million, then bank charges will increase by an amount between \$15 and \$25}.
+
+\item \answer{A} Since 5 more students scored below average, the class mean will clearly decrease. The fact that standard deviation will increase is less clear. Because all of these new scores are more than 2 standard deviations away from the mean, this will certainly increase the standard deviation.
+
+For those interested, the precise criterion and explanation can be found \href{http://stats.stackexchange.com/questions/73498/value-that-increases-the-standard-deviation}{\color{blue} \textbf{here}}. It is not necessary to know this and this will not be explicitly tested.
+
+\item \answer{D} Since this is a standard normal curve, we know $\mu=0$ and $\sigma =1$. Thus the area is 
+$$\calcfunc{normalcdf}(-1.33, 1\calcfunc{E}99, 0, 1) \approx 0.9082408.$$
+
+\item \answer{B} Since we are testing for fitting a uniform distribution, we need to compute the expected column for the $\chi^2$ goodness-of-fit test. The total number of obersvations is 240 and there are 6 possible starting positions. Hence we should expect to see $240\cdot\frac{1}{6}=40$ for the number of wins in each starting position. Putting the observed frequencies into $\calcfunc{L}_1$, expected into $\calcfunc{L}_2$, and using $6-1=5$ degrees of freedom, we see that $\chi^2\calcfunc{GOF-Test}$ gives $\chi^2=6.75$.
+
+\item \answer{D} The strength of linear correlation, measured by $\rho$ or $r$ for populations and samples respectively, is visualized by how tightly packed the dots would be around the least-squares line. Plot D is most suggestive of a strong correlation.
+
+\item \answer{C} Despite the fact the measurements are numbers, their \textbf{natural ordering does not convey ``more or less of a soccer player".} This makes the level of measurement to be nominal.
+
+\item We are comparing two population means through independent sampling, this is clearly unpaired data. As we are ignorant of the population standard deviations, we should use a \texttt{2-SampTTest}. If we call the mean first place price for women $\mu_1$ and $\mu_2$ for men, $H_0$ states $\mu_1=\mu_2$ and $H_1$ states $\mu_1 < \mu_2$. 
+
+Since our P-value is less than $\alpha$, we reject $H_0$. The answer key explains the rest.
+
+\item From the graph, we see the midpoint of each interval is $\{55,60,65,\ldots, 80, 85\}$. The answer key gives a reasonable frequency reading for each of these interval. Putting the midpoints into $\calcfunc{L}_1$ and frequencies into $\calcfunc{L}_2$, use \texttt{1-Var Stats} to display the mean, median and mode.
+
+\item Treating $x$ as the temperature and $y$ as consumption, we put the $x$-values into $\calcfunc{L}_1$ and $y$-values into $\calcfunc{L}_2$. Use \texttt{LinRegTTest} will compute both the P-value and the least-squares line of best fit.
+
+It is important to distinguish which set of data values are ``x"-vales and which set are ``y"-values. On the final exam, this will be made clear and be sure to \textbf{pay attention which one is which}.
+
+\item Putting the group data into $\calcfunc{L}_1$,$\calcfunc{L}_2$, and $\calcfunc{L}_3$ and using $$\calcfunc{ANOVA}\left(\calcfunc{L}_1,\calcfunc{L}_2,\calcfunc{L}_3\right)$$
+will give the necessary information for the solution found in the answer key.
+
+Again, since the P-value is less than the level of significance, we reject $H_0$ and have sufficient evidence to support $H_1$.
+
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage{graphicx, color}
+
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+\newcommand{\answer}[1]{{\color{red}{\large \textbf{#1}}}}
+
+
+\begin{document}
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics}
+
+\begin{center}
+\textbf{\underbar{Mini-Midterm 1 Solutions}}
+\end{center}
+
+\begin{enumerate}
+
+\item \answer{B} The average weight was computed from a sample, making it a statistic.
+
+\item \answer{C} Measuring temperature in the Celsiuis or Farenheit scale an example of a Interval measurement, while Kelvin is Ratio.
+
+\item \answer{B} This is a binomial experiment. Using \texttt{binompdf(8,0.55,4)} gives 0.26266.
+
+\item \answer{B} Since {\bf all} teachers at the random schools were interviewed, this is cluster sampling.
+
+\item \answer{B} The class width is the difference between {\bf lower class limits}, not the high and low value of a class. So, for example, 6-1=5 is the class width.
+
+\item \answer{B} To find the probability that a racket is wood or defective, we first find how many rackets are either wooden or defective. There are 100 wood rackets in total and 14 defective rackets that {\bf are not wooden}. Thus the probability is $114/200=0.57$.
+
+\item \answer{A} Chebyshev's inequality tells us the minimal amount of data between two endpoints $\bar{x} \pm k\cdot s$ where $s$ is a number greater than 1. We first find out how many standard deviations the endpoints of the interval are from the mean: $(44-26)/12=1.5$. Thus the amount of data is at least $1-1/(1.5)^2 = 0.55555$, or approximately 55.6\%.
+
+\item \answer{C} A premature baby would be born at any pregnancy length of $268-21=247$ days or less. Using \texttt{normalCDF} we find that 
+$$\mbox{\texttt{normalCDF}}\left(-1\mbox{E}99, 247, 268, 15 \right) \approx 0.087567.$$
+
+\item \answer{B} We need to find the probability that the number of successes in this binomial experiment is 6 or more, $P(x\geq 6)$. We will compute this by using $P(x\geq 6) = 1 - P(x\leq 5)$. Hence, $$1-\mbox{\texttt{binomcdf}}(10, 0.5, 5) = 0.37695.$$
+
+\item \answer{D} Using $\{0,1,2,3\}$ into $L_1$ and $\{0.45, 0.37, 0.17, 0.01\}$ into $L_2$, \texttt{1-Var Stats} $L_1, L_2$ will compute both the expected value (or mean) of this distribution. Reading $\bar{x}$ give 0.74.
+
+\item \answer{C} Be sure to carefully read the key for stem and leave plots.
+
+\item \answer{B} Following the same strategy in problem 10, we see $\bar{x}=3.6$.
+
+\item \answer{C} $$\mbox{\texttt{normalCDF}}\left(-1\mbox{E}99, 20, 15.5, 3.6 \right) \approx 0.89435.$$
+
+\item \begin{enumerate}
+        \item Since there are 87 flights in total, \answer{$48/87$}.
+        \item There are 48 Upstate Airline flights and 33 on-time flights that are {\bf not} Upstate. Thus, \answer{$81/87$}.
+        \item There are 76 on-time flights, 43 of which are Upstate Airline. Thus, \answer{$43/76$}.
+        \item There are 43 on-time, Upstate Airline flights out of the 87 total. Thus, \answer{$43/87$}.
+    \end{enumerate}
+    
+\item \answer{B} This is a binomial experiment and we will call a success ``a driver who was involved in an accident last year". Computing $P(x\geq 3 ) = 1-P(x\leq 2) = 1-$ \texttt{binomcdf(14, 0.08, 2)} $=0.09583$.
+
+\newpage
+
+\item The number of defective clocks is 7\% of 8000, which is 560 defective clocks. We first compute the probability of selecting \textbf{all good clocks.}
+$$\left(\frac{7440}{8000}\right)\cdot\left(\frac{7439}{7999}\right)\cdot\left(\frac{7438}{7998}\right)\cdot\left(\frac{7437}{7997}\right)\cdot\left(\frac{7436}{7996}\right)\approx 0.6956$$
+The reason for this is the complement to \textbf{at least one defective} is that \textbf{none are defective}. Thus the probability of at least one defective is $1-0.6956=0.3044$.
+
+A tempting, but incorrect solution would be to use \texttt{1-binomcdf(5,0.07,0)}...
+
+\item \begin{enumerate}
+        \item Typing all the data into $L_1$ and using \texttt{1-Var Stats} we get \answer{$S_x = 11.0721$}.
+        \item The largest value is 62 and the smallest is 27. We then compute $(62-27)/8=4.375$ since we want 8 classes. Increasing this to the next integer gives a class width of 5. So the classes will go 25--29, 30--34, etc.
+        \begin{center}
+        \begin{tabular}{c|c|c|c|c}
+        Age & Midpoint & Frequency & Relative Frequency & Cumulative Frequency \\
+        \hline 
+        25 - 29 & 27 & 3 & 3/34 & 3 \\
+        30 - 34 & 32 & 3 & 3/34 & 6 \\
+        35 - 39 & 37 & 6 & 6/34 & 12 \\
+        40 - 44 & 42 & 4 & 4/34 & 16 \\
+        45 - 49 & 47 & 5 & 5/34 & 21 \\
+        50 - 54 & 52 & 3 & 3/34 & 24 \\
+        55 - 59 & 57 & 5 & 5/34 & 29 \\
+        60 - 64 & 62 & 5 & 5/34 & 34 \\
+        \end{tabular}\end{center}
+        
+    \end{enumerate}
+    
+\item \answer{A} The first thing to note is the question asks for the probablility that a \textbf{sample mean} is between 68 and 70. Using the central limit theorem, this sample mean will be normally distributed with mean $69$ and standard deviation $2.8/\sqrt{64}$. Thus,
+$$\mbox{\texttt{normalCDF}}\left(68, 70, 69, 2.8/\sqrt{64} \right) \approx 0.995725.$$
+If one were to use tables, one would get the exact answer listed in option A. As this is a multiple choice, we will select the nearest answer.
+
+\end{enumerate}
+
+\end{document}

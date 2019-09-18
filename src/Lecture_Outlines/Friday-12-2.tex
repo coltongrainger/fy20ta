@@ -1,0 +1,51 @@
+\documentclass{article}
+
+\usepackage[super]{nth}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+\begin{document}
+
+\section*{10.2 Chi-Square: Goodness of Fit}
+
+\begin{enumerate}
+
+  \item Start with an overview of what ``goodness of fit" means. The null hypothesis is always that the population ``fits". The more deviant the data is from the expected distribution the worse the fit.
+  
+  \item Although this is a test that is supported by the TI, I like to spend some time analyzing the formula for chi-square and the distribution. It just so easy to see what it is measuring and why large test statistic values imply small P-value.
+  
+  \item Note that we are using a different distribution (than standard normal or Student’s t).
+  
+  \item Note, we have yet another measure of degrees of freedom.
+  
+  \item The key calculator function is $\chi^2$\texttt{GOF-Test}.
+  
+\end{enumerate}
+
+\section*{10.5 ANOVA}
+
+\begin{enumerate}
+
+    \item My intent here is NOT to really get them to delve into the ``why" and ``how" the derivation of the sample F ratio, as I think that would require more time that we have. So, you can note that in the reading they will see a BUNCH of steps and intermediate computations, but they will not be responsible for understanding all those details for this class.
+    
+    \item Talk about the null and alternate hypotheses of the test.
+    
+    \item Talk about the sample F ratio is a measure of the variance BETWEEN populations versus the variance WITHIN each population. When there is significant variance BETWEEN, our F ratio will be big (we are removing the impact of the variance within each separate population and basically isolating the difference between populations).
+    
+    \item Note that we are using yet another distribution.
+    
+    \item Note that evidence supporting that there is a difference between the populations provides no direct evidence on which population might be the different one.
+    
+    \item The key calculator function is \texttt{ANOVA}.
+    
+\end{enumerate}
+
+\end{document}

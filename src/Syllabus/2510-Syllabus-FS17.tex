@@ -1,0 +1,405 @@
+\documentclass[11pt]{article}
+\usepackage{fancyhdr,amssymb,latexsym,amsmath}
+\usepackage[colorlinks=true, urlcolor=blue, pdfborder={0 0 0}]{hyperref}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{termcal}
+\pagestyle{fancy} \boldmath
+
+%Instructor Info Goes here -------------------------------------------------------------------------------------
+%Make changes below
+\newcommand{\TheInstructor}{Joseph Timmer}
+\newcommand{\TheOffice}{MATH 237}
+\newcommand{\TheOfficeHours}{TBD}
+\newcommand{\TheEmail}{joseph.timmer@colorado.edu}
+\newcommand{\TheSection}{003}
+\newcommand{\TheFinalTime}{Saturday, May 5 4:30pm -- 7:00pm}
+\newcommand{\TheLocation}{DUAN G2B60}
+\newcommand{\TheTime}{9:00 AM -- 9:50 AM}
+
+%----------------------------------------------------------------------------------------------------------------
+
+ % \addtolength{\topmargin}{-0.50in}
+ \addtolength{\textheight}{2\baselineskip}
+ \setlength{\oddsidemargin}{-20pt}
+ \setlength{\evensidemargin}{0pt}
+ \setlength{\textwidth}{6.5in}
+ \setlength{\textheight}{11in}
+ \setlength{\parindent}{0pt}
+ \setlength{\leftmargini}{0pt}
+% \renewcommand{\baselinestretch}{1.1}
+
+\pagestyle{myheadings}
+\markright{\sc MATH 2510 -- Spring 2018 }
+
+\renewcommand{\headrulewidth}{0.7pt}
+\renewcommand{\footrulewidth}{0.7pt}
+
+\renewcommand{\calprintclass}{} %Surpress Numbering of Class Days
+
+% Few useful commands (covering class meeting days)
+
+\newcommand{\MWFClass}{%
+\calday[Monday]{\classday} % Monday
+\skipday % Tuesday (no class)
+\calday[Wednesday]{\classday} % Wednesday
+\skipday % Thursday (no class)
+\calday[Friday]{\classday} %Friday 
+\skipday\skipday % weekend (no class)
+}
+
+%\newcommand{\MTWFClass}{%
+%\calday[Monday]{\classday} % Monday
+%\calday[Tuesday]{\classday} % Tuesday
+%\calday[Wednesday]{\classday} % Wednesday 
+%\skipday % Thursday (no class)
+%\calday[Friday]{\classday} % Friday
+%\skipday\skipday % weekend (no class)
+%}
+
+%\newcommand{\MTWTFClass}{%
+%\calday[Monday]{\classday} %Monday
+%\calday[Tuesday]{\classday} % Tuesday
+%\calday[Wednesday]{\classday} % Wednesday
+%\calday[Thursday]{\classday} % Thursday
+%\calday[Friday]{\classday} %Friday 
+%\skipday\skipday % weekend (no class)
+%}
+
+\newcommand{\Holiday}[2]{
+\options{#1}{\noclassday}
+\caltext{#1}{#2}
+}
+
+%\newenvironment{absolutelynopagebreak}
+ %{\par\nobreak\vfil\penalty0\vfilneg
+ % \vtop\bgroup}
+ % {\par\xdef\tpd{\the\prevdepth}\egroup
+ % \prevdepth=\tpd}
+  
+\begin{document}
+\thispagestyle{plain}
+
+\addtolength{\topmargin}{-1.0in}
+\centerline{
+ \framebox{\parbox{4.0in}{
+ \vspace{6pt}
+  \begin{centering}
+    \Large  \bf S~T~A~T~I~S~T~I~C~S    \\
+    \normalsize \bf (~M~A~T~H~~~~2~5~1~0~) \\[1pt]
+    \normalsize \bf S~P~R~I~N~G~~2~0~1~8    \\[1pt]
+  \end{centering}
+ \vspace{6pt}
+ }}
+}
+
+\vspace{10pt}
+
+%===============================================================================
+
+\normalsize
+\small
+
+\begin{longtable}{lp{5.2in}}
+%
+\textbf{Instructor:}
+  & {\bf Name:}   \hspace{8.00ex} \TheInstructor
+  \\
+  & {\bf Office:}  \hspace{8.25ex} \TheOffice
+  \\
+  & {\bf Office Hours:} \hspace{.20ex} \TheOfficeHours
+  \\
+  & {\bf Email:}  \hspace{8.00ex} \href{mailto:\TheEmail}{\TheEmail}
+  \\[6pt]
+%
+%\textbf{Course Webpage:}& Desire2Learn: \url{http://learn.colorado.edu}
+%  \\[6pt]
+
+\textbf{Class Meetings:}
+  & \TheLocation
+  \\
+  & MWF \TheTime 
+ \\[6pt]
+
+\textbf{Text:}
+  & \textbf{\textsl{Understandable Statistics}\/, 12th Edition}
+   by Brase and Brase
+   Brooks/Cole, 2012.
+   ISBN 1-337-65256-3.
+   Chapters 1-9, and 10 (as time allows)
+  \\
+  & $\triangleright$~Topics to be included:
+  \\
+  & $\circ\;$ Introduction to experimental design - including simulations and sampling methods
+  \\
+  & $\circ\;$ Organizing data - including frequency distributions, histograms, stem-and-leaf, circle graphs, and time-series
+  \\
+  & $\circ\;$ Describing data - including central tendency, variation, and percentiles
+  \\
+  & $\circ\;$ Probability theory - including compound events, conditional probability, trees, counting techniques, and the binomial probability distribution
+  \\
+  & $\circ\;$ Normal curves and sampling distributions - including areas under a normal curve and the Central Limit Theorem
+  \\
+  & $\circ\;$ Confidence intervals - including the mean when sigma is known or unknown, proportions, and differences of means or proportions
+  \\
+  & $\circ\;$ Hypothesis testing - including the mean, a proportion, paired data, and differences of means or proportions
+  \\
+  & $\circ\;$ Correlation and regression - including the best fit line, and inferences for correlation and regression parameters
+  \\
+  & $\circ\;$ (As time allows) Chi-square and $F$ distributions - including tests for independence, goodness-of-fit, testing variance, and ANOVA
+  \\[6pt]
+%
+%
+\textbf{Grading:}
+  & $\triangleright$~Your course grade will be computed from:
+  \\
+  & $\circ\;$
+  \makebox[6cm][s]{
+  {\bf In-class Participation}
+  \dotfill}
+  {\bf $10 \%$}
+  \dotfill {\bf $10 \%$}
+  \\  
+  & $\circ\;$
+  \makebox[6cm][s]{
+  {\bf Reading Assignments}
+  \dotfill}
+  {\bf $10 \%$}
+  \dotfill {\bf $10 \%$}
+  \\
+  & $\circ\;$
+  \makebox[6cm][s]{
+  {\bf Chapter Reviews}
+  \dotfill}
+  {\bf $10 \%$}
+  \dotfill {\bf $10 \%$}
+  \\   
+  & $\circ\;$
+  \makebox[6cm][s]{
+  {\bf Projects}
+  \dotfill}
+  {\bf $10 \%$}
+  \dotfill {\bf $10 \%$}
+  \\
+  & $\circ\;$
+  \makebox[6cm][s]{
+  {\bf Quizzes}
+  \dotfill}
+  {\bf $10 \%$}
+  \dotfill {\bf $10 \%$}
+  \\
+  & $\circ\;$
+  \makebox[6cm][s]{
+  {\bf 2 Midterm Exams}
+  \dotfill}
+  {\bf $15\%$ each }
+  \dotfill {\bf $30 \%$}
+  \\
+  & $\circ\;$
+  \makebox[6cm][s]{
+  {\bf Final Exam}
+  \dotfill}
+  {\bf $20 \%$}
+  \dotfill {\bf $20 \%$}
+  \\[8pt]
+%
+%
+\textbf{Calculators:}
+	& A calculator is required for this course. {\bf We recommend that you purchase a TI-84 Plus graphing calculator for this course.} You will be permitted to use other calculators (provided they do not have access to the internet), however, they may not have the full library of functions to which we will refer.
+	\\[8pt]
+
+\textbf{WebAssign:}
+	& We will be using WebAssign to administer online assessments for Reading Assignments and Chapter Reviews. If you were registered or waitlisted for this course as of the Friday before classes began then you should already be enrolled in the WebAssign course. You will need to purchase an access code for continued access throughout the semester. Details on accessing WebAssign is posted in the D2L News feed. Note that within the WebAssign course is a complete e-book version of the textbook along with video resources.
+	\\[8pt]
+	
+%
+\newpage
+%
+	
+\textbf{Participation:}
+	& Much of our in-class time will be spent engaged in active learning components. These components may include worksheets, discussion, student presentations of solutions, etc. Your attendance and contribution are critical for the success of these learning tools, and, as such, a part of your grade in this course will be based on your participation. As long as you come to class prepared, on a regular basis, and make your best effort to complete the in-class activities and homework, then you should do well in this part of your grade. The lowest three (3) participation scores will be dropped.
+	\\[8pt]
+  
+
+\textbf{\parbox[t][1.0in][t]{1.0in}{Reading Assignments:}}
+  & Prepare for class meetings by reading the textbook and watching video supplements to expose yourself to the concepts and examples in the material to be explored in class is an important step in the format of this class. Towards that end, you will be given specific reading assignments in WebAssign consisting of questions from the textbook on most Mondays and Wednesdays throughout the semester. {\bf Because these assignments are meant to compel you to prepare for class on a given day, no make-up Reading Assignments are allowed.} Each assignment is due by the start of class and the lowest three (3) reading assignments will be dropped.
+  \\[8pt]
+
+\textbf{\parbox[t][1.0in][t]{1.0in}{Chapter Reviews:}}
+  & As we conclude the exploration of the material in a chapter of the textbook, a set of problems will be assigned in WebAssign. These assignments will be due by 11pm on Friday after the completion of the material in class for that week. The lowest two (2) Chapter Reviews will be dropped.
+  \\[8pt]
+
+\textbf{Projects:}  
+  & In an attempt to expose you to tools used for statistical computations and analysis, you will be assigned two projects which require the application of a software package. The first project will involve the use of Excel and the second will involve the use of the programming language R. You will be required to work in coordination with other students in the class on these projects. {\bf No late projects will be accepted.}
+  \\[8pt]
+
+\textbf{Quizzes:}
+  & Individual, in-class quizzes will be administered every Friday (during weeks for which there is not a Midterm scheduled). {\bf No make-up quizzes will be permitted, but the lowest two scores will be dropped.}
+  \\[8pt]
+%
+\textbf{Exams:}
+  & $\triangleright$~\textbf{Midterm Exams}.\/
+  \newline
+  The two exams will be given in class on the following days:
+  \newline
+  \textbf{1st}: \textsl{Wednesday, October 18}
+  \newline
+  \textbf{2nd}: \textsl{Wednesday, November 29}
+  \\
+  \\
+  & $\triangleright$~\textbf{Final Exam}.\/
+  \newline
+  	{\underbar{\TheSection}}:  \textsl{\TheFinalTime}
+ \\
+ \\
+ & There are no makeup midterm exams for any reason. If you miss an exam your final exam grade will be substituted for your grade on the missed exam. In general, if your final exam grade is better than one of your midterm grades it will substitute for the low grade. 
+ \\[20pt]
+
+%
+\textbf{\parbox[t][1.0in][t]{1.0in}{Important Dates:}}
+  & \begin{tabular}{lr}
+  	Last day to drop without a ``W" & September 13 \\
+  	Deadline for final exam change with 3 or more finals & November 3 \\
+  	Last day to drop course in MyCUInfo (``W'' recorded) & November 3 \\
+  	Fall Break & November 20--24 \\
+  	Last Day of Classes & December 14 \\
+  \end{tabular}
+ \\
+
+\end{longtable}
+
+%-----------------------------------------------------------------------------
+
+\newpage
+\normalsize
+
+\textbf{\normalsize Accommodation for Disabilities}
+
+
+If you qualify for accommodations because of a disability, please submit your accommodation letter from Disability Services to your faculty member in a timely manner so that your needs can be addressed. Disability Services determines accommodations based on documented disabilities in the academic environment. Information on requesting accommodations is located on the \href{http://www.colorado.edu/disabilityservices/students}{Disability Services website} (\url{www.colorado.edu/disabilityservices/students}). Contact Disability Services at 303-492-8671 or \href{mailto:dsinfo@colorado.edu}{dsinfo@colorado.edu} for further assistance. If you have a temporary medical condition or injury, see \href{http://www.colorado.edu/disabilityservices/students/temporary-medical-conditions}{Temporary Medical Conditions} under the Students tab on the Disability Services website and discuss your needs with your professor.
+%-----------------------------------------------------------------------------
+
+\bigskip
+
+\textbf{\normalsize Religious Observances}
+
+
+
+Campus policy regarding religious observances requires that faculty make every effort to deal reasonably and fairly with all students who, because of religious obligations, have conflicts with scheduled exams, assignments or required attendance. In this class, it is your responsibility to make arrangements at least \textbf{two weeks prior} to the conflict.
+
+See the \href{http://www.colorado.edu/policies/observance-religious-holidays-and-absences-classes-andor-exams}{campus policy regarding religious observances} for full details.
+
+%-----------------------------------------------------------------------------
+
+\bigskip
+
+\textbf{\normalsize Classroom and Course-Related Behavior policy}
+
+Students and faculty each have responsibility for maintaining an appropriate learning environment. Those who fail to adhere to such behavioral standards may be subject to discipline. Professional courtesy and sensitivity are especially important with respect to individuals and topics dealing with race, color, national origin, sex, pregnancy, age, disability, creed, religion, sexual orientation, gender identity, gender expression, veteran status, political affiliation or political philosophy. Class rosters are provided to the instructor with the student's legal name. I will gladly honor your request to address you by an alternate name or gender pronoun. Please advise me of this preference early in the semester so that I may make appropriate changes to my records. For more information, see the policies on \href{http://www.colorado.edu/policies/student-classroom-and-course-related-behavior}{classroom behavior} and the \href{http://www.colorado.edu/osccr/}{Student Code of Conduct}.
+
+%-----------------------------------------------------------------------------
+
+\bigskip
+\textbf{\normalsize Sexual Misconduct, Discrimination, Harassment and/or Related Retaliation}
+
+The University of Colorado Boulder (CU Boulder) is committed to maintaining a positive learning, working, and living environment. CU Boulder will not tolerate acts of sexual misconduct, discrimination, harassment or related retaliation against or by any employee or student. CU’s Sexual Misconduct Policy prohibits sexual assault, sexual exploitation, sexual harassment, intimate partner abuse (dating or domestic violence), stalking or related retaliation. CU Boulder’s Discrimination and Harassment Policy prohibits discrimination, harassment or related retaliation based on race, color, national origin, sex, pregnancy, age, disability, creed, religion, sexual orientation, gender identity, gender expression, veteran status, political affiliation or political philosophy. Individuals who believe they have been subject to misconduct under either policy should contact the Office of Institutional Equity and Compliance (OIEC) at 303-492-2127. Information about the OIEC, the above referenced policies, and the campus resources available to assist individuals regarding sexual misconduct, discrimination, harassment or related retaliation can be found at the \href{http://www.colorado.edu/institutionalequity/}{OIEC website}.
+
+%-----------------------------------------------------------------------------
+
+\bigskip
+\textbf{\normalsize University's Honor Code}
+
+All students enrolled in a University of Colorado Boulder course are responsible for knowing and adhering to \href{http://www.colorado.edu/policies/academic-integrity-policy}{the academic integrity policy}. Violations of the policy may include: plagiarism, cheating, fabrication, lying, bribery, threat, unauthorized access to academic materials, clicker fraud, resubmission, and aiding academic dishonesty. All incidents of academic misconduct will be reported to the Honor Code Council (\href{mailto:honor@colorado.edu}{honor@colorado.edu}; 303-735-2273). Students who are found responsible for violating the academic integrity policy will be subject to nonacademic sanctions from the Honor Code Council as well as academic sanctions from the faculty member. Additional information regarding the academic integrity policy can be found at the \href{http://www.colorado.edu/honorcode/}{Honor Code Office website}.
+
+%=============================================================================
+\newcommand{\lect}[2]
+{\parbox[t]{2.0in}{\textbf{#1:} \\ \hspace*{0.25in} \parbox[t]{2.5in}{\footnotesize{ #2}} \\ }}
+%\newcommand{\lect}[3]
+%{\parbox[t]{2.0in}{\textbf{#1:} \\ \hspace*{0.25in} \parbox[t]{2.5in}{#2 \\ \footnotesize{\em #3}} \\ }}
+
+\newpage
+
+%\begin{absolutelynopagebreak}
+\begin{center}
+\begin{calendar}{1/15/18}{16} % Semester starts on {date} and last for {number} weeks, not including finals week
+% Date format mm/dd/yy for the year 20yy
+\setlength{\calboxdepth}{.25in}
+\setlength{\calwidth}{\textwidth}
+\MWFClass
+% schedule
+
+
+\caltexton{1}{Introduction}
+\caltextnext{Reading Ch. 1}
+\caltextnext{\color{blue}{Quiz 1} \\ \color{red}{Chapter 1 Review}}
+
+\caltextnext{Reading Chapter 2}
+\caltextnext{\color{blue}{Quiz 2}\\ \color{red}{Chapter 2 Review} }
+
+\caltextnext{Section 3.1}
+\caltextnext{Sections 3.2 \& 3.3}
+\caltextnext{\color{blue}{Quiz 3}\\ \color{red}{Chapter 3 Review}}
+
+\caltextnext{Section 4.1}
+\caltextnext{Section 4.2}
+\caltextnext{\color{blue}{Quiz 4}\\ \color{red}{Chapter 4 Review} }
+
+\caltextnext{Section 5.1}
+\caltextnext{Sections 5.2 \& 5.3}
+\caltextnext{\color{blue}{Quiz 5}\\ \color{red}{Chapter 5 Review}}
+
+\caltextnext{Section 6.1}
+\caltextnext{Sections 6.2 \& 6.3}
+\caltextnext{\color{blue}{Quiz 6}\\ \color{red}{Chapter 6 Review pt.1} }
+
+\caltextnext{Section 6.4}
+\caltextnext{Section 6.5}
+\caltextnext{\color{blue}{Quiz 7}\\ \color{red}{Chapter 6 Review pt.2} }
+
+
+\caltextnext{Review for Midterm 1}
+\caltextnext{\color{red}{Midterm 1}}
+\caltextnext{\color{red}{Project 1 Due}}
+
+\caltextnext{Section 7.1}
+\caltextnext{Section 7.2}
+\caltextnext{\color{blue}{Quiz 8}\\ \color{red}{Chapter 7 Review pt.1} }
+
+\caltextnext{Section 7.3}
+\caltextnext{Section 7.4}
+\caltextnext{\color{blue}{Quiz 9}\\ \color{red}{Chapter 7 Review pt.2} }
+
+\caltextnext{Sections 8.1 \& 8.2}
+\caltextnext{Section 8.3}
+\caltextnext{\color{blue}{Quiz 10}\\ \color{red}{Chapter 8 Review pt.1} }
+
+\caltextnext{Section 8.4}
+\caltextnext{Section 8.5}
+\caltextnext{\color{blue}{Quiz 11}\\ \color{red}{Chapter 8 Review pt.2} }
+
+\caltextnext{Review for Midterm 2}
+\caltextnext{\color{red}{Midterm 2}}
+\caltextnext{}
+
+\caltextnext{Sections 9.1 \& 9.2}
+\caltextnext{Section 9.3}
+\caltextnext{\color{blue}{Quiz 12}\\ \color{red}{Chapter 9 Review}}
+
+\caltextnext{Section 10.2 \\ \color{red}{Project 2 Due}}
+\caltextnext{Section 10.5 \\ \color{red}{Chapter 10 Review}}
+% ... and so on
+
+\Holiday{1/15/18}{MLK Jr. Day}
+\Holiday{3/26/18}{Spring Break}
+\Holiday{3/27/18}{Spring Break}
+\Holiday{3/28/18}{Spring Break}
+\Holiday{3/29/18}{Spring Break}
+\Holiday{3/30/18}{Spring Break}
+\Holiday{5/4/18}{Study Day}
+
+% ... and so on
+
+\end{calendar}
+\end{center}
+%\end{absolutelynopagebreak}
+\end{document}

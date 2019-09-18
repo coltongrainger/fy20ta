@@ -1,0 +1,134 @@
+\documentclass{article}
+
+\usepackage[super]{nth}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+\begin{document}
+
+\section*{4.1 What is Probability?}
+
+\begin{enumerate}
+
+    \item Summary box on page 137 pretty much sums up the key points.
+
+    \item A statistical experiment is any random activity that results in a definite outcome. Give examples like drawing cards, rolling dice, spinning the big wheel on ``The Price is Right", etc.
+    
+        \begin{itemize}
+            
+            \item Sample space - The set of all outcomes of an experiment
+            
+            \item Simple event - a single element of the sample space
+            
+            \item Event - any subset of the sample space
+            
+            \item Give an example of these terms say with dice rolling, playing cards, roulette, etc.
+            
+            \item Probability will always be a value between 0 and 1 (inclusive). State what is means when an event has probability 0 or 1.
+            
+            \item I don’t care if students use fractions, decimals, or percentages.
+            
+        \end{itemize}
+        
+    \item Notation
+    
+        \begin{itemize}
+            
+            \item $P(A)$.
+            
+            \item $P(A^c)$.
+            
+            \item $P(A)+P(A^c)=1$.
+            
+        \end{itemize}
+        
+    \item Computed by
+    
+        \begin{itemize}
+        
+            \item Theoretical design and counting simple events.  Be sure to emphasize formula of $$P(A)=\frac{\textnormal{Number of outcomes in } A}{\textnormal{Number of all possible outcomes.}}.$$
+            
+            
+            \item Empirical data and relative frequencies. Include the statement of the law of large numbers. Also emphasize that these methods will always \textbf{approximate} the probability of an event and is possible to never attain the exact value with such methods.
+            
+        \end{itemize}
+        
+    \item Why is probability relevant to statistics?
+    
+        \begin{itemize}
+        
+            \item Probability is about assigning a likelihood to a particular outcome of an unknown experiment. The most relevant situation is assigning probabilities to sampling from a \textbf{known} population.
+            
+            \item Statistics is about using the results of sampling to infer information about an \textbf{unknown property} of the population.
+            
+        \end{itemize}
+    
+\end{enumerate}
+
+\newpage
+
+\section*{4.2 Some Probability Rules---Compound Events}
+
+\begin{enumerate}
+
+    \item There are some formulas in this section, but often I try to de-emphasize them in trade for ``careful counting". 
+    
+    \item The concept of conditional probability is always tricky for students. Carefully explain the concept with emphasis that for $P(A | B)$, the event $B$ is \textbf{known} to have happened.
+    
+    \item Note the two key terms
+    
+        \begin{itemize}
+        
+            \item Mutually exclusive - $P(A \mbox{ and } B) = 0$
+            
+            \item Independent - $P(A|B) = P(A)$ or equivalently $P(B|A) = P(B)$.
+            
+            \item Over emphasize that $P(A \mbox{ and } B) = P(A) \cdot P(B)$ \textbf{only when A and B are independent events}.
+            
+        \end{itemize}
+        
+    \item Be sure to explain the difference between to conjunctions \textbf{or} and \textbf{and}. The use of a Venn diagram will be of help.
+    
+    \item Describe a standard deck of 52 cards.
+    
+        \begin{itemize}
+        
+            \item Show how to compute $P(\mbox{Ace})$, $P(\mbox{Heart})$, \\ $P(\mbox{Ace or Heart}),$ $P(\mbox{Ace and Heart})$, $P(\mbox{Ace} | \mbox{Heart})$.
+            
+        \end{itemize}
+        
+    \item Provide a contingency table and compute some probabilities with it. 
+    
+    \renewcommand{\arraystretch}{1.2}
+    
+	\begin{center}
+	
+	\begin{tabular}{ccccc}
+	& \multicolumn{3}{c}{\textbf{Political Affiliation}} \\ \cline{2-4}
+	{\textbf{ Employee Type}} & Democrat (D) & Republican (R) & Independent (I) & Row Total\\	\hline
+	Executive (E) \hfill& 5 & 34 & 9 & 48 \\
+	
+	\begin{tabular}{@{}r@{}} Production \\ Worker \end{tabular} (PW) \hfill & 63 & 21 & 8 & 92 \\
+	\hline
+	Column Total \hfill  & 68 & 55 & 17 & 140 \\
+	\end{tabular}
+	\end{center}
+	
+	    \begin{itemize}
+	    
+	        \item $P(D)$ and $P(E)$.
+	        
+	        \item $P(D \mbox{ and } E)$.
+	        
+	        \item $P(D | E)$.
+	        
+	   \end{itemize}
+	   
+\end{enumerate}
+
+\end{document}

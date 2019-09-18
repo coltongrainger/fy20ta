@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage{graphicx, color, multicol}
+\usepackage{hyperref}
+\usepackage{amsmath, amssymb}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+\newcommand{\calcfunc}[1]{\text{\texttt{#1}}}
+
+\begin{document}
+%To display answers, replace "white" with "red".
+\newcommand{\answer}[1]{{\color{red}#1}}
+
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics }
+
+\begin{center}
+\textbf{\underbar{In-class Worksheet 27 - Mini-Midterm 3 Solutions}}
+\end{center}
+
+\begin{enumerate}
+
+\item \answer{A} Since the owner wants to test that $\mu > 28$, this should be his alternate hypothesis. This forces us to choose $\mu = 28$ for the null hypothesis.
+
+\item \answer{B} Since we reject $\text{H}_0$, we have sufficient evidence to support $\text{H}_1$, that is, that the mean MPG is greater than 30 MPG.
+
+\item \answer{C} Since we are testing the claim ``the population proportion is 8\%", this means $\text{H}_0$ is $p=0.08$ and so $\text{H}_1$ is $p \neq 0.08$. Using $\texttt{1-PropZTest}(0.08, 9, 47, \neq \mu_0)$ gives $p\approx 0.0048$.
+
+\item \answer{Fail to reject $\text{H}_0$.} This is a $\chi^2$ Goodness of Fit test. We assume $\text{H}_0:$ responses occur with the same frequency and $\text{H}_1:$ responses do not occur with the same frequency. Since 80 observations have been made, the expected column will have $80/5=16$ in each spot. Putting the observed frequencies into $\texttt{L}_1$, expected into $\texttt{L}_2$, and using $5-1=4$ degrees of freedom, we use $$\chi^2\texttt{-GOF}(L_1, L_2, 4) \approx 0.7587.$$
+
+Thus we have insufficient evidence to support the claim that the responses occur with different frequencies at the 5\% level of significance.
+
+\item \begin{enumerate}
+    \item \answer{$\text{H}_0:$ $\mu = 10$} and \answer{$\text{H}_1:$ $\mu < 10$}
+    \item \answer{T-test} because this is a hypothesis test about a single population mean and there is no mention of an assumed value for $\sigma$, the \textbf{population} standard deviation.
+    \item \answer{Reject $\text{H}_0$} Using $$\texttt{TTest}(10, 7.3, 1.5, 18, <\mu_0) \approx 3.4157\texttt{E-7}.$$ Thus, the $p$-value is less than 0.01 and we reject $\text{H}_0$. Thus we have sufficient evidence to conclude that the mean waiting time for this bus is less than 10 minutes at the 1\% level of significance.
+    \end{enumerate}
+    
+\item \answer{Fail to reject $\text{H}_0$.} We are asked to test a hypothesis about a single population mean and since a population standard deviation is given, we will use a $z$-based hypothesis test. Using \answer{$\text{H}_0:$ $\mu = 200$}, \answer{$\text{H}_1:$ $\mu < 200$} and $$\texttt{ZTest}(200, 121.2, 183.9, 54, <\mu_0) \approx 0.1645.$$
+Thus we will likely have insufficient evidence to support the claim that the mean weight of all such employees is less than 200 lb. I say ``likely" because no level of significance was assigned in this problem. So if we follow a common convention of 5\% level of significance, we would fail to reject.
+
+I will always specify $\alpha$ on the exam.
+
+\item \answer{Fail to reject $\text{H}_0$.} We assume in $H_0$ that all population means are identical and in $H_1$ that at least one population mean is different from another. We then put the data from the samples of Brands A,B,C and D into $\text{L}_1$, $\text{L}_2$, $\text{L}_3$ and $\text{L}_4$ respectively and apply $$\texttt{ANOVA}(\text{L}_1, \text{L}_2, \text{L}_3, \text{L}_4) \approx 0.9822.$$ 
+Thus we fail to reject $\text{H}_0$ and we have insufficient evidence to support the claim that at least one population mean is different from the others at the 2.5\% level of significance.
+
+\item \answer{Reject $\text{H}_0$.} We assume in $H_0$ that all population means are identical and in $H_1$ that at least one population mean is different from another. We then put the data from the samples of Brands A,B, and C into $\text{L}_1$, $\text{L}_2$, and $\text{L}_3$ respectively and apply $$\texttt{ANOVA}(\text{L}_1, \text{L}_2, \text{L}_3) \approx 0.0013.$$ 
+Thus we reject $\text{H}_0$ and we have sufficient evidence to support the claim that at least one population mean is different from the others at the 2.5\% level of significance.
+
+\item \answer{Fail to reject $\text{H}_0$.} We assume the distribution of workday accidents are distributed with the given percentages for $\text{H}_0$ and for $\text{H}_1$, that the distribution is different from this. Since there are a total of 100 observations, we use the assumed distribution to compute the expected entries: 
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c}
+ & Monday & Tuesday & Wednesday & Thursday & Friday \\
+ \hline
+$L_1$ = Observed & 26 & 15 & 17 &17 & 25 \\
+\hline
+$L_2$ = Expected & 100*0.25 = 25 & 100*0.15 = 15 & 100*0.15 = 15 &  15 &  30 \end{tabular}
+\end{center}
+Using $5-1=4$ degrees of freedom, we use $$\chi^2\texttt{-GOF}(L_1, L_2, 4) \approx 0.8430.$$
+So we fail to reject $\text{H}_0$ and have insufficient evidence to conclude that the distribution of workday accidents follows some other distribution other than the one described at the 1\% level of significance.
+
+\item \begin{enumerate}
+
+\item Putting the productivity into $L_1$ and dexterity into $L_2$, we can use $\texttt{LinReg(a+bx)}$ to get the regression equation as \answer{$\hat{y} \approx 5.0549 + 1.9050 x$} and \answer{$r\approx0.9861$}
+
+\item With $\text{H}_0: \rho = 0$ and $\text{H}_1: \rho > 0$, we use $$\texttt{LinRegTTest}(L_1, L_2, 1, <0) \approx 7.9724 \texttt{E-8}.$$
+Thus we \answer{reject $\text{H}_0$} and have sufficient evidence to support the claim that there is a positive correlation between productivity and dexterity at the 5\% level of significance. Specifically, this means the higher an employee's productivity, the higher their dexterity.
+
+\item We use the custom program \texttt{YINT} with $\texttt{C-Level} = 0.95$, $\texttt{DF} = 10-2 = 8$, and $X=27$. This gives the confidence interval of \answer{(55.22, 57.76)}.
+
+\item We use \texttt{LinRegTInt} for this interval and it gives us \answer{(1.694, 2.116)}. Thus, for a increase in productivity by a single unit, the employee's dexterity will increase by an amount between 1.694 and 2.116 units.
+\end{enumerate}
+
+\item \begin{enumerate}
+
+\item \answer{$\text{H}_0:$ $p_1=p_2$}, \answer{$\text{H}_1:$ $p_1 >p_2$}
+
+\item We use $$\texttt{2-PropZTest}(38, 100, 50, 140, p_1 > p_2) \approx 0.3586.$$ 
+Thus we \answer{fail to reject $H_0$} and have insufficient evidence to conclude that first population has a greater proportion than the second at the 1\% level of significance.
+\end{enumerate}
+
+\item \answer{Fail to reject $\text{H}_0$.} If we call population 1 the ``Do Not Exercise" population and population 2 the ``Do Exercise" population, the null hypothesis will be $\text{H}_0: \mu_1 = \mu_2$ and the alternate hypothesis will be $\text{H}_1: \mu_1 < \mu_2$.
+
+Since we do not assume values for the \textbf{population} standard deviations, we will use $$\texttt{2-SampTTtest}(73.3, 10.7, 16, 68.2, 8.2, 12, \mu_1 > \mu_2, \texttt{POOLED = NO}) \approx 0.0826.$$
+Thus we fail to reject $\text{H}_0$ and have insufficient evidence to conclude that people who exercise regularly have a lower heart rate compared to those that do not at the 2.5\% level of significance.
+
+\item \answer{Fail to reject $\text{H}_0$} If we define the mean ``before tutoring" math score as $\mu_B$, the ``after tutoring" math score as $\mu_A$ and the difference $\mu_D = \mu_B - \mu_A$, then we can formulate the null hypothesis as $\text{H}_0: \mu_D = 0$ and the alternate as $\text{H}_1: \mu_D \neq 0$.
+
+This will lead to a paired $t$-test on the differences $before\, - \, after$. Putting the before scores of each student into $\texttt{L}_1$, after into $\texttt{L}_2$, and $\texttt{L}_3 = \texttt{L}_1 - \texttt{L}_2$, we can use the ``DATA" option for the function \texttt{TTest}.
+
+$$\texttt{TTest}(0, \texttt{L}_3, 1, \mu \neq \mu_0) \approx 0.0998.$$
+Thus we fail to reject $\text{H}_0$ and cannot support the claim that tutoring has an effect on the math scores of students at the 1\% level of significance.
+
+\item \begin{enumerate}
+\item If we define the mean ``before listening" blood pressure as $\mu_B$, the ``after listening" blood pressure as $\mu_A$ and the difference $\mu_D = \mu_B - \mu_A$, then we can formulate the null hypothesis as \answer{$\text{H}_0: \mu_D = 0$} and the alternate as \answer{$\text{H}_1: \mu_D > 0$}.
+
+\item Since our $\text{H}_1$ states $\mu_D$ is \textbf{greater than} what is assumed, this will be a \answer{right-tailed test}.
+
+\item \answer{$t \approx 3.4903$} and \answer{$p\approx 0.0034$} This will be a paired $t$-test on the differences $before\, - \, after$. Putting the before scores of each patient into $\texttt{L}_1$, after into $\texttt{L}_2$, and $\texttt{L}_3 = \texttt{L}_1 - \texttt{L}_2$, we can use the ``DATA" option for the function \texttt{TTest}.
+
+$$\texttt{TTest}(0, \texttt{L}_3, 1, \mu >\mu_0) = \begin{cases} t \approx 3.4903 \\p \approx 0.0034. \end{cases}$$
+
+\item Since we \answer{reject $\text{H}_0$}, we have sufficient evidence to support the claim that this relaxation tape lowers a patient's diastolic blood pressure.
+\end{enumerate}
+
+\end{enumerate}
+\end{document}

@@ -1,0 +1,93 @@
+\documentclass{article}
+
+\usepackage[super]{nth}
+\usepackage{amsmath, amssymb}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+\begin{document}
+
+I hope to have my Midterms graded by Friday. So, I may start with reviewing any commonly missed problems, if there seems to be some obvious choices for that discussion. Otherwise, I do NOT intend to go over the midterm in class; students will have to seek out help in office hours on an individual basis.
+ 
+\section*{6.1 Normal Probability Distribution}
+
+    \begin{enumerate}
+    
+        \item Ask the class about the difference between a discrete random variable and a continuous random variable.
+        
+        \item Ask the class what the sum of the probabilities in a discrete probability distribution must equal.
+        
+        \item Introduce the normal distribution
+        
+            \begin{itemize}
+            
+                \item Unimodal, symmetric, approaching x-axis, area under curve is 1.  
+                
+                \item Draw a picture and label the mean. As note the distance between the maximum and inflection points is equal to the standard deviation, which is 1.
+                
+                \item I see no need to write down the density function, as it will likely be met with vacant stares.
+                
+                \item Point out that the students should pay close attention to the Empirical Rule in the reading and to note its connection to Chebyshev’s Theorem.
+            
+            \end{itemize}
+            
+        \item Introduce the concept of a Control Chart.
+        
+            \begin{itemize}
+            
+                \item Using a mean and standard deviation computed from historical data or industry standards, a control chart is a mechanism to determine if the variable is in statistical control. This chart is essentially following the expected distribution from the mean and standard deviation.
+                
+                \item There are 3 ``out-of-control" signals. Make note of them from the reading.
+                
+                    \begin{itemize}
+                    
+                        \item One reading beyond $3\sigma$ of average.
+                        
+                        \item 9 \textbf{consecutive} on one side of average.
+                        
+                        \item 2 of 3 points beyond $2\sigma$ of average.
+                        
+                    \end{itemize}
+                    
+            \end{itemize}
+            
+    \end{enumerate}
+
+\newpage
+
+\section*{Sections 6.2 \& 6.3 Computing Area under Normal Curves}
+
+    \begin{enumerate}
+    
+        \item In these sections, they will see examples and applications of computing the area under the normal curve above, below, and between specified points.
+        
+            \begin{itemize}
+            
+                \item \texttt{NORMALCDF} (under the \texttt{DISTR} menu) will be their friend here.  Somewhat similar in concept to \texttt{BINOMCDF}, it is more flexible with the ability to accept both lower and upper bounds.
+                
+                \item If they have no lower (or upper bound) for a probability question, have them use \texttt{1E99} for $\infty$ and \texttt{-1E99} for $-\infty$. 
+                
+                \item The book will show them methods using a table. Those methods are NOT necessary, if they have the calculator. If they desire, tables are to be made available for quizzes, exams and the final.
+                
+            \end{itemize}
+            
+        \item The $z$-value (or $z$-score) of a data value $x$ gives the number of standard deviations between the data value and the mean.
+        
+        \item When the variable $z$ is used, the assumption is that mean = 0 and standard deviation = 1.
+        
+        \item When the variable $x$ (or any other variable for that matter) is used, we will need to be provided the information on the values of the mean and standard deviation.
+        
+        \item EITHER $z$- or $x$-information can be entered into the \texttt{NORMALCDF} function.
+        
+        \item Another function that will be useful is \texttt{INVNORM} (also under \texttt{DISTR}). This is another somewhat restricted function in that it can \textbf{only be applied to a LEFT-TAIL area}.
+        
+        \item The information about ``checking for normality" is not something that we will assess in this course.  That is not to say that it is worthless, it is just not something that we will explore in this class.
+        
+    \end{enumerate}
+    
+\end{document}

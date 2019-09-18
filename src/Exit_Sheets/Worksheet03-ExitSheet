@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{color}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+%To display answers, replace "white" with "red" here;
+\newcommand{\answer}[1]{\color{white}#1}
+
+\begin{document}
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics }
+
+\begin{center}
+\textbf{\underbar{Worksheet 3 Exit Sheet}}
+\end{center}
+
+Moderator:{\underbar{\hspace{2in}}} \hfill  Recorder:{\underbar{\hspace{2in}} 
+
+\bigskip
+
+Reporter:{\underbar{\hspace{2in}}
+
+As a group, come up with answers to the following questions.
+
+\begin{enumerate} \item Beatrice had a bad Fall semester her Freshman year and is now on academic probation. Beatrice wants to find out what her minimum GPA this semester needs to be to get an overall 2.000 GPA. Beatrice is thinking of taking fewer than the 18 credits she took in the Fall.
+
+    \begin{enumerate}
+        \item If Beatrice takes 12 credits in the Spring semester, what must her GPA be to get above a 2.000 overall GPA?
+        
+        {\answer After this Spring semester, Beatrice would have taken 30 credit hours. Thus, if $x$ is her Spring GPA, she needs to have an average of 2.000 for those 30 credits. This gives the equation 
+        $$\frac{1.25 * 18 + x * 12}{30} = 2.000$$
+        Solving this equation for $x$ will give $x=3.125$.
+        
+        So Beatrice needs a 3.125 GPA (or better) to get off academic probation.}
+        
+        \vfill
+        
+        \item If Beatrice decided to take 18 credits again in the Spring semester, what must her GPA be to get above a 2.000 overall GPA?
+        
+        {\answer One could argue as above, using the equation
+         $$\frac{1.25 * 18 + x * 18}{36} = 2.000$$ and solving for $x$.
+         
+         Another way is because she would take \textbf{the same number of credits as the Fall}, she just needs $x$ (her GPA in the Spring) to satisfy $$\frac{1.25 + x}{2} = 2.000.$$
+         
+         Thus $x= 2.75$. }
+         
+        \vfill
+        
+        \item If Beatrice takes 15 credits in the Spring and thinks she can at best manage a 2.0 in her 3 credit math class, what must her GPA be on her other classes?
+        
+        {\answer First, we find what her \textbf{semester GPA} needs to be using $$\frac{1.25 * 18 + x * 15}{33} = 2.000$$ and solving for $x= 2.9$
+        
+        If $y$ represents her GPA in the other 12 credits (the non-math class), then $y$ needs to satisfy $$\frac{2.0 * 3 + y*12}{15} = 2.9.$$
+        
+        Solving for $y$ gives 3.125.}
+        
+        \vfill
+        
+    \end{enumerate}
+
+\end{enumerate}
+
+\end{document}

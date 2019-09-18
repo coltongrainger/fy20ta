@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage{graphicx,hyperref,enumitem, color}
+\usepackage[super]{nth}
+
+\topmargin=-.25in
+\setlength{\textwidth}{6.75in}
+\setlength{\textheight}{8.8in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+\newcommand{\Rin}[1]{\textbf{$>$ {#1}}}
+\newcommand{\Rcom}[1]{\hspace{1cm} \#{#1}}
+\newcommand{\Rout}[1]{\texttt{{#1}}}
+%To display answers, replace "white" with "red" here;
+\newcommand{\answer}[1]{\color{red}#1}
+
+\begin{document}
+\pagestyle{myheadings}\markright{
+CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics }
+
+\begin{center}
+\textbf{\underbar{Project 2 Worksheet - Due Monday December 11}}
+\end{center}
+
+NAME 1:{\underbar{\hspace{2in}}} \hfill NAME 2:{\underbar{\hspace{2in}} 
+
+\bigskip
+
+NAME 3:{\underbar{\hspace{2in}}
+
+\begin{enumerate}
+
+\item Suppose ``Y1" is an object where \Rin{length(Y1)} yields \Rout{[1] 5} and \Rin{mean(Y1)} yields \Rout{[1] 5.4}. Suppose ``Y2" is an object where \Rin{length(Y2)} yields \Rout{[1] 10} and \Rin{mean(Y2)} yields \Rout{[1] 8.3}. \\
+If we assign \Rin{Y3 = c(Y1, 3, Y2)}, then write the output for
+	\begin{enumerate}
+	\item \Rin{length(Y3)}
+	
+	{\answer 16. Either they get it correct for 2 points or nothing if wrong.}
+	
+	\item \Rin{mean(Y3)}
+	
+	{\answer 7.0625. The most common error will be to average 5.4,3, and 8.3 which yields $5.5\bar{6}$. Give them 1 point for that.}
+	
+	\end{enumerate}
+	
+	\vfill
+	
+\item Attach the frequency histograms for `x4' and `x4distr2'.
+
+    {\answer Varies by group. You can go to the ``Plots" tab after opening a group's file or use the commands are \texttt{>hist(x4)} and \texttt{>hist(x4distr2)}. 1 point for attaching two histograms and 2 points for each that matches the grader output.}
+
+    \vfill
+
+
+\item Of the 20,000 samples taken from `x4', what is the mean of the \nth{417} sample? What is the confidence interval based on the \nth{417} sample? What is the population mean of `x4'? Does that specific interval actually contain the population mean of `x4'?
+
+    {\answer Answers will vary by group. The grader script will output these values. Give 1 point for the mean of the sample, 1 point for each bound of the interval, 1 point for the mean of x4 and 1 point for the proper determination if the confidence interval contains the mean.}
+    
+    \vfill
+
+\item For the 20,000 confidence intervals for the samples from `x4', about how many would you expect to contain the mean of `x4'? Explain.
+How many of the intervals actually contain the mean? What code did you type in to get this? \\
+HINT: You might find the following code, that counts the number times the mean is less than the upper bound, helpful to get you started on determining the relevant line of code:\\
+  \Rin{sum(x4ave $<$ x4upper)}
+  
+  {\answer Since the CI are 95\% confidence intervals, we should expect 19,000. Give them 1 point for that. The actual percentage will vary by group and the grader script will output this value. Give them 2 points for having the correct number and 2 points for writing down a code/showing work that computes this. Two codes that work are 
+  \begin{center}
+  \texttt{>sum(x4ave < x4upper \& x4ave > x4upper)}\\
+  and \texttt{>sum(x4ave < x4upper) - sum(x4ave < x4lower)}.
+  \end{center}
+  }
+  
+  \vfill
+
+\item According to the Central Limit Theorem, what should the (theoretical) value of $\mu_{\bar{x}}$ equal for {\em your} specific x4distr2 sampling distribution? Write an equation in terms of the object names used in this project. How do your empirical results match the theoretical results of the theorem? That is, how does the actual value of the $\mu_{\bar{x}}$ value for your x4distr2 compare to the theoretical value that it should be?
+
+    {\answer $\mu_{\bar{x}} = \texttt{x4ave}$. The actual value will depend on the group file, see the grader output. We compare this to the output of \texttt{>x4distr2ave}. Give them 3 points for conveying the idea behind the equation and 2 points for stating the correct values, based on the grader output.}
+    
+  \vfill
+  
+\newpage
+
+\item According to the Central Limit Theorem,what should the (theoretical) value of $\sigma_{\bar{x}}$ equal for {\em your} specific x4distr2 sampling distribution? Write an equation in terms of the object names used in this project. How do your empirical results match the theoretical results of the theorem? That is, how does the actual value of the $\sigma_{\bar{x}}$ value for your x4distr2 compare to the theoretical value that it should be?
+
+    {\answer $\texttt{x4distr2sd}=\sigma_{\bar{x}} = \frac{\texttt{x4sd}}{\sqrt{1200}}$. The actual value will depend on the group file, see the grader output. Give them 2 points for conveying this concept. Give them two points for stating \texttt{x4distr2sd} and \texttt{x4sd} correctly, and 1 point for using $n=120$. The most common error is to state $n=20,000$.
+    
+    Note, as outlined in the project, we defined the standard deviation of x4 using a \textbf{sample} standard deviation command. This was done on purpose for the students sake. If a group were to define \texttt{x4distr2sd} ``properly", the grader will account for this.}
+    
+\vfill
+
+\item Determine which of the four probability functions \{\texttt{dbinom, pbinom, pnorm, qnorm}\} is most appropriate to compute the answer to the following question. Then write the exact R-code that should be entered to compute that answer, as well as the answer. \\
+{\em Denver Nuggets player Jamal Murray has a free throw percentage of 88.4\% (we can say that the probability that Jamal makes a single free throw is 88.4\%). If Jamal attempts 30 free throws, what is the probability that he makes at most 20 of them? Assume each free throw is independent of all others.}
+
+    {\answer The code used is likely to be \texttt{>pbinom(20,30,0.884)} which gives the output 0.001462003. Give 2 points for using \texttt{pbinom} as the function and 3 points for giving a similar code that gives the correct value. }
+    
+\vfill
+
+\item Using the \texttt{while}-loop provided in the quota problem in 5e as a guide, write the exact R-code that should be entered to solve the following problem. (You don't need to find the answer, just write the complete R-code to be entered.) \\
+{\em The probability that a skeet shooter can hit 31 or more targets in 50 total shots is $0.35463$. Find the probability of this shooter hitting the target when he shoots at a single target. Provide an answer accurate to 4 decimal places.}\\
+So, you know the cumulative probability $P(r \geq 31) = 0.35463$. But, now determine the probability of success on a single attempt using a \texttt{while}-loop.
+
+    {\answer The code should be something like: 
+    \begin{center}
+    \texttt{>p=0; while(1-pbinom(30, 50, p) < 0.35463)\{p=p+0.00001\}} \\
+    or \texttt{>p=0; while(pbinom(30, 50, p, 0) < 0.35463)\{p=p+0.00001\}}
+    \end{center}
+    which sets the value of p to 0.58349. Incidentally, a better approximation of p is 0.5834838.
+    
+    Give them 1 point for setting p to some useful value for their loop. Give 2 points for having a proper logical condition in the ``while" loop, one for each side of the inequality, and 1 point for incrementally increasing p by some value. As long as their code increments p by 0.0001 or anything less, give them 1 point. The phrase ``accurate to 4 decimal places" is somewhat vague for this class.
+     }
+ \vfill
+\end{enumerate}
+
+\end{document}
+

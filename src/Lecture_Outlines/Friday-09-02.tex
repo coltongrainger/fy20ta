@@ -1,0 +1,103 @@
+\documentclass{article}
+
+\usepackage[super]{nth}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+\begin{document}
+
+\section*{3.2  Measures of Variation}
+
+\begin{enumerate}
+
+    \item Give two data sets like
+
+        $$\{10, 9, 9, 8, 8, 8, 7, 7, 7, 7, 6, 6, 6, 5, 5, 4\}$$
+
+        $$\{10, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 4\}$$
+    \begin{itemize}
+    
+        \item Ask the students ``Which data set is more varied?" Explain how standard deviation/variance measures this property. 
+        
+        \item Range: $highest-lowest$. Show both data sets have the same range.
+        
+    \end{itemize}
+
+
+    \item Formula for Variance/Standard Deviation
+    
+    $$\sigma^2 = \frac{ \sum (x-\mu)^2}{N}$$
+    
+    $$s^2 = \frac{ \sum (x-\bar{x})^2}{n-1}$$
+    
+        \begin{itemize}
+        
+            \item As with means, be sure to point out the difference between a population variance and sample standard deviation. Students often get the two mixed up.
+            
+            \item Always emphasize which one should be computing/using in formulas and discussions.
+            
+            \item Explain that the second data set has a smaller standard deviation than the first.
+            
+            \item Mention that we will not have to compute by hand, so no need to ponder the computational formulas.
+
+        \end{itemize}
+
+    \item Coefficient of Variation: Describes standard deviation as a percentage of the mean.
+    
+        \begin{itemize}
+        
+            \item Perhaps note that for $\{100, 70, 70, 70,\ldots,70, 40\}$, the standard deviation and mean is ten times than for the data set above; but are they really that different?
+            
+        \end{itemize}
+
+    \item Chebyshev's Theorem: $1-\frac{1}{k^2}$ of data falls within $\mu\pm k \sigma$ for $k\geq 1$.
+        
+        \begin{itemize}
+        
+        \item Students will have difficulty understanding this lemma. A good idea state the following results:
+        
+        $$\geq 75\%\;\mbox{within} \mu \pm 2\sigma$$
+        $$\geq 88.9\%\;\mbox{within} \mu \pm 3\sigma$$
+        $$\geq 93.8\%\;\mbox{within} \mu \pm 4\sigma$$
+        
+        \item Expect questions about this on Monday.
+        
+        \item Note that for the mound-shape symmetric distributions, the result is much stronger. We will see that later.
+
+        \end{itemize}
+
+\end{enumerate}
+
+\section*{3.3 Percentiles and Quartiles}
+
+\begin{enumerate}
+
+    \item Definition of a percentile
+
+    \item Box-and-whisker
+    
+        \begin{itemize}
+        
+        \item The two ends and middle lines for the box represent quartile marks.
+        
+        \end{itemize}
+
+    \item This concept is valuable in future sections.
+
+    \item Specifically mention quartiles as \nth{25}, \nth{50}, \nth{75}-percentiles (I wouldn’t mention it now, but be prepared for next class to clarify that this textbook finds Q1 as the median of data BELOW Q2 (not including Q2).  Not all textbooks agree and there are at least 9 different and sensible definitions for this values for discrete data.)
+
+    \item Visual display of LOWEST, Q1, Q2, Q3, HIGHEST (also know as the five-number summary)
+    
+    \item Be sure to emphasize that {\bf all} statistics in this chapter is handled by \texttt{1-VAR STATS} on the calculator.
+    
+\end{enumerate}
+
+\end{document}

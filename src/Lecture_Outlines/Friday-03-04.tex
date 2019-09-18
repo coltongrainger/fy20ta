@@ -1,0 +1,93 @@
+\documentclass{article}
+
+\usepackage[super]{nth}
+\usepackage{amsmath, amssymb}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+\begin{document}
+
+
+\section*{Confidence Intervals}
+
+When we can't collect a measurement for every member of a population, how can we determine a population mean?
+
+\begin{enumerate}
+
+    \item Without a full set of population data, we can never be 100\% certain that we know the population mean, but with certain restrictions applied, we can use the data from a random sample to estimate a population parameter.
+
+    \item Even with a large random sample, the value of the sample mean is usually not exactly equal to the population mean. But, according to the Central Limit Theorem, we can have some expectations on how likely it is that the sample mean falls within a certain interval around the population mean. A confidence interval is an interpretation of precisely this application.
+
+    \item What criterion is required to apply the Central Limit Theorem?
+
+    \item The idea is that we start with a sample statistic (called a point estimate). We then create a margin of error around that point estimate which yields an interval of values that is asserted as one that contains the population parameter (at least with some high level of, but not 100\%, certainty)
+    
+    \begin{enumerate}
+    
+        \item So, this looks like (point -- error, point + error) or a guess $\pm$error.
+        
+        \item The size of the error depends on what level of certainty we want to assert.
+        
+        \item The most prevalent example of a confidence interval are during elections and predicting election results.
+        
+    \end{enumerate}
+    
+    \item Keep in mind that although we will be asserting that we have an interval that contains the population parameter, there is no indication where within the interval we expect it to lie.
+    
+\end{enumerate}
+
+\section{7.1 Estimating $\mu$ when $\sigma$ is known}
+
+\begin{enumerate}
+
+    \item The first look at confidence intervals assumes that we know $\sigma$.  (This might seem a bit contrived, because why would we know $\sigma$ if we don’t know $\mu$.)
+    
+    \item The TI \texttt{Z-INTERVAL} function will compute the confidence interval, either by entering the actual list of sample data or by entering the sample mean. For that reason some of the details of the formulation developed in the reading are not so critical, but understanding what the function does and how to interpret the result is critical.
+    
+    \item When reading, pay special attention to
+    
+        \begin{itemize}
+        
+            \item The formula for E in this case, as it should make sense why this is the correct formula.
+            
+            \item The definition of $z_c$, as this should also be something that you already know how to compute.
+            
+            \item The interpretation of a confidence interval, as it is easy to misinterpret what the interval found means.
+            
+        \end{itemize}
+        
+\end{enumerate}
+
+\section{7.2 Estimating $\mu$ when $\sigma$ is unknown}
+
+\begin{enumerate}
+
+    \item In this case, a seemingly more common case, we don’t know $\sigma$. So, we must estimate the value of $\sigma$ too. This translates into a slightly larger margin of error to compensate for the potential error in our guess of $\sigma$.
+    
+    \item Rather than the standard normal distribution, we use the Student's $t$-distributions. There is a slightly different distribution for each sample size, but they are all bell-shaped.  As $n$ gets larger, the $t$-distributions approach the standard normal distribution.
+    
+    \item The formulation and interpretation of a confidence interval in this case is very similar to that when $\sigma$ is known, just the distributions from which the critical values are determined has changed.
+    
+    \item The \texttt{T-INTERVAL} function the TI can do the work for us.
+    
+    \item When reading, pay special attention to
+    
+        \begin{itemize}
+        
+            \item The formula for E (which should look VERY similar to that from Section 7.1).
+            
+            \item The formula for degrees of freedom.
+            
+        \end{itemize}
+        
+    \item If your calculator does not already have an \texttt{InvT} function, there is a screencast available about how to create a program in your calculator that does the job.
+    
+\end{enumerate}
+
+\end{document}

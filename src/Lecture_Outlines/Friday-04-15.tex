@@ -1,0 +1,63 @@
+\documentclass{article}
+
+\usepackage[super]{nth}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+
+\setlength{\parskip}{2ex}
+\setlength{\parindent}{0in}
+
+\begin{document}
+
+\section*{9.1 \& 9.2 Linear Correlation}
+
+\begin{enumerate}
+
+  \item The key ideas here are, of course, the correlation coefficient and the least squares line of best fit. This is frequently a topic that students have some familiarity with \ldots and some intuition for.
+  
+  \item If you are so compelled (inspired by) the actual formulas for the various pieces, then by all means, discuss. However, as for most things so far, the calculator can take care of it for them.
+  
+  \item I do think a brief conceptual discussion about ``least-squares" is based on is very much worthwhile. A discussion of how $r$ measures the ``goodness-of-fit" and how to interpret its value is.
+  
+  \item The key calculator function is \texttt{LinReg(a+bx)}.
+  
+    \begin{itemize}
+    
+        \item Note that there is also a \texttt{LinReg(ax+b)} that does precisely the same thing. HOWEVER, because we will be referring to the population slope with the letter $\beta$, the former is a better choice.
+        
+        \item Be sure to mention that we will \textbf{only} be using \texttt{LinReg(a+bx)} in this class to compute the line of best fit.
+        
+        \item In order to get the $r$ and $r^2$ values to display, the \texttt{DiagnosticsON} must be set. To do this, go to \texttt{Catalog} (which is located by \nth{2} + 0), select \texttt{DiagnosticsON} and push \texttt{Enter} twice.
+        
+    \end{itemize}
+    
+    \item A brief mention of the difference of interpolation and extrapolation would also be a good note.
+    
+    \item Mention the coefficient of determination and what it measures.
+    
+\end{enumerate}
+
+\section*{9.3 Inference for Correlation}
+
+\begin{enumerate}
+
+    \item Note the notation for population parameters $\rho$, $\beta$, and  $y$.
+    
+    \item Most calculators should have \texttt{LinRegTTest} which simultaneously tests the sign of $\rho$ and $\beta$. Note that like null hypothesis in both cases is ``$= 0$".
+    
+    \item Now, the TI-84 will likely have \texttt{LinRegTInterval} to determine a confidence interval for the value of $\beta$, but TI-83 will not. There is a screencast to help them program a function to compute the interval.
+    
+    \item Further, neither TI-83 nor TI-84 will have a built-in function to compute a prediction interval (confidence interval) for y. (The TI-89 should.) The formula for E is not impossible to evaluate with the function, but it is certainly a bit of a pain. It may be good to present the formula so that they have a preview of what will be expected of them if they don’t program the function.
+    
+    \item There is a screencast on D2L and definitely mention this to them in class.
+    
+    \item One conceptual point to highlight, the closer $x$ is to the $\bar{x}$, the narrower the prediction interval is.
+
+\end{enumerate}
+
+\end{document}

@@ -1,5 +1,5 @@
 ---
-title: In-class Quiz
+title: Take-Home Quiz Week 4
 author: Colton Grainger (MATH 2510-001)
 date: 2019-09-17
 revised:
@@ -8,24 +8,23 @@ header-includes:
     - \usepackage{graphicx}
 ---
 
-This is an 
-## Definitions
+Your name (print clearly in capital letters): \underline{\hspace{8cm}}
 
-First, given a sample of $n$ real numbers, recall that the *standard deviation* $s$ to the mean $\bar{x}$ for the *entire sample* can be computed by:
+This is a **graded take home quiz** that will replace your in-class quiz given on Monday. It's due at the beginning of our next class, Friday September 20, **handed to Colton by 8:00am**. You have 48 hours.
+
+We'll open with some helpful remarks, then get on with the questions. Firstly, given a sample of $n$ real numbers, recall that the *standard deviation* $s$ to the mean $\bar{x}$ for the *entire sample* can be computed by:
 \begin{equation*}
     \label{samplemean}
     \overline{x} = \frac{\sum x}{n} \qq{and} s = \sqrt{\frac{\sum x^2 - (\sum x)^2 / n}{n-1}}.
 \end{equation*}
 
-Second, the *coefficient of variation* for the *entire sample* is defined to be the ratio $c = s/\bar{x}$ (sometimes computed as $\text{CV} = \frac{s}{\bar{x}} \cdot 100$) of the standard deviation $s$ to the mean $\bar{x}$.
+Secondly, the *coefficient of variation* for the *entire sample* is defined to be the ratio $c = s/\bar{x}$ (sometimes computed as $\text{CV} = \frac{s}{\bar{x}} \cdot 100$) of the standard deviation $s$ to the mean $\bar{x}$.
 
 Lastly, we can measure the distance between an *individual data point* and the sample mean in units of the sample standard deviation. This measure is called the *z-score* of a data point $x$ and is defined by
 \begin{equation*}
     \label{zscore}
     z_x = \frac{x-\bar{x}}{s}.
 \end{equation*}
-
-Here are two frequency distributions for your use in the following problems.
 
 \begin{figure}[htpb]
     \centering
@@ -108,5 +107,5 @@ Here are two frequency distributions for your use in the following problems.
 \vspace{5em}
 
 \newpage
-8. Argue in *full, grammatically correct, English sentences* why the bounds^[We'll define "bound" rigorously later. For now, you might like to know that the upper and lower bounds of a dataset approximately refer to the range of numbers between which a-whole-lotta the data lies.] for the *Empircal rule* are *different* than the bounds for *Chebyshev's theorem*. Or, if you'd like, write a haiku (5-7-5 syllables). 
+8. Argue in **no more than 250 words** (consisting of *full, grammatically correct, English sentences*) why the bounds^[We'll define "bound" rigorously later. For now, you might like to know that the upper and lower bounds of a dataset approximately refer to the range of numbers between which a-whole-lotta the data lies.] given by the *Empircal rule* are *smaller but necessarily less strict* than the bounds on the spread of the data given by *Chebyshev's theorem*. 
 
