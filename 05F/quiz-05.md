@@ -1,5 +1,4 @@
 ---
-title: Quiz 05
 author: Colton Grainger (MATH 2510-001)
 date: 2019-09-20
 revised:
@@ -8,21 +7,24 @@ header-includes:
 - \newcommand{\answer}[1]{\color{white}#1}
 - \newcommand{\question}[1]{\color{black}#1}
 ---
-
+ 
 Your name (print clearly in capital letters): \underline{\hspace{8cm}}
 
-- This is an **graded** quiz. (Recall that quizzes make up about $1/10$ of your final grade.)
+![](/home/colton/rote/2019-09-26-cover.png)
+
+**Ground Rules**
+
+- This is an **graded** quiz. (Recall that quizzes make up about $1/10$ of your final grade.) 
+
 - It is meant to give you some **low-stakes practice** for the upcoming midterm, which will be in-class on Wednesday, October 16th. (The first midterm is worth about $3/20$ of your final grade.)
 
-- You may use a statistical calculator if you wish, but each problem has been written so that it can be reasonable done with pencil and paper if necessarily. 
+- I will grade the first **five out of six sections**, unless you explicitly tell me which section you'd like me **not to grade.**
 
+- Which section do you want Colton **not to grade**? (Please circle one.) `1  2  3  4  5  6`.
+ 
 - You may not collaborate.
-
-- Attempt *all six parts* (sections 1 through 6).
-
-- **Return this quiz to Colton by 8:50am Friday, September 27th**.
-
-![](/home/colton/rote/2019-09-26-cover.png)
+- You may use a statistical calculator if you wish, but each problem has been written so that it can be reasonable done with pencil and paper if necessary. 
+- You have until 8:55am, and you may leave class once you have finished.  Have a great weekend!
 
 \newpage
 
@@ -49,7 +51,7 @@ IV |`A B C D E` | $[\hspace{3em}, \hspace{3em})$  | $[\hspace{3em}, \hspace{3em}
 
 \newpage
 
-## Basic probability computations
+## Basic Probability Computations
 
 ![](/home/colton/rote/2019-09-26-mcqs.png){width=7cm}
 ![](/home/colton/rote/2019-09-26-vader.png){width=9cm}
@@ -94,7 +96,7 @@ Would knowing $P(A^c \cap B^c)$ allow you to compute $P(A\cup B)$ exactly? (Choo
 
 > \framebox[5cm][l]{Your answer: }
 
-## Conditional probability computations
+## A Tree Diagram for Bayes' Rule
 
 ![](/home/colton/rote/2019-09-26-luke.png){width=8cm}
 ![](/home/colton/rote/2019-09-26-tree.png){width=8cm}
@@ -109,9 +111,9 @@ Upon arriving in the Dagobah Cave, Yoda observes that Luke has failed to lift hi
 
 \newpage
 
-## Life goes on: further tedious computations
+## Life goes on: Further Tedious Computations
 
-The value of Han Solo's portfolio (consisting mostly of smuggled goods and foreign investments) increases by $18%$ during a financial boom and by $9%$ during normal times. It decreases by $12\%$ during a recession.
+The value of Han Solo's portfolio (consisting mostly of smuggled goods and foreign investments) increases by $18\%$ during a financial boom and by $9\%$ during normal times. It decreases by $12\%$ during a recession.
 
 What is the expected return on this portfolio if each scenario is equally likely?
 
@@ -151,7 +153,7 @@ What is the mean^[The mean of a probability distribution $P(X)$ for $X$ is the e
 
 \newpage
 
-## The Binomial Distribution and Friends 
+## Would the real Binomial Distribution please stand up?
 
 ![](/home/colton/rote/2019-09-26-binom.png)
 
@@ -168,7 +170,7 @@ B. Chewie the Wookie has $4$ identical boxes of snacks. Each box contains $40$ s
 > \framebox[5cm][l]{Your answer: }
 \newpage
 
-## Conditional probability again
+## Conditional Probability, Again!
 
 ![](/home/colton/rote/2019-09-26-condo.png)
 
