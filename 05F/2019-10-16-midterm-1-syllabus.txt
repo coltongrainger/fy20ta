@@ -1,0 +1,159 @@
+﻿---
+title: "Official Midterm 1 Syllabus"
+author: Unknown Author (Edited by Colton Grainger)
+date: 2019-09-26
+
+---
+
+*Here's an "official" midterm syllabus that I dug up from Canvas. Naturally, we covered different content in class, and perhaps used different terminology.*
+
+*Some critiques I have of the following list include:*
+
+- *it's written like a series of small recipes, and uses "pseudo-mathematics"*,
+- *it's outdated*,
+- *it's totally dependent on the TI-84*.
+
+*However, I want y'all to ace the midterm, so let's have a "cautious" look at the material together. You should check the trello board <https://trello.com/c/j6y05cHj> if you want a midterm outline that you can actually read and study from.*
+
+*I do **NOT** want to see you write like this. -Colton*
+
+## Content on Midterm 1
+
+1. Sampling Techniques
+    - Stratified
+    - Clustered
+    - Simple random sample (SRS)
+    - Systematic
+2. Classifying Variables
+    - Quantitative
+    - Qualitative
+3. Levels of Measurement
+    - Nominal
+    - Ordinal
+    - Interval
+    - Ratio
+4. Statistics vs. Parameters
+    - Samples vs. statistics
+    - Populations vs. parameters
+5. Experiments vs. Observational studies
+    - Control vs. treatment groups
+    - Variable = what we are measuring 
+    - Placebo
+
+\newpage
+
+6. Histograms
+    - Quantitative
+    - Class width
+        * Max – Min divided by number classes (round up to nearest whole number)
+        * Midpoint = middle of class
+    - Class boundaries
+        * Subtract 0.5 from lower limit
+        * Add 0.5 to upper limit
+7. Other graphs/charts
+    - Ogive vs. time series
+    - Circle graph
+        * Mutually exclusive portions of the pie ONLY
+    - Bar graph vs. pareto
+    - Stem & leaf
+    - Box & whisker
+8. Shapes of distributions
+    - Mound/symmetric
+    - Skewed
+    - Uniform
+    - Bimodal
+9. Frequency tables
+    - L1 = data points
+    - L2 = frequency of each data point
+10. 5% trimmed mean
+    - Determine n (number of data points)
+    - N * 0.05 (yields number to trim off of top and bottom)
+    - Re-compute mean using 1-var stats
+11. Weighted averages
+12. Basic Stats 
+    - Mean
+    - Median
+    - Quartiles (Q1, Q3, IQR)
+    - Min/Max
+    - Mode
+13. Coefficient of variation
+    - $\sigma$ / $\mu$, then convert to % (aka x100)
+    - What % of the mean is the standard deviation
+14. Chebyshev’s Theorem
+    - 1- 1/k2  = % of data that will lie between k standard deviations
+    - at least 75% lies within 2 standard deviations
+
+    \newpage
+
+15. Probability
+    - Mutually exclusive events vs. independent events
+        * Mutually exclusive = add to 1
+        * Independent = one thing doesn’t affect probability of another thing
+    - With vs. without replacement & how that affects 2-component probability problems 
+    - Sample space {x, y, z}
+    - $P(A)$ vs. $P(A)^c$
+    - sum of probabilities always = 1
+    - Common examples:
+        * 6 sided die
+        * 52 deck of cards
+        * Roulette 
+    - “Given” probabilities & contingency tables
+    - P (A or B) vs. P(A & B)
+    - Continuous vs. discrete random variables
+    - Probability distribution tables
+        * Calculate average or expected value & st. dev. based on probability distribution
+16. Odds
+    - odds for = ways to get what you want : ways to not get what you want
+    - Odds against = reverse
+        * Also called “betting odds”
+    - Relation to probability
+        * If odds are X:Y, X + Y = denominator of probability expression
+17. Binomials
+    - N, P, R (X) notation
+    - Binompdf = EXACT number of outcomes
+    - Binomcdf = all other scenarios
+        * Calculator counts from 0 to number you put in for x
+        * Use binomcdf for following scenarios:
+            - “At most x”
+            - “X or less”
+            - “Fewer than x”
+        * Must do 1 – binomcdf for the following scenarios:
+            - “At least x”
+            - “X or more”
+            - “Greater than x”
+    - Rules for using binomials
+        * Independent events/trials
+        * Only 2 outcomes (success or failure)
+    - Using table function 
+        * Y = binomial function (X, p, r,)
+        * 2nd, table
+        * Determine correct N for probability given 
+
+        \newpage
+
+18. Normal Distributions
+    - Normal vs. Standard Normal
+    - Symmetrical properties
+    - Empirical rule
+        * 68% within 1$\sigma$, 95% within 2$\sigma$, 99.7% within 3$\sigma$ of $\mu$
+    - Z-scores (Negative vs. positive z-scores and how they relate to $\mu$)
+        * Z = x – $\mu$
+    - Find probability/area given Z-score or x-value (Normalcdf)
+    - Find Z-score given area (invNorm)
+19. Control Signals
+    - 9 consecutive values are above mean or 9 consecutive values are below mean
+    - Any value is outside of 3$\sigma$ (+/-)
+    - 2 of 3 consecutive values are between +/- 2-3$\sigma$
+20. Central Limit Theorem
+    - As n increases, x bar distribution approaches x normal distribution
+    - Need n >= 30 if we don’t know our original distribution is normal
+
+## Calculator Functions
+
+1. Inputting data into lists (L1, L2)
+2. `1-var stats`
+3. `Binompdf`
+4. `Binomcdf`
+5. Table function to find N for binomials
+6. `Normalcdf`
+7. `InvNorm`
