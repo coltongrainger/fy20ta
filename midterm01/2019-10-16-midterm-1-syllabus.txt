@@ -5,17 +5,17 @@ date: 2019-09-26
 
 ---
 
-*Here's an "official" midterm syllabus that I dug up from Canvas. Naturally, we covered different content in class, and perhaps used different terminology.*
+*Here's an "official" midterm syllabus that I dug up from Canvas. We covered this and different content in class, and certainly used more sophisticated terminology.*
 
-*Some critiques I have of the following list include:*
+*To critique the following syllabus, start noticing::*
 
-- *it's written like a series of small recipes, and uses "pseudo-mathematics"*,
-- *it's outdated*,
-- *it's totally dependent on the TI-84*.
+- *they're only sketchs of recipes for performing "pseudo-mathematics"*,
+- *they're dated by the job markey*
+- *they're contrained by calculator computation*,
 
-*However, I want y'all to ace the midterm, so let's have a "cautious" look at the material together. You should check the trello board <https://trello.com/c/j6y05cHj> if you want a midterm outline that you can actually read and study from.*
-
-*I do **NOT** want to see you write like this. -Colton*
+*However, I want all y'all to suceed in the midterm. Let's have a "cautious" look at the material together.*
+*You should check the trello board <https://trello.com/c/j6y05cHj> for about 30 pages in supplement to this midterm outline.*
+*The further outlines are written so that one can both learn and study from working through problems.*
 
 ## Content on Midterm 1
 
@@ -80,8 +80,9 @@ date: 2019-09-26
     - $\sigma$ / $\mu$, then convert to % (aka x100)
     - What % of the mean is the standard deviation
 14. Chebyshev’s Theorem
-    - 1- 1/k2  = % of data that will lie between k standard deviations
-    - at least 75% lies within 2 standard deviations
+    - $1- 1/(k^2)$  gives the proportion of data that lies within a radius of $k$ $\text{\begin{texttt}standard deviations\end{texttt}}$ from the mean
+    - therefore, at least 75% lies within 2 standard deviations
+    - have we supplied proof enough?
 
     \newpage
 
@@ -150,10 +151,10 @@ date: 2019-09-26
 
 ## Calculator Functions
 
-1. Inputting data into lists (L1, L2)
-2. `1-var stats`
-3. `Binompdf`
-4. `Binomcdf`
-5. Table function to find N for binomials
-6. `Normalcdf`
-7. `InvNorm`
+1. `INPUTTING DATA INTO LISTS (L1, L2)`
+2. `1-VAR STATS`
+3. `BINOMPDF`
+4. `BINOMCDF`
+5. `TABLE FUNCTION TO FIND N FOR BINOMIALS`
+6. `NORMALCDF`
+7. `INVNORM`

@@ -1,0 +1,212 @@
+<p><em>Here’s an “official” midterm syllabus that I dug up from Canvas. We covered this and different content in class, and certainly used more sophisticated terminology.</em></p>
+<p><em>To critique the following syllabus, start noticing::</em></p>
+<ul>
+<li><em>they’re only sketchs of recipes for performing “pseudo-mathematics”</em>,</li>
+<li><em>they’re dated by the job markey</em></li>
+<li><em>they’re contrained by calculator computation</em>,</li>
+</ul>
+<p><em>However, I want all y’all to suceed in the midterm. Let’s have a “cautious” look at the material together.</em> <em>You should check the trello board <a href="https://trello.com/c/j6y05cHj" class="uri">https://trello.com/c/j6y05cHj</a> for about 30 pages in supplement to this midterm outline.</em> <em>The further outlines are written so that one can both learn and study from working through problems.</em></p>
+<h2 id="content-on-midterm-1">Content on Midterm 1</h2>
+<ol type="1">
+<li>Sampling Techniques
+<ul>
+<li>Stratified</li>
+<li>Clustered</li>
+<li>Simple random sample (SRS)</li>
+<li>Systematic</li>
+</ul></li>
+<li>Classifying Variables
+<ul>
+<li>Quantitative</li>
+<li>Qualitative</li>
+</ul></li>
+<li>Levels of Measurement
+<ul>
+<li>Nominal</li>
+<li>Ordinal</li>
+<li>Interval</li>
+<li>Ratio</li>
+</ul></li>
+<li>Statistics vs. Parameters
+<ul>
+<li>Samples vs. statistics</li>
+<li>Populations vs. parameters</li>
+</ul></li>
+<li>Experiments vs. Observational studies
+<ul>
+<li>Control vs. treatment groups</li>
+<li>Variable = what we are measuring</li>
+<li>Placebo</li>
+</ul></li>
+</ol>
+
+<ol start="6" type="1">
+<li>Histograms
+<ul>
+<li>Quantitative</li>
+<li>Class width
+<ul>
+<li>Max – Min divided by number classes (round up to nearest whole number)</li>
+<li>Midpoint = middle of class</li>
+</ul></li>
+<li>Class boundaries
+<ul>
+<li>Subtract 0.5 from lower limit</li>
+<li>Add 0.5 to upper limit</li>
+</ul></li>
+</ul></li>
+<li>Other graphs/charts
+<ul>
+<li>Ogive vs. time series</li>
+<li>Circle graph
+<ul>
+<li>Mutually exclusive portions of the pie ONLY</li>
+</ul></li>
+<li>Bar graph vs. pareto</li>
+<li>Stem &amp; leaf</li>
+<li>Box &amp; whisker</li>
+</ul></li>
+<li>Shapes of distributions
+<ul>
+<li>Mound/symmetric</li>
+<li>Skewed</li>
+<li>Uniform</li>
+<li>Bimodal</li>
+</ul></li>
+<li>Frequency tables
+<ul>
+<li>L1 = data points</li>
+<li>L2 = frequency of each data point</li>
+</ul></li>
+<li>5% trimmed mean
+<ul>
+<li>Determine n (number of data points)</li>
+<li>N * 0.05 (yields number to trim off of top and bottom)</li>
+<li>Re-compute mean using 1-var stats</li>
+</ul></li>
+<li>Weighted averages</li>
+<li>Basic Stats
+<ul>
+<li>Mean</li>
+<li>Median</li>
+<li>Quartiles (Q1, Q3, IQR)</li>
+<li>Min/Max</li>
+<li>Mode</li>
+</ul></li>
+<li>Coefficient of variation
+<ul>
+<li><span class="math inline"><em>σ</em></span> / <span class="math inline"><em>μ</em></span>, then convert to % (aka x100)</li>
+<li>What % of the mean is the standard deviation</li>
+</ul></li>
+<li>Chebyshev’s Theorem
+<ul>
+<li>1- 1/k2 = % of data that will lie between k standard deviations</li>
+<li>at least 75% lies within 2 standard deviations</li>
+</ul></li>
+<li>Probability
+<ul>
+<li>Mutually exclusive events vs. independent events
+<ul>
+<li>Mutually exclusive = add to 1</li>
+<li>Independent = one thing doesn’t affect probability of another thing</li>
+</ul></li>
+<li>With vs. without replacement &amp; how that affects 2-component probability problems</li>
+<li>Sample space {x, y, z}</li>
+<li><span class="math inline"><em>P</em>(<em>A</em>)</span> vs. <span class="math inline"><em>P</em>(<em>A</em>)<sup><em>c</em></sup></span></li>
+<li>sum of probabilities always = 1</li>
+<li>Common examples:
+<ul>
+<li>6 sided die</li>
+<li>52 deck of cards</li>
+<li>Roulette</li>
+</ul></li>
+<li>“Given” probabilities &amp; contingency tables</li>
+<li>P (A or B) vs. P(A &amp; B)</li>
+<li>Continuous vs. discrete random variables</li>
+<li>Probability distribution tables
+<ul>
+<li>Calculate average or expected value &amp; st. dev. based on probability distribution</li>
+</ul></li>
+</ul></li>
+<li>Odds
+<ul>
+<li>odds for = ways to get what you want : ways to not get what you want</li>
+<li>Odds against = reverse
+<ul>
+<li>Also called “betting odds”</li>
+</ul></li>
+<li>Relation to probability
+<ul>
+<li>If odds are X:Y, X + Y = denominator of probability expression</li>
+</ul></li>
+</ul></li>
+<li>Binomials
+<ul>
+<li>N, P, R (X) notation</li>
+<li>Binompdf = EXACT number of outcomes</li>
+<li>Binomcdf = all other scenarios
+<ul>
+<li>Calculator counts from 0 to number you put in for x</li>
+<li>Use binomcdf for following scenarios:
+<ul>
+<li>“At most x”</li>
+<li>“X or less”</li>
+<li>“Fewer than x”</li>
+</ul></li>
+<li>Must do 1 – binomcdf for the following scenarios:
+<ul>
+<li>“At least x”</li>
+<li>“X or more”</li>
+<li>“Greater than x”</li>
+</ul></li>
+</ul></li>
+<li>Rules for using binomials
+<ul>
+<li>Independent events/trials</li>
+<li>Only 2 outcomes (success or failure)</li>
+</ul></li>
+<li>Using table function
+<ul>
+<li>Y = binomial function (X, p, r,)</li>
+<li>2nd, table</li>
+<li>Determine correct N for probability given</li>
+</ul>
+</li>
+</ul></li>
+<li>Normal Distributions
+<ul>
+<li>Normal vs. Standard Normal</li>
+<li>Symmetrical properties</li>
+<li>Empirical rule
+<ul>
+<li>68% within 1<span class="math inline"><em>σ</em></span>, 95% within 2<span class="math inline"><em>σ</em></span>, 99.7% within 3<span class="math inline"><em>σ</em></span> of <span class="math inline"><em>μ</em></span></li>
+</ul></li>
+<li>Z-scores (Negative vs. positive z-scores and how they relate to <span class="math inline"><em>μ</em></span>)
+<ul>
+<li>Z = x – <span class="math inline"><em>μ</em></span></li>
+</ul></li>
+<li>Find probability/area given Z-score or x-value (Normalcdf)</li>
+<li>Find Z-score given area (invNorm)</li>
+</ul></li>
+<li>Control Signals
+<ul>
+<li>9 consecutive values are above mean or 9 consecutive values are below mean</li>
+<li>Any value is outside of 3<span class="math inline"><em>σ</em></span> (+/-)</li>
+<li>2 of 3 consecutive values are between +/- 2-3<span class="math inline"><em>σ</em></span></li>
+</ul></li>
+<li>Central Limit Theorem
+<ul>
+<li>As n increases, x bar distribution approaches x normal distribution</li>
+<li>Need n &gt;= 30 if we don’t know our original distribution is normal</li>
+</ul></li>
+</ol>
+<h2 id="calculator-functions">Calculator Functions</h2>
+<ol type="1">
+<li><code>INPUTTING DATA INTO LISTS (L1, L2)</code></li>
+<li><code>1-VAR STATS</code></li>
+<li><code>BINOMPDF</code></li>
+<li><code>BINOMCDF</code></li>
+<li><code>TABLE FUNCTION TO FIND N FOR BINOMIALS</code></li>
+<li><code>NORMALCDF</code></li>
+<li><code>INVNORM</code></li>
+</ol>
