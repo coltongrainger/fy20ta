@@ -1,0 +1,248 @@
+\PassOptionsToClass{12pt}{ccg-topic}
+\documentclass{ccg-topic}
+\topic{Random Variables}
+\institution{University of Colorado}
+\coursenum{MATH 2510-001}
+\coursename{Introduction to Statistics}
+\semester{Fall 2019}
+\author{Blitzstein and Hwang (edited by Colton)}
+\date{\today}
+\email{colton.grainger@colorado.edu}
+\thanks{These notes are scraped from section 3.1 on random variables in \cite{BH19} and section 3.4 on the binomial distribution in \cite{DCB15}.}
+\usepackage{graphicx, color}
+
+\begin{document}
+\frontstuff
+
+\section{Random variables}
+
+We introduce random variables, an incredibly useful concept that
+simplifies notation and expands our ability to quantify uncertainty and summarize the results of experiments.
+
+To see why our current notation can quickly become unwieldy, consider the gambler’s ruin problem. In this problem, we may be very interested in how much wealth either gambler $A$ or gambler $B$ has at any particular time. 
+
+So we could make up notation like letting $A_{jk}$ be the event that gambler $A$ has exactly $j$ dollars after $k$ rounds, and similarly defining an event $B_{jk}$ for gambler $B$, for all $j$ and $k$.
+
+This is already too complicated. And what's to say that we're not interested in other quantities, such as the difference of their wealths after $k$ rounds, or the duration of the game (the number of rounds until one player is bankrupt)?
+
+Expressing the event ``the duration of the game is $r$ rounds'' in terms of
+the $A_{jk}$ and $B_{jk}$ would involve a long, awkward string of unions and intersections.
+
+And then, what if we want to express gambler $A$’s wealth as the equivalent amount in euros rather than dollars? We can multiply a \term{number} in dollars by a currency exchange rate, but we can’t multiply an \term{event} by an exchange rate.
+
+Instead of having convoluted notation that obscures how the quantities of interest are related, wouldn't it be nice if we could say something like the following? 
+
+Let $X_k$ be the wealth of gambler $A$ after $k$ rounds. Then $Y_k = N - X_k$ is the wealth of gambler $B$ after $k$ rounds (where $N$ is the fixed total wealth); then
+\begin{equation*}
+    \label{difference}
+    X_k - Y_k = 2X_k - N \qq{is the difference in wealths after $k$ rounds,}
+\end{equation*}
+and
+\begin{equation*}
+    \label{euros}
+    c_kX_k \qq{is the wealth of gambler $A$ after $k$ rounds}
+\end{equation*}
+where $c_k$ is the euros per dollar exchange rate after $k$ rounds; and the duration is \[R = \min\set{n \qq{such that} X_n = 0 \qq{or}Y_n = 0}.\]
+
+The notion of a random variable will allow us to do exactly this! It needs to be introduced carefully though, to make it both conceptually and technically correct. 
+
+Sometimes a definition of ``random variable'' is given that is a barely paraphrased version of ``a random variable is a variable that takes on random values'', but such a feeble attempt at a definition fails to say where the randomness come from.
+
+Nor does it help us to derive properties of random variables: we’re familiar with working with algebraic equations like $x^2 + y^2 = 1$, but what are the \term{valid mathematical operations} if $x$ and $y$ are \term{random} variables? 
+
+To make the notion of a random variable precise, we define it as a \term{function} mapping the sample space to the real line.
+
+\begin{defn}[Random variable]
+    \label{defn:random_variable}
+    Given an experiment with sample space $\Omega$, a \term{random variable} (r.v.) is a function from the sample space $\Omega$ to the real numbers $\R$. It is common, but not required, to denote random variables by capital letters.
+\end{defn}
+
+Thus, a random variable assigns a numerical value $X(E)$ to each possible outcome $E$ of the experiment. The randomness comes from the fact that we have a random experiment (with probabilities determined by the probability measure $\P$); the mapping itself is deterministic, as illustrated in \ref{fig:/home/colton/rote/2019-09-29-mapping}.
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\linewidth]{/home/colton/rote/2019-09-29-mapping.png}
+    \caption{A random variable maps the sample space into the real line. The r.v. $X$ depicted here is defined on a sample space with 6 elements, and has possible values 0, 1, and 4. The randomness comes from choosing a random pebble according to the probability function $\P$ for the sample space.}
+    \label{fig:/home/colton/rote/2019-09-29-mapping}
+\end{figure}
+
+A simpler way to ``see'' the mapping is simply to write the value of $X(s)$ on each simple event $s$ in $\Omega$.
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\linewidth]{/home/colton/rote/2019-09-29-masses.png}
+    \caption{The random variable we just defined, with labels instead of arrows.}
+    \label{fig:/home/colton/rote/2019-09-29-masses}
+\end{figure}
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\linewidth]{/home/colton/rote/2019-09-29-masses-2.png}
+    \caption{A different random variable, defined on the same sample space.}
+    \label{fig:/home/colton/rote/2019-09-29-masses-2}
+\end{figure}
+
+As we've mentioned earlier, the source of the randomness in a random variable is the experiment itself, in which a sample outcome $E \in \Omega$ is chosen according to a probability function $\P$. Before we perform the experiment, the outcome $E$ has not yet been realized, so we don’t know the value of $X$, though we could calculate the probability that $X$ will take on a given value or range of values. After we perform the experiment and the outcome s has been realized, the random variable crystallizes into the numerical value $X(E)$.
+
+Random variables provide numerical summaries of the experiment in question. This is very handy because the sample space of an experiment is often incredibly complicated or high-dimensional, and the outcomes $E \in \Omega$ may be non-numeric. For example, the experiment may be to collect a random sample of people in a certain city and ask them various questions, which may have numeric (e.g., age or height) or non-numeric (e.g., political party or favorite movie) answers. The fact that r.v.s take on numerical values is a very convenient simplification compared to having to work with the full complexity of $\Omega$ at all times. 
+
+\section{Distributions and probability mass functions}
+
+\begin{defn}[Discrete random variable]
+    \label{defn:discrete_random_variable}
+    A random variable $X$ is said to be discrete if there is a finite list of values $a_1, a_2, \ldots, a_n$ or an infinite list of values $a_1, a_2, \ldots$ such that \[\P(X = a_j \text{ for some } j )=1.\] If $X$ is a discrete r.v., then the finite or countably infinite set of values such that $\P(X = x) > 0$ is called the \term{support} of $X$.
+\end{defn}
+
+Most commonly in applications, the support of a discrete r.v. is a set of integers. In contrast, a continuous r.v. can take on any real value in an interval (possibly even the entire real line); such r.v.s will be defined more precisely on Wednesday.
+
+Given a random variable, we would like to be able to describe its behavior using the language of probability. For example, we might want to answer questions about the probability that the r.v. will fall into a given range: if L is the lifetime earnings of a randomly chosen U.S. college graduate, what is the probability that L exceeds a million dollars? If M is the number of major earthquakes in California in the next five years, what is the probability that M equals 0? 
+
+The \term{distribution} of a random variable provides the answers to these questions; it specifies the probabilities of all events associated with the r.v., such as the probability of it equaling 3 and the probability of it being at least 110. We will see that there are several equivalent ways to express the distribution of an r.v. For a discrete r.v., the most natural way to do so is with a \term{probability mass function}, which we now define.
+
+\begin{defn}[Probability mass function]
+    \label{defn:probability_mass_function}
+    The \term{probability mass function} (PMF) of a discrete r.v. $X$ is the function $p_X$ given by 
+\begin{equation*}
+    \label{pmf}
+    p_X(n) = P(X = n) \qq{(for $n$ usually an integer; go back to the definition of a discrete r.v.).}
+\end{equation*}
+Note that this is positive is $n$ is in the \term{support} of $X$ and $0$ otherwise.
+\end{defn}
+
+\begin{note}[Warning!]
+    \label{rem:warning}
+    In writing $\P(X= n)$ we are using $X=n$ to denote an \term{event}, consisting of all outcomes $E$ to which $X$ assign the number $n$. This even is also written as $\set{X = n}$; formally, $\set{X= n}$ is defined as 
+\begin{equation*}
+    \label{preimage}
+    \set{E \in \Omega : X(E) = n}
+\end{equation*}
+but writing $\set{X=n}$ is shorter and more intuitive. Thinking of the sample space of two fair coin flips, if $X$ is the number of \texttt{heads} in two fair coin tosses, then $\set{X = 1}$ consists of the sample outcomes $HT$ and $TH$, which are the two outcomes to which $X$ assigns the number $1$. Since $\set{HT, TH}$ is a subset of the sample space, it is an event. So it makes sense to talk about $\P(X=1)$, or more generally, $P(X=n)$. If $\set{X=n}$ were anything other than an event, it would make no sense to calculate its probability! It \emph{doesn't make a lick of sense} to write $P(X)$, we can only take the probability of an event, not of an r.v.
+\end{note}
+
+\begin{thm}[Valid probability mass functions]
+    \label{thm:valid_probability_mass_functions}
+    Let $X$ be a discrete r.v. with support $x_1, x_2, \ldots$ (assume these values are distinct and, for notational simplicity, that the support is countably infinite; the analogous results hold if the support is finite). 
+The PMF $p_X$ of $X$ \term{must} satisfy the following two criteria:
+\begin{description}
+    \item [Non-negative] $p_X(x) > 0$ if $x = x_j$ for some $j$, and $p_X(x) = 0$ otherwise;
+\item [Sums to $1$] $\sum\limits_{j=1}^{\infty} p_x(x_j) = p_X(x_1) + p_X(x_2) + \ldots = 1$.
+\end{description}
+
+\end{thm} 
+
+The PMF is one way of expressing the distribution of a discrete r.v. This is because once we know the PMF of X, we can calculate the probability that X will fall into a given subset of the real numbers by summing over the appropriate values of x, as the next example shows.
+
+\begin{ex}[Sum of two fair die rolls]
+    \label{ex:sum_of_two_fair_die_rolls}
+    Let $T$ be the sum of two fair die rolls.
+\begin{enumerate}
+    \item Calculate the PMF of $T$.
+\item Now suppose we’re interested in the probability that T is in the interval $[1, 4]$. There are only three values in the interval $[1, 4]$ that $T$ can take on, namely, 2, 3, and 4. We know the probability of each of these values from the PMF of $T$.
+\item Compute $\P(1 \le T \le 4) = \P(T = 2) + \P(T=3) + \P(T=4)$.
+\item It's $6/36$, or $1/6$.
+\end{enumerate}
+\end{ex}
+
+In general, given a discrete r.v. $X$ and a set $B$ of real numbers, if we know the PMF of $X$ we can find $\P(\set{X \in B})$, the probability that $X$ is in $B$, by summing up the heights of the vertical bars at points in $B$ in the plot of the PMF of $X$. 
+
+\emph{Knowing the PMF of a discrete r.v. determines its distribution.}
+
+\section{Binomial distribution}
+
+Some distributions are so ubiquitous in probability and statistics that they have their own names. We will introduce these named distributions throughout the book, starting with a very simple but useful case: an r.v. that can take on only two possible values, 0 and 1.
+
+\newcommand{\Bern}{\mathrm{Bern}} 
+\begin{defn}[Bernoulli distribution]
+    \label{defn:bernoulli_distribution}
+    A r.v. $X$ is said to have the \term{Bernoulli distribution} with parameter $p$ if $\P(X = 1) = p$ and $\P(X=0) = 1-p$, where $0<p<1$. We write this as $X \sim \Bern(p)$. The symbol $\sim$ is read ``is distributed as''.
+\end{defn}
+
+\begin{note}[Families of distributions]
+    \label{rem:families_of_distributions}
+    This number $p$ in $\Bern(p)$ is called the parameter of the distribution; it determines which specific Bernoulli distribution we have. Thus there is not just one Bernoulli distribution, but rather a family of Bernoulli distributions, indexed by $p$. For example, if $X \sim Bern(1/3)$, it would be correct but incomplete to say ``X is Bernoulli''; to fully specify the distribution of $X$, we should both say its name (Bernoulli) and its parameter value ($1/3$), which is the point of the notation $X \sim \Bern(1/3)$.
+\end{note}
+
+\begin{defn}[Bernoulli trial]
+    \label{defn:bernoulli_trial}
+An experiment that can result in either a success or a failure (but not both) is called a \term{Bernoulli trial}. A Bernoulli random variable can be thought of as the \term{indicator of success} in a Bernoulli trial: it equals 1 if success occurs and 0 if failure occurs in the trial. 
+\end{defn}
+
+Because of this story, the parameter $p$ is often called the success probability of the $\Bern(p)$ distribution. Once we start thinking about Bernoulli trials, it’s hard not to start thinking about what happens when we have more than one trial.
+
+\newcommand{\Bin}{\mathrm{Bin}} 
+
+\begin{defn}[Binomial distribution]
+    \label{defn:binomial_distribution}
+    Suppose that $n$ \term{$n$ independent} Bernoulli trials are performed, each with the same success probability $p$. Let $X$ be the number of successes. The distribution of $X$ is called the \term{Binomial distribution} with parameters $n$ and $p$. We write $X \sim \Bin(n,p)$ to mean that $X$ that the Binomial distribution with parameters $n$ and $p$, where $n$ is a positive integer and $0 < p< 1$.
+\end{defn}
+
+Notice that we define the Binomial distribution not by its PMF, but by a story about the type of experiment that could give rise to a random variable with a Binomial distribution. The most famous distributions in statistics all have stories which explain why they are so often used as models for data, or as the building blocks for more complicated distributions.
+
+Thinking about the named distributions first and foremost in terms of their stories has many benefits. It facilitates pattern recognition, allowing us to see when two problems are essentially identical in structure; it often leads to cleaner solutions that avoid PMF calculations altogether; and it helps us understand how the named distributions are connected to one another. Here it is clear that $\Bern(p)$ is the same distribution as $\Bin(1, p)$: the Bernoulli is a special case of the Binomial.
+
+Using the story definition of the Binomial, let’s find its PMF.
+
+\begin{thm}[Derivation of the Binomial PMF]
+    \label{ex:derivation_of_the_binomial_pmf}
+    The binomial distribution describes the probability of having exactly $k$ successes in $n$ independent Bernoulli trials with probability of a success $p$. If $X \sim \Bin(n,p)$, then the PMF of $X$ is 
+\[
+    \P(X=k) = {n \choose k} p^k(1-p)^{1-k}
+\]
+for $k = 0, 1, \ldots, n$ and $\P(X = k) = 0$ otherwise when $k > n$.
+\end{thm}
+\begin{proof}
+Let an unfair coin have probability $p$ of landing $\mathtt{heads}$. Clearly the probability of $\mathtt{tails}$ is $1-p$. Now consider $\P(\mathtt{heads})$ under the general case of $k$ \texttt{heads} and $n-k$ \texttt{tails} across the $n$ Bernoulli trials. In any such scenario, we apply the Multiplication Rule for independent events:
+\[
+    p^k(1-p)^{n-k}.
+\]
+This is our general probability for $\P(\mathtt{heads})$, which is just the probability of a single event.
+Secondly, we introduce a general formula for the number of ways to choose $k$ successes in $n$
+trials, i.e. arrange $k$ successes and $n-k$ failures:
+\[
+    {n \choose k} = \frac{n!}{k!(n-k)!}.
+\]
+The quantity ${n \choose k}$ is read \emph{$n$ choose $k$}. The exclamation point notation (e.g. $k!$) denotes a factorial expression.
+\begin{align*}
+0! &= 1\\
+1! &= 1\\
+2! &= 2 \times 1 = 2\\
+3! &= 3 \times 2 \times 1 = 6\\
+4! &= 4 \times 3 \times 2 \times 1 = 24\\
+\vdots
+n! &= n \times (n-1) \times \cdots \times 3 \times 2 \times 1
+\end{align*}
+For example, using the formula, we can compute the number of ways to choose $k=3$ successes in $n=4$ trials:
+\begin{equation*}
+    {4 \choose 3} = \frac{4!}{3!(4-3)!} = \frac{4!}{3!1!} = \frac{4\cdot 3 \cdot 2 \cdot 1}{(3\cdot 2 \cdot 1)(1)} = 4
+\end{equation*}
+Substituting $n$ choose $k$ for the number of arrangements of $k$ $\mathtt{heads}$ in $n$ trials, and also substituting $p^k(1-p)^{n-k}$ for the probability of the single event $\mathtt{heads}$, yields the general binomial formula.
+\end{proof}
+
+What does the binomial PMF look like?
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\linewidth]{/home/colton/rote/2019-09-29-pmf.png}
+    \caption{Some Binomial PMFs. In the lower left, we plot the $\Bin(100, 0.03)$ PMF between 0 and 10 only, as the probability of more than 10 successes is pretty darn close to 0.}
+    \label{fig:/home/colton/rote/2019-09-29-pmf}
+\end{figure}
+
+\begin{note}[Is $X$ distributed binomially?]
+    \label{rem:is_x_distributed_binomially_}
+     Is your random variable binomially distributed? With parameters $p, k, n$? You have four conditions to check.
+\begin{enumerate}
+\item The trials are independent.
+\item The number of trials, $n$, is fixed.
+\item Each trial outcome can be classified as a success or failure.
+\item The probability of a success, $p$, is the same for each trial.
+\end{enumerate}
+\end{note}
+
+\begin{coro}[The binomial distribution begins to approximate the normal distribution]
+    \label{coro:the_binomial_distribution_begins_to_approximate_the_normal_distribution}
+    Let $X \sim \Bin(n,p)$ with $p=1/2$ and $n$ even. Then the distribution of $X$ is symmetric about $n/2$, in the sense that $\P(X = n/2 + j) = \P (X = n/2 − j)$ for all nonnegative integers $j$.
+\end{coro}
+
+\bibliography{/home/colton/coltongrainger.bib}
+\bibliographystyle{alpha}
+\printindex
+\end{document}
