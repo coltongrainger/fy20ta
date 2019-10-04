@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass{article}
 \usepackage{graphicx,color}
 \usepackage{nth}
 
@@ -10,14 +10,39 @@
 \setlength{\parindent}{0in}
 
 %To display answers, replace "white" with "red" here;
-\newcommand{\answer}[1]{\color{white}#1}
+\newcommand{\answer}[1]{\color{red}#1}
 
 \begin{document}
+\pagestyle{myheadings}\markright{CU Boulder \hspace{0.5in} MATH 2510 - Introduction to Statistics }
 
 \begin{enumerate}
 
-\item The incubation time for Rhode Island Red chicks is normally distributed with a mean of $\mu = 21$ days and a standard deviation of about $\sigma =1$ day.  If 1000 eggs are being incubated, how many chicks do we expect to hatch
+\item Given a normal curve (shown here),  what percentage of the area lies 
 
+\begin{center}
+\includegraphics[scale=0.6]{WS10_NormalArea.jpg}
+\end{center}
+
+	\begin{enumerate}
+	\item to the right of $\mu$? 
+	
+	{\answer The mean $\mu$ sits in the center of the data, so 50\% lies to the right (and to the left) of $\mu$.}
+	
+	\item between $\mu - \sigma$ and $\mu$? 
+	
+	{\answer The first region to the left of $\mu$ to $\mu-\sigma$ there is 34\% of the area.}
+	
+	\item between $\mu + \sigma$ and $\mu + 2\sigma$? 
+	
+	{\answer Looking at the graph, the region between $\mu + \sigma$ and $\mu +2\sigma$ consists of 13.5\% of the area.}
+	
+	\item between $\mu-2\sigma$ and $\mu + \sigma$? 
+	
+	{\answer For $\mu-2\sigma$ to $\mu + \sigma$ we can add the three percentages 13.5\%, 34\%, and 34\% to get 81.5\%.}
+	
+	\end{enumerate}
+	
+\item The incubation time for Rhode Island Red chicks is normally distributed with a mean of $\mu = 21$ days and a standard deviation of about $\sigma =1$ day.  If 1000 eggs are being incubated, how many chicks do we expect to hatch
 	\begin{enumerate}
 	\item on day 21 or after?
 	
@@ -36,6 +61,8 @@
 	{\answer Since $\mu = 21$ and $\sigma=1$, we are looking at the percentage of eggs in the interval $\mu-2\sigma$ and $\mu + \sigma$ which is 81.5\%.  So, that is 815 of the eggs.}
 	
 	\end{enumerate}
+
+\newpage
 
 \item The Empirical Rule tells us the percentage of data values that lie within certain intervals about the mean when we have a normal distribution as follows.
 
@@ -64,9 +91,8 @@
 	{\answer Add 13.5\%, 34\%, 34\%, 13.5\%, 2.35\%, and 0.15\% to get 97.5\%.
 	
 	Note that equivalently, since we know that 50\% lie to the left of the mean $\mu$ and $34\%+13.5\%$ lie between $\mu$ and $\mu+2\sigma$, that total is 97.5\% lying to the left of $\mu+2\sigma$. } 
-
 	\end{enumerate}
-
+\newpage
 \item In preparation for Sections 6.2 and 6.3 (of Brase and Brase), suppose the mean of a normal distribution is $\mu = 75$ with a standard deviation of $\sigma = 8$.  For each of the following values of the random variable $x$, determine whether $x$ is above or below the mean and then determine the number of standard deviations away from the mean that $x$ lies.  (Note that your second answer could be a fraction or decimal number.)
 
 	\begin{enumerate}
@@ -86,36 +112,99 @@
 
 \item Hydraulic pressure in the main cylinder of the landing gear of a commercial jet is very important for a safe landing.  In-flight landing tests show that the actual pressure in the main cylinders is variable (approximately normal) with a mean of 819 pounds per square inch and a standard deviation of 23 pounds per square inch, which are considered safe.
 
-Two different planes were tested with 10 test-landings.  
+Two different planes were tested with 10 test-landings.  Here are the recorded pressures for each. 
 
+Plane A 
 
 \begin{tabular}{l|cccccccccc}
 \hline 
-landing number for plane A& 1& 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+Landing number  & 1& 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
 \hline
-pressure & 870 & 855 & 830 & 815 & 847 & 836 & 825 & 810 & 792 & 820 \\
+Pressure & 870 & 855 & 830 & 815 & 847 & 836 & 825 & 810 & 792 & 820 \\
 \hline
 \end{tabular}
 
+Plane B 
+
 \begin{tabular}{l|cccccccccc}
 \hline 
-landing number for plane B& 1& 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+Landing number  & 1& 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
 \hline
-pressure & 865 & 850 & 841 & 820 & 815 & 789 & 801 & 765 & 730 & 725 \\
+Pressure & 865 & 850 & 841 & 820 & 815 & 789 & 801 & 765 & 730 & 725 \\
 \hline
 \end{tabular}
 
 	\begin{enumerate}
 	\item  Is the pressure for Plane A ``in control" or not?  If not, describe the specific out-of-control signals present. 
 	
-	{\answer Out of control Signal 1: $\mu -3\sigma = 750$ and $\mu +3\sigma = 888$.  No values fall outside that range. Out of control Signal 2 : $\mu = 819$.  There are no more than 3 consecutive values above $\mu$ and no more than 2 consecutive values below $\mu$. Out of control Signal 3: $\mu -2\sigma = 773$ and $\mu +2\sigma = 865$.  There is only 1 value that lies beyond either end of that range, so certainly not 2 of 3 consecutive values do. There are no out-of-control warning signals present for Plane A.} 
+	{\answer Out of control Signal 1: $\mu -3\sigma = 750$ and $\mu +3\sigma = 888$.  No values fall outside that range. 
+	
+	Out of control Signal 2 : $\mu = 819$.  There are no more than 3 consecutive values above $\mu$ and no more than 2 consecutive values below $\mu$.
+	
+	Out of control Signal 3: $\mu -2\sigma = 773$ and $\mu +2\sigma = 865$.  There is only 1 value that lies beyond either end of that range, so certainly not 2 of 3 consecutive values do. There are no out-of-control warning signals present for Plane A.} 
 	
 	\item  Is the pressure for Plane B ``in control" or not?  If not, describe the specific out-of-control signals present.
 	
-	{\answer Out of control Signal 1: $\mu -3\sigma = 750$ and $\mu +3\sigma = 888$.  There are two values that fall below 750. Out of control Signal 2 : $\mu = 819$.  There are no more than 4 consecutive values above $\mu$ and no more than 6 consecutive values below $\mu$. Out of control Signal 3: $\mu -2\sigma = 773$ and $\mu +2\sigma = 865$.  The last three values recorded lie below 773, so there are two occasions of 2 out of 3 consecutive values flying beyond the $2\sigma$ level on the same side. There are two out-of-control warning signals present for Plane B.} 
-
+	{\answer Out of control Signal 1: $\mu -3\sigma = 750$ and $\mu +3\sigma = 888$.  There are two values that fall below 750. 
+	
+	Out of control Signal 2 : $\mu = 819$.  There are no more than 4 consecutive values above $\mu$ and no more than 6 consecutive values below $\mu$. 
+	
+	Out of control Signal 3: $\mu -2\sigma = 773$ and $\mu +2\sigma = 865$.  The last three values recorded lie below 773, so there are two occasions of 2 out of 3 consecutive values flying beyond the $2\sigma$ level on the same side. There are two out-of-control warning signals present for Plane B.} 
 	\end{enumerate}
 	
+	
+%Section 6.2 #8
+%\item Raul earned a score of 80 on a history test for which the class mean was 70 with standard deviation 10.  He earned a score of 75 on a biology test for which the class mean was 70 with standard deviation 2.5.  If we assume that the scores of both tests follow a normal distribution, then on which test did Raul do better relative to the rest of the class?  Explain. \\
+%{\answer For the history test, Raul's score was $z = \frac{80-70}{10} = 1$ standard deviation above the mean.  On the biology test, Raul's score was $ = \frac{75-70}{2.5} = 2$ standard deviations above the mean.  This implies that Raul did better on the biology test relative to the rest of the class. \\
+
+%Looking at the area under the normal curve, we can translate these $z$-values to the percentage of the class that Raul scored higher than.  In the history class, where $z=1$, Raul scored higher than about 84.1\% of the students in the class.  However, for the biology class, where $z=2$, Raul scored higher than about 97.7\% of the students in the class.}
+
+%Section 6.2 #9
+\item The college physical education department offered an advanced first aid course last semester.  The scores on the comprehensive final exam were normally distributed, and the $z$ scores for some of the students are shown below:
+	\begin{center}
+	\{Robert,  $1.10$\}  \{Juan, $1.70$\}  \{Susan, $-2.00$\}  \{Joel, $0.00$\}  \{Jan, $-0.80$\}  \{Linda, $1.60$\} 
+	\end{center}
+	
+%	\begin{enumerate}
+%	\item List the students that scored above the mean. \\
+%	{\answer Because their $z$-scores are positive, Robert, Juan, and Linda scored above the mean.} \\
+%	\item List the students that score below the mean. \\
+%	{\answer Because their $z$-scores are negative, Susan and Jan scored below the mean.} \\
+If the mean score was $\mu = 150$ with standard deviation $\sigma = 20$, what was the final exam score for each student? 
+
+	{\answer Robert: $z= 1.10$, so the raw score is $1.10\cdot 20 + 150 = 172$.  \\
+	Juan: $z= 1.70$, so the raw score is $1.70\cdot 20 + 150 = 184$.  \\
+	Susan: $z= -2.00$, so the raw score is $-2.00\cdot 20 + 150 = 110$.  \\
+	Joel: $z= 0.00$, so the raw score is $0.00\cdot 20 + 150 = 150$.  \\
+	Jan: $z= -0.80$, so the raw score is $-0.80\cdot 20 + 150 = 134$.  \\
+	Linda: $z= 1.60$, so the raw score is $1.60\cdot 20 + 150 = 182$.  
+	} 
+%	\end{enumerate}
+
+%Section 6.2 #32, 36, 40, 44
+\item Let $z$ be a random variable with a {\em standard} normal distribution.  Find the indicated probability.
+	\begin{enumerate}
+	\item $P(z \geq 0)$ 
+	
+	{\answer This is simply 50\% because $z=0$ sits at the mean, and 50\% of the area is above the mean.
+	} 
+	
+	\item $P(z \leq 3.20)$  
+	
+	{\answer $\texttt{normalcdf(-1E99,3.20,0,1)} = 0.9993127979 \approx 99.93\%$
+	} 
+	
+	\item $P(z \geq -1.50)$ 
+	
+	{\answer  $\texttt{normalcdf(-1.50,1E99,0,1)} = 0.9331927713 \approx 93.32\%$
+	} 
+	
+	\item $P(-1.78 \leq z \leq 1.40)$ 
+	
+	{\answer  $\texttt{normalcdf(-1.78,1.40,0,1)} = 0.8817053583 \approx 88.17\%$
+	} 
+	\end{enumerate}
+
 
 \item Let $x$ be a random variable with a normal distribution with mean $\mu = 15$ and standard deviation $\sigma = 4$.  Find the indicated probability.
 
@@ -241,6 +330,8 @@ pressure & 865 & 850 & 841 & 820 & 815 & 789 & 801 & 765 & 730 & 725 \\
 
 This section of the problem set is an activity with the goal of simulating a sampling distribution of sample means. The first part of the activity is for each of you to generate a list of sample means. After the data is gathered, the second part directs you to use the results of the entire class to analyze the outcome.
 
+\textbf{PART 1}
+
 
 \item Attached to this page is a copy of a random number table for the population of digits \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9\}. Assuming that this random distribution is uniform:
 
@@ -299,6 +390,9 @@ Sample & List of 10 digits & Sample mean \\
 
 \end{center}
 
+
+\textbf{PART 2}
+
 \begin{enumerate}
 
 \item Looking at the list of sample means, there should be a variety of values, but they are not uniformly distributed. What is the shape of the distribution for the sample means?
@@ -345,7 +439,7 @@ Sample & List of 10 digits & Sample mean \\
 
 \end{enumerate}
 
-\includegraphics[width=\textwidth]{RandNumbers.pdf}
+\includegraphics[scale=0.7]{RandNumbers.pdf}
 
 
 
