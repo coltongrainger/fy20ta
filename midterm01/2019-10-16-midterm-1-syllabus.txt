@@ -5,17 +5,15 @@ date: 2019-09-26
 
 ---
 
-*Here's an "official" midterm syllabus that I dug up from Canvas. We covered this and different content in class, and certainly used more sophisticated terminology.*
+*Here's an "official" midterm syllabus that I dug up from Canvas. We covered this and different content in class, and used more sophisticated terminology.*
 
 *To critique the following syllabus, start noticing::*
 
 - *they're only sketchs of recipes for performing "pseudo-mathematics"*,
-- *they're dated by the job markey*
-- *they're contrained by calculator computation*,
+- *they're dated by the job market*
+- *they're constrained by calculator computation*,
 
 *However, I want all y'all to suceed in the midterm. Let's have a "cautious" look at the material together.*
-*You should check the trello board <https://trello.com/c/j6y05cHj> for about 30 pages in supplement to this midterm outline.*
-*The further outlines are written so that one can both learn and study from working through problems.*
 
 ## Content on Midterm 1
 
@@ -66,8 +64,8 @@ date: 2019-09-26
     - L1 = data points
     - L2 = frequency of each data point
 10. 5% trimmed mean
-    - Determine n (number of data points)
-    - N * 0.05 (yields number to trim off of top and bottom)
+    - Determine $n$ (number of data points)
+    - $N$ * 0.05 (yields number to trim off of top and bottom)
     - Re-compute mean using 1-var stats
 11. Weighted averages
 12. Basic Stats 
@@ -77,58 +75,56 @@ date: 2019-09-26
     - Min/Max
     - Mode
 13. Coefficient of variation
-    - $\sigma$ / $\mu$, then convert to % (aka x100)
-    - What % of the mean is the standard deviation
+    - take $\sigma$ / $\mu$, then convert to percentage
+    - What \% of the mean is the standard deviation?
 14. Chebyshev’s Theorem
     - $1- 1/(k^2)$  gives the proportion of data that lies within a radius of $k$ $\text{\begin{texttt}standard deviations\end{texttt}}$ from the mean
-    - therefore, at least 75% lies within 2 standard deviations
-    - have we supplied proof enough?
+    - therefore, at least $75\%$ lies within 2 standard deviations
 
     \newpage
 
 15. Probability
     - Mutually exclusive events vs. independent events
-        * Mutually exclusive = add to 1
+        * mutually exclusive events are represented by disjoint sets
         * Independent = one thing doesn’t affect probability of another thing
     - With vs. without replacement & how that affects 2-component probability problems 
-    - Sample space {x, y, z}
+    - Sample space $\Omega = \{x, y, z\}$
     - $P(A)$ vs. $P(A)^c$
-    - sum of probabilities always = 1
+    - if $E_1, E_2, \ldots$ are disjoint events, and their union is the entire sample space $\Omega$, then $\mathbf{P}(E_1) + \mathbf{P}(E_2) + \cdots)  = \mathbf{P}(E_1 \sqcup E_2 \sqcup \ldots) = \mathbf{P}(\Omega) = 1$.
     - Common examples:
         * 6 sided die
-        * 52 deck of cards
-        * Roulette 
+        * 52 card deck
+        * roulette 
     - “Given” probabilities & contingency tables
-    - P (A or B) vs. P(A & B)
+    - $P (A \text{ or } B) = P(A \cup B)$ vs. $P(A \& B) = P (A \cap B)$
     - Continuous vs. discrete random variables
     - Probability distribution tables
-        * Calculate average or expected value & st. dev. based on probability distribution
+        * Calculate average or expected value and variance based on probability distribution
 16. Odds
-    - odds for = ways to get what you want : ways to not get what you want
-    - Odds against = reverse
-        * Also called “betting odds”
-    - Relation to probability
-        * If odds are X:Y, X + Y = denominator of probability expression
+    - the "odds for an event" is the ratio of the number ways  $P(E)$ to get the event $E$ you want against the number of ways $P(E^c)$ to not get what you want $E^c$
+    - the "odds against an event" is the reverse ratio
+        * these are also called “betting odds”
+    - What's the relation to of betting odds to probability?
 17. Binomials
-    - N, P, R (X) notation
-    - Binompdf = EXACT number of outcomes
-    - Binomcdf = all other scenarios
-        * Calculator counts from 0 to number you put in for x
-        * Use binomcdf for following scenarios:
-            - “At most x”
-            - “X or less”
-            - “Fewer than x”
-        * Must do 1 – binomcdf for the following scenarios:
-            - “At least x”
-            - “X or more”
-            - “Greater than x”
+    - using the TI-84 with the $(n, p, k)$ notation
+        * $n$ trials
+        * $p$ probability of success
+        * $r$ observed sucesses
+    - `binompdf` gives the PMF (or the exact number of outcomes)
+    - `binomcdf` gives the CMF (or the cumulative number of outcomes up to a specified number of observed successes)
+        * the calculator counts from $0$ to number you put in for $k$
+        * Use `binomcdf` for following scenarios:
+            - “at most $k$”
+            - “$k$ or less”
+            - “fewer than $k$”
+        * Use $1 – \mathtt{binomcdf}$ for the following scenarios:
+            - “at least $k$”
+            - “$k$ or more”
+            - “greater than $k$”
     - Rules for using binomials
-        * Independent events/trials
-        * Only 2 outcomes (success or failure)
-    - Using table function 
-        * Y = binomial function (X, p, r,)
-        * 2nd, table
-        * Determine correct N for probability given 
+        * the trials are independent
+        * each trial has only 2 outcomes (success or failure)
+        * the probability of success for each trial is constant
 
         \newpage
 
@@ -136,20 +132,22 @@ date: 2019-09-26
     - Normal vs. Standard Normal
     - Symmetrical properties
     - Empirical rule
-        * 68% within 1$\sigma$, 95% within 2$\sigma$, 99.7% within 3$\sigma$ of $\mu$
+        * 68\% within 1$\sigma$, 95\% within 2$\sigma$, 99.7\% within 3$\sigma$ of $\mu$
     - Z-scores (Negative vs. positive z-scores and how they relate to $\mu$)
         * Z = x – $\mu$
-    - Find probability/area given Z-score or x-value (Normalcdf)
-    - Find Z-score given area (invNorm)
+    - Find the cumulative probability given a Z-score or x-value (`normalcdf`)
+    - Find the Z-score given a cumulative probability (`invNorm`)
 19. Control Signals
     - 9 consecutive values are above mean or 9 consecutive values are below mean
-    - Any value is outside of 3$\sigma$ (+/-)
-    - 2 of 3 consecutive values are between +/- 2-3$\sigma$
+    - Any value is outside 3$\sigma$
+    - 2 of 3 consecutive values have absolute value greater between $2 \sigma$ and $3\sigma$
 20. Central Limit Theorem
-    - As n increases, x bar distribution approaches x normal distribution
-    - Need n >= 30 if we don’t know our original distribution is normal
+    - As the number of samples $n$ increases, the mean of the various samples $\bar{x}$ approaches the normal distribution
+    - one needs $n \ge 30$ if one doesn't know that the original distribution is normal
 
 ## Calculator Functions
+
+Be comfortable with: 
 
 1. `INPUTTING DATA INTO LISTS (L1, L2)`
 2. `1-VAR STATS`
