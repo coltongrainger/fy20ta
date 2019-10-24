@@ -1,0 +1,224 @@
+\documentclass{ccg-topic}
+
+\topic{Weeks 09 and 10}
+
+\institution{University of Colorado}
+\coursenum{MATH 2510}
+\coursename{Introduction to Statistics}
+\semester{Fall 2019}
+\author{Joseph Timmer (Edited by Colton Grainger)}
+\date{\today}
+\email{colton.grainger@colorado.edu}
+\thanks{This material corresponds to Chapter 7 of \emph{Understandable Statistics} [Brase and Brase, 2018].}
+
+\usepackage{graphicx, color}
+\newcommand{\answer}[1]{\color{black}#1}
+\begin{document}
+\frontstuff
+
+\setcounter{section}{-1}
+\section{Lecture Outlines}
+\subsection*{Confidence Intervals}
+
+When we can't collect a measurement for every member of a population, how can we determine a population mean?
+
+\begin{enumerate}
+
+    \item Without a full set of population data, we can never be 100\% certain that we know the population mean, but with certain restrictions applied, we can use the data from a random sample to estimate a population parameter.
+
+    \item Even with a large random sample, the value of the sample mean is usually not exactly equal to the population mean. But, according to the Central Limit Theorem, we can have some expectations on how likely it is that the sample mean falls within a certain interval around the population mean. A confidence interval is an interpretation of precisely this application.
+
+    \item What criterion is required to apply the Central Limit Theorem?
+
+    \item The idea is that we start with a sample statistic (called a point estimate). We then create a margin of error around that point estimate which yields an interval of values that is asserted as one that contains the population parameter (at least with some high level of, but not 100\%, certainty)
+    
+    \begin{enumerate}
+    
+        \item So, this looks like (point -- error, point + error) or a guess $\pm$error.
+        
+        \item The size of the error depends on what level of certainty we want to assert.
+        
+        \item The most prevalent example of a confidence interval are during elections and predicting election results.
+        
+    \end{enumerate}
+    
+    \item Keep in mind that although we will be asserting that we have an interval that contains the population parameter, there is no indication where within the interval we expect it to lie.
+    
+\end{enumerate}
+
+\subsection*{7.1 Estimating $\mu$ when $\sigma$ is known}
+
+\begin{enumerate}
+
+    \item The first look at confidence intervals assumes that we know $\sigma$.  (This might seem a bit contrived, because why would we know $\sigma$ if we don’t know $\mu$.)
+    
+    \item The TI \texttt{Z-INTERVAL} function will compute the confidence interval, either by entering the actual list of sample data or by entering the sample mean. For that reason some of the details of the formulation developed in the reading are not so critical, but understanding what the function does and how to interpret the result is critical.
+    
+    \item When reading, pay special attention to
+    
+        \begin{itemize}
+        
+            \item The formula for E in this case, as it should make sense why this is the correct formula.
+            
+            \item The definition of $z_c$, as this should also be something that you already know how to compute.
+            
+            \item The interpretation of a confidence interval, as it is easy to misinterpret what the interval found means.
+            
+        \end{itemize}
+        
+\end{enumerate}
+
+\subsection*{7.2 Estimating $\mu$ when $\sigma$ is unknown}
+
+\begin{enumerate}
+
+    \item In this case, a seemingly more common case, we don’t know $\sigma$. So, we must estimate the value of $\sigma$ too. This translates into a slightly larger margin of error to compensate for the potential error in our guess of $\sigma$.
+    
+    \item Rather than the standard normal distribution, we use the Student's $t$-distributions. There is a slightly different distribution for each sample size, but they are all bell-shaped.  As $n$ gets larger, the $t$-distributions approach the standard normal distribution.
+    
+    \item The formulation and interpretation of a confidence interval in this case is very similar to that when $\sigma$ is known, just the distributions from which the critical values are determined has changed.
+    
+    \item The \texttt{T-INTERVAL} function the TI can do the work for us.
+    
+    \item When reading, pay special attention to
+    
+        \begin{itemize}
+        
+            \item The formula for E (which should look VERY similar to that from section 7.1).
+            
+            \item The formula for degrees of freedom.
+            
+        \end{itemize}
+        
+    \item If your calculator does not already have an \texttt{InvT} function, there is a screencast available about how to create a program in your calculator that does the job.
+    
+\end{enumerate}
+
+\subsection*{Internet Visual for Confidence Intervals}
+
+\begin{enumerate}
+
+    \item What is this whole confidence interval and confidence level thing about? This applet could be effective in confirming what idea of the c-level, also as a way to compare how the size of the interval changes with changes to the variables.
+    
+    \item The website is \url{http://www.rossmanchance.com/applets/ConfSim.html}
+    
+    \item Start with Means, Normal, z with $\sigma$.
+    
+        \begin{itemize}
+        
+            \item Show 1 sample
+            
+            \item Show 10 samples
+            
+            \item Show 100 samples, maybe a few times to show how the number of ``good" confidence intervals can vary.
+            
+            \item Change Conf level
+            
+            \item Change $n$
+            
+        \end{itemize}
+        
+    \item Reset and look at Means, Normal, $t$. Note how they can have different lengths. (this is sometimes subtle)  Why?
+    
+\end{enumerate}
+
+\subsection*{7.3 Confidence Interval for a Proportion}
+
+\begin{enumerate}
+
+    \item This time, rather than a mean, we are estimating a population proportion, like ``What percentage of all college students change their major at least once in their first four years?"  which is different than ``What is the average number of times a college student changes their major within their first four years?"
+    
+    \item The calculator function is \texttt{1-PropZInt}.
+    
+    \item In the reading watch out for
+    
+        \begin{itemize}
+        
+            \item The requirement on the sample size, it is more complicated than just $n \geq 30$.
+            
+            \item The formula for E.
+            
+            \item The formulas for finding sample size.
+            
+            \item Interpreting poll results.
+            
+        \end{itemize}
+        
+\end{enumerate}
+
+\subsection*{7.4 Confidence Intervals for Differences}
+
+\begin{enumerate}
+
+    \item As our last look at confidence intervals, we look at differences (between two means or between two proportions), as a way to tell if two populations are different.
+    
+    \item This subsection refers only to independent samples, but check out the reading for the definitions as it will matter later (when we do tests).
+    
+    \item \texttt{2-SampZInt}, \texttt{2-SampTInt}, and \texttt{2-PropZInt} are the calculator functions.
+    
+    \item In the reading watch out for
+    
+        \begin{itemize}
+        
+            \item The degrees of freedom for Tint
+            
+            \item The criteria on sample size (it is again different for $p$ than for $\mu$).
+            
+            \item The interpretation of the confidence interval
+                
+            \begin{itemize}
+                
+                \item When the interval contains only negative values
+                
+                \item When the interval contains only positive values
+                
+                \item When the interval contains both positive and negative values.
+                
+            \end{itemize}
+            
+        \end{itemize}
+        
+\end{enumerate}
+
+
+\subsection*{Hypothesis Testing}
+
+In Chapter 7, we estimated the value of population parameters (mean and proportion) using confidence intervals. Another method of statistical inference is to make decisions concerning the value of a population parameter, which we do in Chapter 8 with hypothesis testing.
+
+\begin{enumerate}
+
+  \item Suppose that you roll a regular six-sided die 600 times. About how many times would you expect to see a 4 rolled within those 600?
+    
+    \begin{enumerate}
+    
+      \item If you saw 105 rolls that were 4, would this be surprising\ldots enough to question the fairness of the die?
+
+      \item What if you saw 595 rolls that were 4, would this be surprising\ldots enough to question the fairness of the die?
+
+      \item Where would you draw the line between ``not so surprising" and ``surprising"?
+      
+    \end{enumerate}
+    
+  \item The basic idea in hypothesis testing is to start with an assumption of what ''should" happen and to draw a line on what extreme outcomes would be ``surprising". If the random sample indicates a ''surprising" result, we have evidence to abandon our assumption\ldots if the ransom sample indicates a ``not so surprising" result, we do not have adequate evidence to abandon our assumption and we must stick with it.
+  
+  \item Note, as with the case of the rolls of the die, the result of the random sample may be very ``surprising" (595 of our 600 rolls were 4), but it will never serve as PROOF that our assumption is wrong (as it's possible that this 595/600 happens with a completely fair die).
+  
+\end{enumerate}
+
+\newpage
+\section{Estimating the mean $\mu$ when the standard deviation $\sigma$ is known}
+\input{Worksheet_Sec7_1.tex}
+
+\newpage
+\section{Estimating the mean $\mu$ when the standard deviation $\sigma$ is unknown}
+\input{Worksheet_Sec7_2.tex}
+
+\newpage
+\section{Estimating $p$ in the Binomial Distribution}
+\input{Worksheet_Sec7_3.tex}
+
+\newpage
+\section{Estimating the Difference Between Two Means or Proportions}
+\input{Worksheet_Sec7_4.tex}
+
+\end{document}

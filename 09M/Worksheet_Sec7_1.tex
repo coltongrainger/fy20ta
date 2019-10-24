@@ -1,0 +1,122 @@
+\begin{enumerate}
+	
+\item Suppose that you read in a local newspaper that 45 officials in student services at CU earned an average $\bar x = \$50,340$ each year.
+
+	\begin{enumerate}
+	%--
+	\item Assume that $\sigma = \$16,920$ for salaries of college officials in student services. Find a 90\% confidence interval for the population mean salaries of such personnel. What is the margin of error? 
+	
+	{\answer Using the \texttt{ZInterval} function, with $\sigma = 16920$, $\bar{x} = 50340$, $n=45$, and $\textnormal{C-level} = 0.90$, the confidence interval is $(\$46191, \$54489)$. 
+	
+	This implies that the margin of error is $E = 54489 - 50340 = \$4149$. 
+	
+	The margin of error could also be computed using $\displaystyle E = z_c\frac{\sigma}{\sqrt{n}} = 1.645\frac{16920}{\sqrt{45}} = 4149$.
+	} 
+
+	\item Assume that $\sigma = \$10,780$ for salaries of college officials in student services. Find a 90\% confidence interval for the population mean salaries of such personnel. What is the margin of error? 
+	
+	{\answer Using the \texttt{ZInterval} function, with $\sigma = 10780$, $\bar{x} = 50340$, $n=45$, and $\textnormal{C-level} = 0.90$, the confidence interval is $(\$47697, \$52983)$. 
+	
+	This implies that the margin of error is $E = 52983 - 50340 = \$2643$. 
+	The margin of error could also be computed using $\displaystyle E = z_c\frac{\sigma}{\sqrt{n}} = 1.645\frac{10780}{\sqrt{45}} = 2643$.
+	} 
+
+	\item Assume that $\sigma = \$4830$ for salaries of college officials in student services. Find a 90\% confidence interval for the population mean salaries of such personnel. What is the margin of error? 
+	
+	{\answer Using the \texttt{ZInterval} function, with $\sigma = 4830$, $\bar{x} = 50340$, $n=45$, and $\textnormal{C-level} = 0.90$, the confidence interval is $(\$49156, \$51524)$. 
+	
+	This implies that the margin of error is $E = 51524 - 50340 = \$1184$. 
+	The margin of error could also be computed using $\displaystyle E = z_c\frac{\sigma}{\sqrt{n}} = 1.645\frac{4830}{\sqrt{45}} = 1184$.
+	} 
+
+	\item What does this example illustrate about the effect of the size of $\sigma$ on the length of the confidence interval? Why does this make sense? 
+	
+	{\answer The smaller the value of $\sigma$, the smaller the value of the margin of error and the shorter the length of the confidence interval.  This makes sense because a lower $\sigma$ implies that the $x$ distribution is less spread from the mean $\mu$. So, the likelihood that the mean of sample selected at random is a good estimate of the population mean is greater, thereby making the need for error in the confidence interval smaller.
+	} 
+	%--
+	\end{enumerate}
+
+\vfill
+\pagebreak
+	
+\item Suppose that you read in a local newspaper that the annual salary of administrators at CU is $\bar x = \$50,340$. Assume that $\sigma$ is known to be $\$18,490$ for college administrators salaries. 
+
+	\begin{enumerate}
+	%--
+	\item Suppose that the $\bar x = \$50,340$ is based on a random sample of $n=36$ administrators. Find a 90\% confidence interval for the population mean annual salary of local college administrators. What is the margin of error? 
+	
+	{\answer Using the \texttt{ZInterval} function, with $\sigma = 18490$, $\bar{x} = 50340$, $n=36$, and $\textnormal{C-level} = 0.90$, the confidence interval is $(\$45271, \$55409)$. 
+	
+	This implies that the margin of error is $E = 55409 - 50340 = \$5069$. 
+	The margin of error could also be computed using $\displaystyle E = z_c\frac{\sigma}{\sqrt{n}} = 1.64485\frac{18490}{\sqrt{36}} = 5069$.
+	} 
+
+	\item Suppose that the $\bar x = \$50,340$ is based on a random sample of $n=64$ administrators. Find a 90\% confidence interval for the population mean annual salary of local college administrators. What is the margin of error? 
+	
+	{\answer Using the \texttt{ZInterval} function, with $\sigma = 18490$, $\bar{x} = 50340$, $n=64$, and $\textnormal{C-level} = 0.90$, the confidence interval is $(\$46538, \$54142)$. 
+
+	This implies that the margin of error is $E = 54142 - 50340 = \$3802$. 
+	The margin of error could also be computed using $\displaystyle E = z_c\frac{\sigma}{\sqrt{n}} = 1.64485\frac{18490}{\sqrt{64}} = 3802$.
+	} 
+
+	\item Suppose that the $\bar x = \$50,340$ is based on a random sample of $n=121$ administrators. Find a 90\% confidence interval for the population mean annual salary of local college administrators.  What is the margin of error? 
+	
+	{\answer Using the \texttt{ZInterval} function, with $\sigma = 18490$, $\bar{x} = 50340$, $n=121$, and $\textnormal{C-level} = 0.90$, the confidence interval is $(\$47575, \$53105)$. 
+	
+	This implies that the margin of error is $E = 53105 - 50340 = \$2765$. 
+	The margin of error could also be computed using $\displaystyle E = z_c\frac{\sigma}{\sqrt{n}} = 1.64485\frac{18490}{\sqrt{121}} = 2765$.
+	} 
+
+	\item What does this example illustrate about the effect of the sample size on the length of the confidence interval? Why does this make sense? 
+	
+	{\answer The larger the sample size $n$, the smaller the value of the margin of error and the shorter the length of the confidence interval. This makes sense because a larger sample increases the likelihood that the sample mean is a good estimate of the population mean, thereby making the need for error in the confidence interval smaller.
+	} 
+	
+	\item What sample size $n$ is necessary for a 90\% confidence interval with maximal margin of error $E=1000$ for the mean annual salary? 
+	
+	{\answer Solving the margin of error formula $\displaystyle E = z_c\frac{\sigma}{\sqrt{n}}$ for $n$ yields $\displaystyle n = \left( \frac{z_c \sigma}{E}\right)^2 = \left( \frac{(1.64485)(18490)}{1000}\right)^2 = 924.967$. So, a sample size of $n = 925$ is necessary.
+	}
+	%--
+	\end{enumerate}
+	
+	
+\pagebreak
+
+\item Suppose that you read in a local newspaper that 45 officials in student services at CU earned an average $\bar x = \$50,340$ each year. Assume that $\sigma$ is known to be $\$16,920$ for salaries of college officials in student services. 
+	\begin{enumerate}
+	%--
+	\item Find a 90\% confidence interval for the population mean salaries of such personnel. What is the margin of error? 
+	
+	{\answer Using the \texttt{ZInterval} function, with $\sigma = 16920$, $\bar{x} = 50340$, $n=45$, and $\textnormal{C-level} = 0.90$, the confidence interval is $(\$46191, \$54489)$. 
+	
+	This implies that the margin of error is $E = 54489 - 50340 = \$4149$. 
+	The margin of error could also be computed using $\displaystyle E = z_c\frac{\sigma}{\sqrt{n}} = 1.645\frac{16920}{\sqrt{45}} = 4149$.
+	} 
+
+	\item Find a 95\% confidence interval for the population mean salaries of such personnel. What is the margin of error? 
+	
+	{\answer Using the \texttt{ZInterval} function, with $\sigma = 16,920$, $\bar{x} = 50340$, $n=45$, and $\textnormal{C-level} = 0.95$, the confidence interval is $(\$45396, \$55284)$. 
+	
+	This implies that the margin of error is $E = 55284 - 50340 = \$4944$. 
+	The margin of error could also be computed using $\displaystyle E = z_c\frac{\sigma}{\sqrt{n}} = 1.96\frac{16920}{\sqrt{45}} =4944$.
+	} 
+
+	\item Find a 99\% confidence interval for the population mean salaries of such personnel. What is the margin of error? 
+	
+	{\answer Using the \texttt{ZInterval} function, with $\sigma = 16,920$, $\bar{x} = 50340$, $n=45$, and $\textnormal{C-level} = 0.99$, the confidence interval is $(\$43843, \$56837)$. 
+	
+	This implies that the margin of error is $E = 56837 - 50340 = \$6497$. 
+	The margin of error could also be computed using $\displaystyle E = z_c\frac{\sigma}{\sqrt{n}} = 2.576\frac{16,920}{\sqrt{45}} = 6497$.
+	} 
+
+	\item What does this example illustrate about the effect of the level of confidence on the length of the confidence interval? Why does this make sense? 
+	
+	{\answer The lower the level of confidence, the smaller the value of the margin of error and the shorter the length of the confidence interval. This makes sense because with the same expected sampling distribution (based on the same $\mu$ and the same $\sigma$ for the population) to be more confident that our confidence interval will capture the actual mean, this interval must span a wider range.
+	} 
+	%--
+	\end{enumerate}
+
+
+\end{enumerate}
+
+\vfill

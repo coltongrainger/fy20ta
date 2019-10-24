@@ -1,0 +1,108 @@
+\begin{enumerate}
+
+
+\item Suppose the random variable $x$ has a mound-shaped, symmetric distribution.  Consider a random sample of size $n=21$, sample mean $\bar x = 45.2$, and sample standard deviation $s = 5.3$.
+	\begin{enumerate}
+	%--
+	\item Use the Student's $t$ distribution to compute the 95\% confidence interval. 
+	
+	{\answer \texttt{TInterval: Stats} 
+	with $\bar{x} = 45.2$, $S_x = 5.3$, $n=21$, and $\texttt{C-Level} = .95$ yields $(42.787, 47.613)$.
+	} 
+	
+	\item Now, assume that $\sigma = s$ (so that $\sigma$ is now known) and use the standard normal distribution (with $z_c$) to compute the 95\% confidence interval. 
+	
+	{\answer \texttt{ZInterval: Stats} 
+	with $\sigma = 5.3$, $\bar{x} = 45.2$, $n=21$, and $\texttt{C-Level} = .95$ yields $(42.933, 47.467)$.
+	} 
+	
+	\item How do the intervals compare?  Is one longer than the other?  Why does this make sense? 
+	
+	{\answer The \texttt{TInterval} yields a longer interval.  This makes sense because with the \texttt{ZInterval} more is known about the population (and therefore the sampling distribution), namely $\sigma$.  When we know less, we need to allow for more potential error in our results accurately representing the population and as a result we stretch that maximal margin of error.
+	} 
+	
+	\item Now repeat these same steps with $n=200$.  How do the intervals compare now and why should we expect this? 
+	
+	{\answer \texttt{TInterval: Stats} 
+	with $\bar{x} = 45.2$, $S_x = 5.3$, $n=21$, and $\texttt{C-Level} = .95$ yields $(44.461, 45.939)$.
+	
+	\texttt{ZInterval: Stats} 
+	with $\sigma = 5.3$, $\bar{x} = 45.2$, $n=21$, and $\texttt{C-Level} = .95$ yields $(44.465, 45.935)$.
+	
+	The intervals are much closer in length.  We should expect this because the sample size is larger.  As the sample size increases, the Student's $t$ distribution approaches the normal curve.  So, the results will be more similar.
+	} 
+	%--
+	\end{enumerate}
+
+%From Section 7.2 #18
+\item What percentage of hospitals provide at least some charity care?  The following problem is based on information taken from {\em State Health Care Data: Utilization, Spending, and Characteristics} (American Medical Association).  Based on a random sample of hospital reports from the eastern states, the following information was obtained (units in percentage of hospitals providing at least some charity care):
+\begin{center}
+$57.1$, $56.2$, $53.0$, $66.1$, $59.0$, $64.7$, $70.1$, $64.7$, $53.5$, $78.2$
+\end{center}
+	\begin{enumerate}
+	%--
+	\item Is it more appropriate to use the Student's $t$ distribution or the standard normal distribution to determine a confidence interval for this data? Assume the percentage of hospital's follows an approximately normal distribution.
+	
+	{\answer  Because the standard deviation of the population is not know, the $t$ distribution is more appropriate.  If the sample size is large, the results may not vary much, but the $t$ distribution is still more appropriate.
+	} 
+	
+	\item Using the distribution you determined was more appropriate in part (a), find a 90\% confidence interval for the population average $\mu$ of the percentage of hospitals providing at least some charity care. 
+	
+	{\answer Entering the above data into list $L_1$, the \texttt{TInterval : Data} option can be used with
+	$\texttt{List} = L_1$, $\texttt{Freq} = 1$, $\texttt{C-Level} = .90$.  The result is $(57.612, 66.908)$.
+	} 
+	%--
+	\end{enumerate}
+
+\newpage
+
+%Section 7.2 #16
+\item With some interest in running your own candy store and a decent credit rating, you can probably get a bank loan for franchises such as Candy Express, The Fudge Company, Karmel Corn, and Rocky Mountain Chocolate Factory.  Startup costs (in thousands of dollars) for a random sample of candy stores are given below (Source: {\em Entrepreneur Magazine}, Vol.23, No.10). Assume start up costs follow an approximately normal distribution.
+
+\begin{center}
+95, 173, 129, 95, 75, 94, 116, 100, 85
+\end{center}
+
+	\begin{enumerate}
+	%--
+	\item Find a 90\% confidence interval for the population average startup costs $\mu$ for candy store franchises. 
+	
+	{\answer Entering the above data into list $L_1$, the \texttt{TInterval : Data} option can be used with 
+	$\texttt{List} = L_1$, $\texttt{Freq} = 1$, $\texttt{C-Level} = .90$.  The result is $(88.639, 125.14)$.
+	} 
+	
+	\item What does this confidence interval mean in the context of the problem? 
+	
+	{\answer We are 90\% confident that the interval \$88,639 to \$125,140 is one that contains the average startup cost for all candy store franchises.
+	} 
+	%--
+	\end{enumerate}
+	
+\item From a random sample of $n=40$ current major league baseball players, a 90\% confidence interval for the population mean $\mu$ of home run percentages for all current major league baseball players was determined to be $1.93$ to $2.65$.
+
+	\begin{enumerate}
+	%--
+	\item What does this imply that the sample mean $\bar x$ of home run percentages was?  What is $E$ in this case? 
+	
+	{\answer The sample mean $\bar{x}$ is the center of the confidence interval.  So, that implies $\bar{x} = 2.29$. 
+	
+	The maximal margin of error $E$ is the distance from $\bar{x}$ to either endpoint of the interval, or equivalently, half the length of the interval.  So, that implies $E = 0.36$.
+	} 
+	
+	\item Determine a 99\% confidence interval for the population mean $\mu$ of home run percentages.  
+	
+	(HINT: First, use $E$ to find the value of $s$, then use $n$ and $\bar{x}$ along with the $s$.) 
+	
+	{\answer We know the value of $E$ is $0.36$ from above.  We also know by formula that $E = t_{0.90} \cdot \frac{s}{\sqrt{n}}$.  Note that $t_{0.90} = \texttt{InvT(0.95, 39)} = 1.684875$.  So,
+	$0.36 = 1.684875 \cdot \frac{s}{\sqrt{40}} $ which implies $1.3513405  = s$. 
+	
+	Then \texttt{TInterval: Stats} with $\bar{x} = 2.29$, $S_x = 1.3513405$, $n = 40$, and $\texttt{C-Level} = .99$, yields $(1.7114, 2.8686)$. 
+	
+	The 99\% confidence is longer than the 90\% confidence, as we would expect.  To make a more confident statement with the same data, we need to stretch that interval out to allow for a bit more error in our sample.
+	} 
+	%--
+	\end{enumerate}
+	
+\end{enumerate}
+
+\vfill

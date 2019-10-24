@@ -1,0 +1,92 @@
+\begin{enumerate}
+
+%Section 7.4 #4
+\item If a 90\% confidence interval for the difference of means $\mu_1 -\mu_2$ contains all positive values, what can we conclude about the relationship between $\mu_1$ and $\mu_2$? What if the interval contains all negative values? What if it contains a mix of positive and negative values?  
+
+{\answer When the interval contains all positive values, then we are asserting that we are 90\% certain the true difference lies in that interval...so, is positive...and therefore $\mu_1 > \mu_2$.  
+
+On the other hand, when the interval contains all negative values, then we are asserting that we are 90\% certain the true difference lies in that interval...so, is negative...and therefore $\mu_2 > \mu_1$.  
+
+When the confidence contains both positive and negative, we cannot assert that there is any difference between $\mu_1$ and $\mu_2$.
+}  
+
+%Section 7.4 #14
+\item Independent random samples of professional football and basketball players gave the following information (references: {\em Sports Encyclopedia of Pro Football} and {\em Official NBA Basketball Encyclopedia}). Assume that the weight distributions are mound-shaped and symmetric.
+\begin{center}
+\textbf{Weights (in lb) of pro football players:}  
+
+245, 262, 255, 251, 244, 276, 240, 265, 257, 252, 282,  
+256, 250, 264, 270, 275, 245, 275, 253, 265, 270  
+
+\medskip
+
+\textbf{Weights (in lb) of pro basketball players:}  
+
+205, 200, 220, 210, 191, 215, 221, 216, 228, 207,  
+225, 208, 195, 191, 207, 196, 181, 193, 201
+\end{center}
+
+	\begin{enumerate}
+	%--
+	\item Let $\mu_1$ be the population mean for the weights of professional football players and let $\mu_2$ be the population mean for the weights of professional basketball players. Which distribution (standard normal or Student's $t$) should we use to compute a confidence interval for $\mu_1 - \mu_2$? Explain.  
+	
+	{\answer Because we do not know the population standard deviation for at least one of the groups, we should use the Student's $t$ distribution.
+	}  
+	
+	\item Find a 99\% confidence interval for $\mu_1 - \mu_2$.  
+	
+	{\answer Using \texttt{2-SampTInt} with the \texttt{Inpt: Data} option and $\texttt{List1:} L_1$ (for the 21 football players), $\texttt{List2:} L_2$ (for the 19 basketball players), \texttt{Freq1} and \texttt{Freq2} both 1, \texttt{C-Level: .99}, and \texttt{Pooled: No}, the interval is $(43.076, 64.583)$.
+	}  
+	
+	\item Does the interval consist of numbers that are all positive? all negative? of different signs? At the 99\% confidence level, do professional football players tend to have a higher population mean weight than professional basketball players?  
+	
+	{\answer Because the interval contains only positive values, we are 99\% confident that the population mean weight of professional football players is greater than the population mean weight of professional basketball players.
+	}  
+	%--
+	\end{enumerate}
+
+\newpage
+	
+%Section 7.4 #18
+\item Most married couples have two or three personality preferences in common. Myers used a random sample of 375 married couples and found that 132 had three preferences in common. Another random sample of 571 couples showed that 217 had two personality preferences in common. Let $p_1$ be the population proportion of all married couples who have three personality preferences in common. Let $p_2$ be the population proportion of all married couples who have two personality preferences in common.
+	\begin{enumerate}
+	%--
+	\item Can a normal distribution be used to approximate the $\hat{p_1}- \hat{p_2}$ distribution? Explain.  
+	
+	{\answer Since $n_1\hat{p}_1 = (375)(\frac{132}{375}) = 132$, $n_1\hat{q}_1 = (375)(\frac{243}{375}) = 243$, $n_2\hat{p}_2 = (571)(\frac{217}{571}) = 217$, and $n_2\hat{q_2} = (571)(\frac{354}{571}) = 354$ are all greater than 5, we can use the normal approximation.
+	}  
+	
+	\item Find a 90\% confidence interval for $p_1 -p_2$.  
+	
+	{\answer Using \texttt{2-PropZInt} with $\texttt{x1:} 132$, $\texttt{n1:}375$, $\texttt{x2:} 217$, $\texttt{n2:} 571$, and $\texttt{C-Level:} .90$, the interval is: $$(-0.0806, 0.02452).$$
+	}  
+	
+	\item Does the interval consist of numbers that are all positive? all negative? of different signs? What does this tell you about the proportion of married couples with three personality preferences in common compared with the proportion of couples with two preferences in common (at the 90\% confidence level)?  
+	
+	{\answer Because the interval contains a mix of positive and negative values. So at the 90\% confidence level, there does not appear to be difference in the population proportion of married couples who have three personality preferences in common and those which have only two.
+	}  
+	%--
+	\end{enumerate}
+	
+
+%Section 7.4 #20
+\item ``Parental Sensitivity to Infant Cues: Similarities and Difference Between Mothers and Fathers'' by MV Graham reports a study of parental empathy for sensitivity cues and baby temperament (higher scores means more empathy). Let $x_1$ be a random variable that represents the score of a mother on an empathy test. Let $x_2$ be the empathy score of a father. A random sample of 32 mothers gave a sample mean of $\bar{x}_1 = 69.44$. Another random sample of 32 fathers gave $\bar{x}_2 = 59$. Assume that $\sigma_1=11.69$ and $\sigma_2 = 11.60$.
+	\begin{enumerate}
+	%--
+	\item Which distribution, normal or Student's $t$, do we use to approximate the $x_1-x_2$ distribution? Explain.  
+	
+	{\answer Because we are given the population standard deviations $\sigma_1$ and $\sigma_2$ and the sample sizes are large enough (without knowing the shape of the $x_1$ and $x_2$ distributions), we can use the normal distribution.
+	}  
+	
+	\item Let $\mu_1$ be the population mean of $x_1$ and let $\mu_2$ be the population mean of $x_2$. Find a 99\% confidence interval for $\mu_1-\mu_2$. What can we conclude? 
+	
+	{\answer Using \texttt{2-SampZInt} with the \texttt{Inpt: Stats} option and $\sigma1: 11.69$, $\sigma2: 11.60$, $\bar{x}1: 69.44$, $n1: 32$, $\bar{x}2: 59$, $n2: 32$, and \texttt{C-Level:.99}, the interval is $(2.9411,17.939)$.  
+	
+	Because the interval contains only positive values the mothers' mean score appears higher than the fathers' at the 99\% confidence level.
+	}  
+	%--
+	\end{enumerate}
+
+\end{enumerate}
+
+\vfill
