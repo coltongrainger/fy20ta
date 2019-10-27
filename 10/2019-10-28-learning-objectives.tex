@@ -1,0 +1,200 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+% \usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{amsmath}            
+\usepackage{multirow}    
+\usepackage{multicol}    
+\usepackage{changepage}
+\usepackage{lscape}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\newcommand{\bs}{$\square$}
+\newcommand{\bd}{$\blacklozenge$}
+\newcommand{\dbd}{$\blacklozenge\blacklozenge$}
+
+\begin{document}
+
+\noindent
+{\LARGE {MATH 2510-001 \hfill Week 10}}
+
+This week's material will be the most technical in the entire course. We need to finish building the conceptual (and mathematical) foundations for \emph{statistical inference}. From prior experience, I know it's going to be tough.
+
+\begin{quote}
+\textit{%
+    ``All of my life been wadin' in \textbackslash \textbackslash\ Water so deep now we got to swim \textbackslash\textbackslash\ Wonder will it ever end. \textbackslash\textbackslash\ We're all together in the same boat \textbackslash\textbackslash\ I know you, you know me \textbackslash\textbackslash\  Baby, you know me \textbackslash\textbackslash\ I just wanna dream.'' (Get Free, Major Lazer ft. Amber Coffman) }
+\end{quote}
+
+Many sections are going to ``wave their hands", flail, and end up cheating themselves of understanding this stuff. We will not, because, I repeat, this material constitutes the \emph{foundations for statistical inference}, and \emph{understanding inference} is arguably the \emph{primary reason} to take this course. Here is a study guide with ratings of difficulty to help us get through the material safely:
+
+\begin{itemize}
+    \item (\bs) should require the usual level of effort. No fancy footwork required.
+    \item (\bd) may require additional effort; considering slowing down and doing the suggested readings.
+    \item (\dbd) may seem \emph{spooky}. Here's a tip: approach this material \emph{carefully} and ask for help. E.g., consider visiting the MARC (MATH 175) while reading section 7.4 in Brase and Brase.
+\end{itemize}
+
+\noindent
+{\Large Study Guide: Point Estimates and Sampling Variability}
+%
+
+\begin{enumerate}
+
+\item (\bs) Define sample statistic as a point estimate for a population parameter, for example, the sample proportion is used to estimate the population proportion, and note that point estimate and sample statistic are synonymous.
+
+\item (\bs) Recognize that point estimates (such as the sample proportion) will vary from one sample to another, and define this variability as sampling variation.
+
+\item (\bs) Calculate the sampling variability of the proportion, the standard error, as $SE = \sqrt{\frac{p(1-p)}{n}}$, where $p$ is the population proportion.
+\begin{itemize}
+\item[-] Note that when the population proportion $p$ is not known (almost always), this can be estimated using the sample proportion, $SE = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$.
+\end{itemize}
+
+\item (\bd) Standard error ($SE$) measures the variability in point estimates from different samples of the same size and from the same population; i.e., $SE$ measures the sampling variability.
+
+\item (\bs) Recognize that when the sample size increases we would expect the sampling variability to decrease.
+\begin{itemize}
+\item[-] Conceptually: Imagine taking many samples from the population. When sample sizes are large the sample proportion will be much more consistent across samples than when the sample sizes are small.
+\item[-] Mathematically: $SE = \sigma/ \sqrt{n} \approx s/\sqrt{n}$, when $n$ increases, $SE$ will decrease since $n$ is in the denominator.
+\end{itemize}
+
+\item (\bd) Notice that sampling distributions of point estimates coming from samples that don't meet the required conditions for the Central Limit Theory (about sample size and independence) will not be normal.
+
+\end{enumerate}
+
+{\it
+\vspace{-0.5cm}
+\begin{itemize}
+\renewcommand{\labelitemi}{{$\ast$}}
+\item Reading: Section 5.1 of this packet 
+\item Reading: Section 7.3 of Understandable Statistics (on WebAssign)
+\item Test yourself: 
+{\small
+\begin{enumerate}
+\item For each of the following situations, state whether the variable is categorical or numerical, and whether the parameter of interest is a mean or a proportion: (a) In a survey, college students are asked whether they agree with their parents' political ideology.  (b) In a survey, college students are asked what percentage of their non-class time they spend studying.
+\item Explain what is going on in Figures 5.4 and 5.5 of this packet (pages 176 and 177).
+\end{enumerate}
+}
+\end{itemize}
+}
+
+\noindent
+{\Large Study Guide: Confidence Intervals for a Proportion}
+
+\begin{enumerate}[resume]
+\item (\bd) Define a confidence interval as the plausible range of values for a population parameter.
+
+\item (\bs) Define the confidence level as the percentage of random samples which yield confidence intervals that capture the true population parameter.
+
+\item (\bs) Calculate an approximate 95\% confidence interval by adding and subtracting 2 standard errors to the point estimate: $point~estimate \pm 2 \times SE$.
+
+\item (\bs) Recognize that the Central Limit Theorem (CLT) is about the distribution of point estimates, and that given certain conditions, this distribution will be nearly normal.
+\begin{itemize}
+\item[-] In the case of the proportion the CLT tells us that if
+\begin{itemize}[parsep=0pt]
+\item[(1)] (\bd) the observations in the sample are independent, and
+\item[(2)] (\bs) there are at least 10 successes and 10 failures%
+    \footnote{%
+    WebAssign only requires 5, ok? But 5 doesn't fly in social science, journalism, business, the natural sciences, etc. You need 10 successes and failures if you want to apply the CLT like a professional.
+    }
+\end{itemize}
+then the distribution of the sample proportion will be nearly normal, centered at the true population proportion and with a standard error of $\sqrt{\frac{p(1-p)}{n}}$.
+\[ \hat{p} \sim N \left(\mu_{\hat{p}} = p, SE = \sqrt{\frac{p(1-p)}{n}} \right) \]
+\item[-] (\bs) When the population proportion $p$ is unknown, condition (2) can be checked using the sample proportion $\hat{p}$.
+\end{itemize}
+
+\item Recall that independence of observations in a sample is provided by random sampling (in the case of observational studies) or random assignment (in the case of experiments).
+\begin{itemize}
+\item[-] In addition, the sample should not be \textit{too} large compared to the population, or more precisely, should be smaller than 10\% of the population, since samples that are too large will likely contain observations that are not independent.
+\end{itemize}
+
+\item Recognize that the nearly normal distribution of the point estimate (as suggested by the CLT) implies that a more precise confidence interval can be calculated as
+\[ point~estimate \pm z^{\star} \times SE, \] 
+where $z^{\star}$ corresponds to the cutoff points in the standard normal distribution to capture the middle XX\% of the data, where XX\% is the desired confidence level.
+\begin{itemize}
+\item[-] For proportions this is $\bar{x} \pm Z^\star \sqrt{\frac{p(1-p)}{n}}$.
+\item[-] Note that $z^{\star}$ is always positive.
+\end{itemize}
+
+\item Define margin of error as the distance required to travel in either direction away from the point estimate when constructing a confidence interval, i.e. $z^{\star} \times SE$.
+\begin{itemize}
+\item[-] Notice that this corresponds to half the width of the confidence interval.
+\end{itemize}
+
+\item Interpret a confidence interval as ``We are XX\% confident that the true population parameter is in this interval", where XX\% is the desired confidence level.
+\begin{itemize}
+\item[-] Note that your interpretation must always be in context of the data -- mention what the population is and what the parameter is (mean or proportion).
+\end{itemize}
+
+
+\end{enumerate}
+
+{\it
+\begin{itemize}
+\renewcommand{\labelitemi}{{$\ast$}}
+\item Reading: Section 5.2 of this packet 
+\item Reading: Section 7.3 of Understandable Statistics (on WebAssign)
+\item Test yourself: 
+{\small
+\begin{enumerate}
+\item Explain, in plain English, what is going on in Figure 5.6 of this packet (page 182).
+\item List the conditions necessary for the CLT to hold. Make sure to list alternative conditions for when we know the population distribution is normal vs. when we don't know what the population distribution is, and the when the sample size is barely over 30 vs. when it's very large.
+\item Confirm that $z^{\star}$ for a 98\% confidence level is 2.33. (Include a sketch of the normal curve in your response.)
+\item Explain, in plain English, the difference between standard error and margin of error.
+\item Suppose 10\% of CU Boulder students smoke. You collect many random samples of 100 CU Boulder students at a time, and calculate a sample proportion ($\hat{p}$) for each sample, indicating the proportion of students in that sample who smoke. What would you expect the distribution of these $\hat{p}$'s to be? Describe its shape, center, and spread.
+\end{enumerate}
+}
+\end{itemize}
+}
+
+\noindent
+{\Large Study Guide: Estimating Differences of Population Means and Proportions}
+
+\begin{enumerate}[resume]
+
+\item For independent populations, the confidence intervals for the difference of two means or of two populations follow the same format as confidence intervals for a single mean or a single proportion.
+
+\newpage
+\item The margin of error ``depends on the sampling distribution''%
+    \footnote{%
+    The ``sampling distribution'' here is \emph{either} the distribution of a linear combination of sample means $\bar{X}$, $\bar{Y}$, etc. (when we are interested in the difference of sample means) \emph{or} the distribution of a linear combination of point estimates $\hat{p}$, $\hat{\ell}$, etc. (when we are finding a sample proportion).
+    }
+of the point estimate:
+\begin{enumerate}
+    \item $\bar{x}_1 - \bar{x}_2$ for $\mu_1 - \mu_2$  (in the case we want a confidence interval for a difference of means)
+    \begin{itemize}
+        \item When $\sigma_1$ and $\sigma_2$ are known, the standard error is \[SE = \sqrt{\frac{\sigma_1^2}{n_1} +\frac{\sigma_2^2}{n_2}}\] and the margin of error is $E = z_c \cdot SE$ (please know how to find the critical $z$-value $z_c$ with \texttt{invNorm}).
+        \item When $\sigma_1$ and $\sigma_2$ are unknown, and $n = \min\{n_1, n_2\}$ is relatively small (ie., less than $100$), the standard error is found by guessing the sample standard deviation is a good enough estimator for the population standard deviation (e.g., guessing that $s_1 \approx \sigma_1$), then taking the standard error to be $SE = \sqrt{\frac{s_1^2}{n_1} +\frac{s_2^2}{n_2}}$ and the margin of error to be $E = (t_n)_c \cdot SE$ with $t_n$ found from Student's $t$ distribution with $n - 1$ degrees of freedom, where $n =\min\{n_1, n_2\}$ is the minimum of the sample sizes. (Please know how to find the critical $(t_n)_c$-value with \texttt{invT}).
+    \item When $n = \min\{n_1, n_2\}$ is relatively large (larger than $100$), you have enough data to accurately ``guess'' $\sigma_1$ and $\sigma_2$. Refer to the first case.
+    \end{itemize}
+    \item $\hat{p}_1 - \hat{p}_2$ for $p_1 - p_2$ (in the case we want a confidence interval for a difference of proportions)
+    \begin{itemize}
+        \item When $n_1$ and $n_2$ sufficiently large (e.g., when $n_1\hat{p}_1$ and $n_1(1-\hat{p}_1)$ are both larger than $10$, and likewise, for the second proportion, $n_2\hat{p}_2$ and $n_2(1-\hat{p}_2)$ are \emph{also} both larger than $10$) here is the standard error of the distribution of the difference in two independent sample proportions%
+ \footnote{%
+This is the standard error also for hypothesis tests when $H_0: p_1 -p_2 =$ a nonzero value.
+    }
+\[SE_{(\hat{p}_1 - \hat{p}_2)} = \sqrt{\frac{ \hat{p}_1 (1 - \hat{p}_1)}{n_1} + \frac{ \hat{p}_2 (1 - \hat{p}_2)}{n_2} } \]
+    and here is the margin of error for the corresponding confidence interval
+\[E_{(\hat{p}_1 - \hat{p}_2)} = z_c \cdot SE_{(\hat{p}_1 - \hat{p}_2)}\]
+    \item When $n_1$ and $n_2$ are small, you need a larger sample!
+    \end{itemize}
+\end{enumerate}
+\end{enumerate}
+
+{\it
+\vspace{-0.55cm}
+\begin{itemize}
+\renewcommand{\labelitemi}{{$\ast$}}
+\item Reading: Section 6.2 of this packet
+\item Reading: Section 7.4 of Understandable Statistics (WebAssign)
+\item Test yourself:
+\begin{enumerate}
+{\small
+\item Suppose a 95\% confidence interval for the difference between the CU Boulder and CSU students who smoke (calculated using $\hat{p}_{CU} - \hat{p}_{CSU}$) is (-0.08,0.11). Interpret this interval, making sure to incorporate into your interpretation a comparative statement about the two schools.
+\item Does the above interval suggest a significant difference between the true proportions of smokers at the two schools?
+}
+\end{enumerate}
+\end{itemize}
+}
+\end{document}
