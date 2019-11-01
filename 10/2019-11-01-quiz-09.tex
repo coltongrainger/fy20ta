@@ -1,0 +1,118 @@
+\documentclass{ccg-topic}
+
+\topic{Quiz Week 10 (\texttt{ZInterval}, \texttt{TInterval}, \texttt{1-PropZInt}, or \texttt{2-PropZInt}?)}
+
+\institution{University of Colorado}
+\coursenum{2510-001}
+\coursename{Introduction to Statistics}
+\semester{Fall 2019}
+\author{Colton Grainger}
+\date{All Saints' Day 2019}
+\email{colton.grainger@colorado.edu}
+\thanks{These questions are from a quiz and a practice midterm from MATH 2510, Fall 2018.}
+
+\begin{document}
+
+\maketitle
+
+Your name (print clearly in capital letters): \underline{\hspace{8cm}}
+
+\section*{Read Me Carefully}
+\begin{itemize}
+    \item This is a 72 hour take-home quiz. 
+    \item Please \textbf{answer each problem}, and return this quiz to me on \textbf{Monday, November 4th at 8:00am}.
+    \item This quiz is \emph{open note and open internet}. The \emph{Week 10 study guide} should help to answer these questions.
+    \item I encourage y'all to collaborate! 
+    \item Who (if anyone) did you collaborate with? \underline{\hspace{10cm}}
+    \item Note: each person does need to turn in their own copy of this quiz for credit.
+\end{itemize}
+
+\section*{Graded Questions}
+\begin{enumerate}
+\item (2 points) A marketing research company is estimating the average yearly compensation of famous European rappers. In 2016, data were randomly collected from 18 rappers and the 90\% confidence interval for the mean was calculated to be $(218126, 583618)$ (in Euros). If the same random sample were to be used to compute a  $\%95$ confidence interval, how would this new $\%95$ confidence interval compare to the original $\%90$ interval?
+
+\begin{enumerate}
+\item The interval would get wider.
+\item The interval would get narrower.
+\item There would be no change in the width of the interval.
+\item It is impossible to tell until the 95\% interval is constructed.
+\end{enumerate}
+     
+\framebox[10cm][l]{Your answer: }
+
+\vfill
+
+\item (2 points) Find numerically the $\%95$ confidence interval for the 2016 famous European rapper yearly compensation data given in the previous problem.
+
+\framebox[10cm][l]{Your answer: }
+
+\vfill
+    
+\item (2 points) If $10^4 = 1000$ simple random samples each of size $n=50$ are drawn from the population of American voters, and $1000$ corresponding $\%90$ confidence intervals 
+\[
+    \hat{p}_i \pm z_{0.9} \times \text{standard error from the $i$th sample} \qq{(one each for the samples $i = 1$ to $i=1000$)}
+\]
+are created from this data to estimate a \emph{population proportion} $p$, how many of these intervals are expected to contain $p$?
+    
+\framebox[10cm][l]{Your answer: }
+\vfill
+\newpage
+
+\item An educator wants to estimate the proportion of school children in Toronto who are living with only one parent. The report is to be published, thus they want a reasonably accurate estimate. However, their funding is limited so they do not want to collect a larger sample than necessary. They hope to use a sample size such that, with a confidence level of $0.99$, the margin of error will not exceed $0.038$. 
+
+\begin{enumerate}
+\item ($1/2$ point) What relevant mathematical information is as \emph{known} in this problem?%
+\footnote{%
+Hint: What is known should help you determine whether it is more appropriate to use the standard normal distribution or one of Student's $t$-distributions to determine the optimal sample size.
+}
+
+\framebox[10cm][l]{Your answer: }
+
+\vfill
+\item ($1/2$ point) What relevant mathematical parameters are \emph{unknown} in this problem?%
+\footnote{%
+Hint: Draw and label the probability distribution that is most appropriate to use. What should the labels be?
+}
+
+\framebox[10cm][l]{Your answer: }
+
+\vfill 
+\item ($1/2$ point) What mathematical relation,%
+    \footnote{%
+    For example, a ``mathematical relationship'' could be in the form of an equation or an approximation.
+    }
+if any, exists between the unknown parameters and the known information?
+
+\framebox[10cm][l]{Your answer: }
+\vfill 
+
+\item ($1/2$ point) Exploit the relationship between the known information to determine the unknown parameters, then provide a numerical answer to the question: What sample size will ensure that this researcher's margin of error is bounded by $0.038$, regardless of what sample proportion value occurs once they gather the sample?
+
+\framebox[10cm][l]{Your answer: }
+\vfill
+\end{enumerate}
+
+\item A data scientist in charge of a charity organization that distributes free kits that help smokers quit. There are two towns that still need a shipment, Onett and Twoson. She knows that both towns have approximately 30,000 people in them and wants to determine how many kits to send to each town.
+
+Here's the header%
+    \footnote{%
+    In SQL, a header like this declares the names of the columns as \emph{field} names. The rows of a SQL table are called \emph{entries}.
+    }
+for the data: 
+
+\begin{center}
+    (\texttt{town\_name}, \texttt{sample\_size}, \texttt{number\_of\_smokers\_in\_sample})
+\end{center}
+
+Here is the data corresponding to the above header.
+\begin{align*}
+    (\mathtt{Onett}, 1780, 215)\\
+    (\mathtt{Twoson}, 1751, 150)
+\end{align*}
+
+(2 points) Before the researcher can report her results, her supervisor informs her that it is believed that there is a significant difference and asks her to estimate the difference of population proportions. Create a 95\% confidence interval for the difference of population proportions based on the previously mentioned polling results.
+
+\framebox[10cm][l]{Your answer: }
+\vfill
+\end{enumerate}
+\end{document}

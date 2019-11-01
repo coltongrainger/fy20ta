@@ -1,0 +1,126 @@
+\documentclass{ccg-topic}
+
+\topic{Quiz and Self-Assessment Week 09 (Confidence Intervals)}
+
+\institution{University of Colorado}
+\coursenum{2510-001}
+\coursename{Introduction to Statistics}
+\semester{Fall 2019}
+\author{Colton Grainger}
+\date{\today}
+\email{colton.grainger@colorado.edu}
+\thanks{These are the official quiz questions from Joseph Timmer, MATH 2510, Fall 2018.}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+    \item Your name (print clearly in capital letters): \underline{\hspace{8cm}}
+    \item This is a timed 20 minute partner quiz and self-assessment.  
+    \item Please find a partner. You will both receive the same grade on the quiz.
+    \item Thanks! Your partner's name (print clearly in capital letters): \underline{\hspace{6cm}}
+\end{itemize}
+
+\section*{Quiz (with Partner)}
+\subsection*{Instructions}
+\begin{enumerate}
+    \item Please collaborate to write down $4$ (total!) arguments to respond to all the following questions. 
+    \item Each of y'all's arguments will be graded out of 5 points ($4$ points for correctness, $1$ point for ``style''). 
+    \item Y'all may split the writing any way you both see fit. I will grade both of your individual pages at once. 
+    \item Y'all do not need to duplicate each other's arguments. That is, I only need $4$ arguments (total!) from the two of you. For example, $2$ arguments from one person and $2$ from another.
+\end{enumerate}
+
+\subsection*{Questions}
+\begin{enumerate}
+    \item If the standard deviation of the population increases, what happens to the margin for error of a confidence interval based on a random sample of the population? Explain why or give an explicit example.
+    
+    \vfill
+    
+    \item If the sample size increases, what happens to the margin for error of a confidence interval based on the sample? Explain why or give an explicit example.
+    
+    \vfill
+
+    \item If the level of confidence increases, what happens to the margin for error of a confidence interval based on a random sample? Explain why or give an explicit example.
+    
+    \vfill
+    
+    \item You may notice we do not ask a ``necessary sample size'' question for $t$ intervals. Why is this? (It might help to remember the how to compute a $t$-interval from, say, $n=25$ a sample size, $\overline{X} = 100$ a sample mean, and $S_{\overline{X}} = 10$ the sample standard deviation. \emph{Which of Student's $t$-distributions did you need to use?})
+
+    \vfill    
+\end{enumerate}
+
+\newpage
+
+\section*{Self-Assessment (Individual)}
+
+Please assess your own work by giving yourself a numerical score between $0$ and $4$ for Monday and Wednesday and this week. I encourage you to \emph{write feedback or questions} next to the corresponding concepts that we covered this week.
+
+\subsection*{Monday October 20, 2019}
+
+Here's what we covered in class and in reading from section 7.1 of Brase and Brase. 
+
+    Without a full set of population data, we can never be 100\% certain that we know the population mean, but with certain restrictions applied, we can use the data from a random sample to estimate a population parameter. Even with a large random sample, the value of the sample mean is usually not exactly equal to the population mean. But, according to the Central Limit Theorem, we can have some expectations on how likely it is that the sample mean falls within a certain interval around the population mean. A confidence interval is an interpretation of precisely this application. (What criterion is required to apply the Central Limit Theorem?)
+
+    The idea is that we start with a sample statistic (called a point estimate). We then create a margin of error around that point estimate which yields an interval of values that is asserted as one that contains the population parameter (at least with some high level of, but not 100\%, certainty) Keep in mind that although we will be asserting that we have an interval that contains the population parameter, there is no indication where within the interval we expect it to lie.
+    
+    The first look at confidence intervals assumes that we know $\sigma$.  (This might seem a bit contrived, because why would we know $\sigma$ if we don’t know $\mu$? Hint: historical records.)
+    
+    The TI \texttt{Z-INTERVAL} function will compute the confidence interval, either by entering the actual list of sample data or by entering the sample mean. For that reason some of the details of the formulation developed in the reading are not so critical, but understanding what the function does and how to interpret the result is critical.
+    
+    When reading, pay special attention to
+    
+        \begin{itemize}
+        
+            \item The formula for $E$ in this case, as it should make sense why this is the correct formula.
+            
+            \item The definition of $z_c$, as this should also be something that you already know how to compute.
+            
+            \item The interpretation of a confidence interval, as it is easy to misinterpret what the interval found means.
+            
+        \end{itemize}
+        
+\textbf{Please grade your participation for this content by circling a response.}
+
+\begin{enumerate}
+    \item[0] I didn't look at this material at all.
+    \item[2] I skimmed this material, but didn't try any problems.
+    \item[2.5] I tried a single problem.
+    \item[3] I tried multiple problems.
+    \item[3.5] I completed multiple problems.
+    \item[4] I did the best I could do.
+\end{enumerate}
+
+\subsection*{Wednesday October 22}
+
+Here's what we covered in class and in reading from section 7.2 of Brase and Brase. 
+
+    In a seemingly more common case, we don’t know the population standard deviation $\sigma$. So, we must estimate the value of $\sigma$ too (usually with $S_{\overline{X}}$). This translates into a slightly larger margin of error to compensate for the potential error in our guess of $\sigma$. Rather than the standard normal distribution, we use one of Student's $t$-distributions. There is a slightly different distribution for each sample size, but they are all (fat) and bell-shaped.  As $n$ gets larger, the $t$-distributions approach the standard normal distribution. The formulation and interpretation of a confidence interval in this case is similar to that when $\sigma$ is known, \emph{only} the distributions from which the critical values $t_c$ (versus $z_c$) are determined has changed.
+    
+    The \texttt{T-INTERVAL} function on the TI-84 can do the heavy lifting for us.
+    
+    When reading, pay special attention to
+    
+        \begin{itemize}
+        
+            \item The formula for $E$ (which should look similar to that from section 7.1).
+            
+            \item The formula for degrees of freedom.
+            
+        \end{itemize}
+        
+    \item Just as there's a \texttt{InvNorm} function, there's alos \texttt{InvT} function (to compute $t_c$ for a sample of $n$ from a population) on the TI-84. Please let me know if you don't have this function available to you.
+\end{enumerate}
+
+\textbf{Please grade your participation for this content by circling a response.}
+
+\begin{enumerate}
+    \item[0] I didn't look at this material at all.
+    \item[2] I skimmed this material, but didn't try any problems.
+    \item[2.5] I tried a single problem.
+    \item[3] I tried multiple problems.
+    \item[3.5] I completed multiple problems.
+    \item[4] I did the best I could do.
+\end{enumerate}
+
+\end{document}

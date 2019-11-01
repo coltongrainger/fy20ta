@@ -99,32 +99,33 @@ Many sections are going to ``wave their hands", flail, and end up cheating thems
     WebAssign only requires 5, ok? But 5 doesn't fly in social science, journalism, business, the natural sciences, etc. You need 10 successes and failures if you want to apply the CLT like a professional.
     }
 \end{itemize}
-then the distribution of the sample proportion will be nearly normal, centered at the true population proportion and with a standard error of $\sqrt{\frac{p(1-p)}{n}}$.
+then the distribution of the sample proportion will be nearly normal, centered at the true population proportion and with a standard error of $SE = \sqrt{\frac{p(1-p)}{n}}$.
 \[ \hat{p} \sim N \left(\mu_{\hat{p}} = p, SE = \sqrt{\frac{p(1-p)}{n}} \right) \]
-\item[-] (\bs) When the population proportion $p$ is unknown, condition (2) can be checked using the sample proportion $\hat{p}$.
+\item[-] (\bs) When the population proportion $p$ is unknown: condition (2) can be checked using the sample proportion $\hat{p}$ and we replace true $p$ in our standard error $SE$ by the guess $\hat{p}$.
 \end{itemize}
 
-\item Recall that independence of observations in a sample is provided by random sampling (in the case of observational studies) or random assignment (in the case of experiments).
+\item (\bs) Recall that independence of observations in a sample is provided by random sampling (in the case of observational studies) or random assignment (in the case of experiments).
 \begin{itemize}
-\item[-] In addition, the sample should not be \textit{too} large compared to the population, or more precisely, should be smaller than 10\% of the population, since samples that are too large will likely contain observations that are not independent.
+\item[-] (\bs) In addition, the sample should not be \textit{too} large compared to the population, or more precisely, should be smaller than 10\% of the population, since samples that are too large will likely contain observations that are not independent.
 \end{itemize}
 
-\item Recognize that the nearly normal distribution of the point estimate (as suggested by the CLT) implies that a more precise confidence interval can be calculated as
+\item (\bs) Recognize that the nearly normal distribution of the point estimate (as suggested by the CLT) implies that a more precise confidence interval can be calculated as
 \[ point~estimate \pm z^{\star} \times SE, \] 
 where $z^{\star}$ corresponds to the cutoff points in the standard normal distribution to capture the middle XX\% of the data, where XX\% is the desired confidence level.
 \begin{itemize}
-\item[-] For proportions this is $\bar{x} \pm Z^\star \sqrt{\frac{p(1-p)}{n}}$.
-\item[-] Note that $z^{\star}$ is always positive.
+\item[-] (\bd) For proportions this is $\hat{p} \pm z^\star \sqrt{\frac{p(1-p)}{n}}$.
+\item[-] (\bs) Note that $z^{\star}$ is always positive. 
+\item[-] (\bs) Whether you write $z_c$ or $z^\star$ is just a matter of preference. Writing $z_c$ has the advantage that the ``$c$-level'' is just the subscript $c$.
 \end{itemize}
 
-\item Define margin of error as the distance required to travel in either direction away from the point estimate when constructing a confidence interval, i.e. $z^{\star} \times SE$.
+\item (\bs) Define margin of error as the distance required to travel in either direction away from the point estimate when constructing a confidence interval, i.e. $z^{\star} \times SE$.
 \begin{itemize}
-\item[-] Notice that this corresponds to half the width of the confidence interval.
+\item[-] (\bs) Notice that this corresponds to half the width of the confidence interval.
 \end{itemize}
 
-\item Interpret a confidence interval as ``We are XX\% confident that the true population parameter is in this interval", where XX\% is the desired confidence level.
+\item (\bs) Interpret a confidence interval as ``We are XX\% confident that the true population parameter is in this interval", where XX\% is the desired confidence level.
 \begin{itemize}
-\item[-] Note that your interpretation must always be in context of the data -- mention what the population is and what the parameter is (mean or proportion).
+\item[-] (\bd) Note that your interpretation must always be in context of the data---please mention what the population is and what the parameter is (mean or proportion).
 \end{itemize}
 
 
@@ -153,10 +154,10 @@ where $z^{\star}$ corresponds to the cutoff points in the standard normal distri
 
 \begin{enumerate}[resume]
 
-\item For independent populations, the confidence intervals for the difference of two means or of two populations follow the same format as confidence intervals for a single mean or a single proportion.
+\item (\bs) For independent populations, the confidence intervals for the difference of two means or of two populations follow the same format as confidence intervals for a single mean or a single proportion.
 
 \newpage
-\item The margin of error ``depends on the sampling distribution''%
+\item (\dbd) The margin of error ``depends on the sampling distribution''%
     \footnote{%
     The ``sampling distribution'' here is \emph{either} the distribution of a linear combination of sample means $\bar{X}$, $\bar{Y}$, etc. (when we are interested in the difference of sample means) \emph{or} the distribution of a linear combination of point estimates $\hat{p}$, $\hat{\ell}$, etc. (when we are finding a sample proportion).
     }
@@ -164,26 +165,25 @@ of the point estimate:
 \begin{enumerate}
     \item $\bar{x}_1 - \bar{x}_2$ for $\mu_1 - \mu_2$  (in the case we want a confidence interval for a difference of means)
     \begin{itemize}
-        \item When $\sigma_1$ and $\sigma_2$ are known, the standard error is \[SE = \sqrt{\frac{\sigma_1^2}{n_1} +\frac{\sigma_2^2}{n_2}}\] and the margin of error is $E = z_c \cdot SE$ (please know how to find the critical $z$-value $z_c$ with \texttt{invNorm}).
-        \item When $\sigma_1$ and $\sigma_2$ are unknown, and $n = \min\{n_1, n_2\}$ is relatively small (ie., less than $100$), the standard error is found by guessing the sample standard deviation is a good enough estimator for the population standard deviation (e.g., guessing that $s_1 \approx \sigma_1$), then taking the standard error to be $SE = \sqrt{\frac{s_1^2}{n_1} +\frac{s_2^2}{n_2}}$ and the margin of error to be $E = (t_n)_c \cdot SE$ with $t_n$ found from Student's $t$ distribution with $n - 1$ degrees of freedom, where $n =\min\{n_1, n_2\}$ is the minimum of the sample sizes. (Please know how to find the critical $(t_n)_c$-value with \texttt{invT}).
-    \item When $n = \min\{n_1, n_2\}$ is relatively large (larger than $100$), you have enough data to accurately ``guess'' $\sigma_1$ and $\sigma_2$. Refer to the first case.
+        \item (\bs) When $\sigma_1$ and $\sigma_2$ are known, the standard error is \[SE = \sqrt{\frac{\sigma_1^2}{n_1} +\frac{\sigma_2^2}{n_2}}\] and the margin of error is $E = z_c \cdot SE$ (please know how to find the critical $z$-value $z_c$ with \texttt{invNorm}).
+        \item (\dbd) When $\sigma_1$ and $\sigma_2$ are unknown, and $n = \min\{n_1, n_2\}$ is relatively small (ie., less than $100$), the standard error is found by guessing the sample standard deviation is a good enough estimator for the population standard deviation (e.g., guessing that $s_1 \approx \sigma_1$), then taking the standard error to be $SE = \sqrt{\frac{s_1^2}{n_1} +\frac{s_2^2}{n_2}}$ and the margin of error to be $E = (t_n)_c \cdot SE$ with $t_n$ found from Student's $t$ distribution with $n - 1$ degrees of freedom, where $n =\min\{n_1, n_2\}$ is the minimum of the sample sizes. (Please know how to find the critical $(t_n)_c$-value with \texttt{invT}).
+    \item (\bd) When $n = \min\{n_1, n_2\}$ is relatively large (larger than $100$), you have enough data to accurately ``guess'' $\sigma_1$ and $\sigma_2$. Refer to the first case.
     \end{itemize}
     \item $\hat{p}_1 - \hat{p}_2$ for $p_1 - p_2$ (in the case we want a confidence interval for a difference of proportions)
     \begin{itemize}
-        \item When $n_1$ and $n_2$ sufficiently large (e.g., when $n_1\hat{p}_1$ and $n_1(1-\hat{p}_1)$ are both larger than $10$, and likewise, for the second proportion, $n_2\hat{p}_2$ and $n_2(1-\hat{p}_2)$ are \emph{also} both larger than $10$) here is the standard error of the distribution of the difference in two independent sample proportions%
+        \item (\bd) When $n_1$ and $n_2$ sufficiently large (e.g., when $n_1\hat{p}_1$ and $n_1(1-\hat{p}_1)$ are both larger than $10$, and likewise, for the second proportion, $n_2\hat{p}_2$ and $n_2(1-\hat{p}_2)$ are \emph{also} both larger than $10$) here is the standard error of the distribution of the difference in two independent sample proportions%
  \footnote{%
 This is the standard error also for hypothesis tests when $H_0: p_1 -p_2 =$ a nonzero value.
     }
 \[SE_{(\hat{p}_1 - \hat{p}_2)} = \sqrt{\frac{ \hat{p}_1 (1 - \hat{p}_1)}{n_1} + \frac{ \hat{p}_2 (1 - \hat{p}_2)}{n_2} } \]
     and here is the margin of error for the corresponding confidence interval
 \[E_{(\hat{p}_1 - \hat{p}_2)} = z_c \cdot SE_{(\hat{p}_1 - \hat{p}_2)}\]
-    \item When $n_1$ and $n_2$ are small, you need a larger sample!
+    \item (\dbd) When $n_1$ and $n_2$ are small, you need a larger sample!
     \end{itemize}
 \end{enumerate}
 \end{enumerate}
 
 {\it
-\vspace{-0.55cm}
 \begin{itemize}
 \renewcommand{\labelitemi}{{$\ast$}}
 \item Reading: Section 6.2 of this packet
