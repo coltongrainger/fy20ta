@@ -1,0 +1,151 @@
+On each of the following problems, be sure have an answer to each of the following:
+	\begin{itemize}
+	\item State the null and alternate hypothesis.
+	\item Determine if it is a left-tailed, a right-tailed, or a two-tailed test.
+	\item Determine which sampling distribution should be used and explain why.
+	\item Determine the $P$-value for the test.
+	\item Draw a conclusion on whether you will reject or fail to reject the null hypothesis.
+	\item Interpret and explain what that conclusion tells you within the context of that data.
+	\end{itemize}
+
+\begin{enumerate}
+
+%Section 8.4 #8
+\item For a random sample of 20 data pairs, the sample mean of the difference was 2. The sample standard deviation of the differences was 5. Assume that the distribution of the differences is (approximately) normally distributed. At the 5\% level of significance, test the claim that the population mean of the differences is positive.
+	\begin{enumerate}
+	%
+	\item Why is it appropriate to use a Students' $t$ distribution for the sample test statistic?   What degrees of freedom are used? 
+	
+	{\answer Because the distribution is (approximately) normally distributed, we can use the Student's $t$ test despite the small sample size. Further, because $\sigma$ is unknown, the $t$-distribution is more appropriate than the $z$-distribution.  
+	Degrees of freedom are $n-1 = 19$} 
+	 
+	\vfill
+	
+	\item State the null and alternate hypotheses for this test.  
+	
+	{\answer $H_0 : \mu_d = 0$  and $H_1: \mu_d > 0$ and this is a right-tailed test.} 
+	 
+	\vfill
+	
+	\item Compute the $P$-value.  
+	
+	{\answer Using \texttt{T-Test} with $\mu_0 = 0$, $\bar{x} = 2$, $s_x = 5$, $n = 20 $, and $\mu: > \mu_0$, we get $P = 0.0447972557$.} 
+	 
+	\vfill
+	
+	\item Does the $P$-value indicate that we reject or fail to reject the null hypothesis? Explain and interpret what the result then tells you.  
+	
+	{\answer Because $P\leq \alpha$ ($\alpha= 0.05$), we reject the null hypothesis. That is, at the 5\% level of significance, the sample mean of the difference is sufficiently greater than $0$ to reject $H_0$ .}
+	
+	\vfill
+	%
+	\end{enumerate}
+	
+\newpage
+
+\item A random sample of nine banks shows their deposits (in billions of dollars) 3 years ago and their deposits (also in billions) today. At the $\alpha = 0.05$ significance level, can we support claim that the average deposit for the banks is greater today that it was 3 years ago?
+    \begin{center}
+    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{Bank}   & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9  \\
+    \hline
+    \textbf{3 years ago} & 11.42 & 8.41 & 3.98 & 7.37 & 2.28 & 1.10 & 1.00 & 0.90 & 1.35 \\
+    \hline
+    \textbf{Today}       & 11.69 & 9.44 & 6.53 & 5.58 & 2.92 & 1.88 & 1.78 & 1.50 & 1.22 \\
+    \hline
+    \end{tabular}
+    \end{center}
+    
+    \begin{enumerate}
+        
+        \item What assumption(s) will we need to make to use a paired $t$-Test?
+        
+        {\answer We need to assume the bank deposits are (approximately) normally distributed.}
+        
+        \vfill
+        
+        \item State the null and alternate hypotheses for this test. Be sure to state how $\mu_d$ is defined.
+        
+        {\answer $H_0 : \mu_d = 0$  and	$H_1: \mu_d < 0$ where $\mu_d$ is the the mean deposit 3 years ago minus the mean deposit today. This is a left-tailed test.}
+        
+        \vfill
+        
+        \item Type the data from 3 years ago into the $L_1$ column and the data from today into $L_2$. By selecting $L_3$ and typing the formula $L_3 = L_1 - L_2$, what are the 9 differences from each data pair?
+        
+        {\answer    \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+                    \textbf{Bank}   & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9   \\
+                    \hline
+                    \textbf{Difference} & -0.27 & -1.03 & -2.55 & 1.79 & -0.64 & -0.78 & -0.78 & -0.60 & 0.13 \\
+                    \end{tabular} }
+        
+        \vfill
+        
+        \item Compute the test statistic $t$ and the corresponding $P$-value.
+        
+        
+        {\answer Using \texttt{T-Test} with $\mu_0 = 0$, \texttt{List:} $L_3$, \texttt{Freq: 1} and $\mu: < \mu_0$, we get $t\approx -1.3856$ and $P \approx 0.1016$.}
+        \vfill
+        
+        \item What conclusion do you make based on this hypothesis test?
+        
+        {\answer Since $P > \alpha$, we fail to reject $H_0$. This means we have insufficient evidence to support the claim that the mean deposit of banks today is greater than the mean deposit three years ago.}
+        
+        \vfill
+        
+    \end{enumerate}
+
+\newpage
+
+%Section 8.4 #10	
+\item Is fishing better from a boat or from the shore? Pyramid Lake is located on the Paiute Indian Reservation in Nevada. Presidents, movies stars, and people who just want to catch fish go to Pyramid Lake for really large cutthroat trout.  Let row $B$ represent hours per fish caught fishing from the shore, and let row $A$ represent hours per fish caught using a boat. The following data are paired by month from October through April (Source: {\em Pyramid Lake Fisheries}, Paiute Reservation, Nevada). Use a 1\% level of significance to test if there is a difference in the population mean hours per fish caught using a boat compared with fishing from the shore.  
+
+\begin{center}
+\begin{tabular}{l|ccccccc}
+
+& Oct. & Nov. & Dec. & Jan. & Feb. & Mar. & Apr.  \\
+\hline
+Shore & 1.6 & 1.8 & 2.0 & 3.2 & 3.9 & 3.6 & 3.3  \\
+\hline
+Boat & 1.5 & 1.4 & 1.6 & 2.2 & 3.3 & 3.0 & 3.8  \\
+\hline
+\end{tabular}
+\end{center} 
+	
+{\answer 
+$H_0: \mu_d = 0$  
+$H_1: \mu_d \neq 0$  
+This is a two-tailed test.  
+
+Assuming that the distribution of differences is approximately normal, we should use the Student's $t$ distribution.  
+
+With $L_3 = \mbox{ Shore } - \mbox{ Boat}$, 
+\texttt{T-Test} with $\mu_0 = 0$, List $=L_3$, Freq = 1, $\mu: \neq \mu_0$ yields $P = 0.0822903746$.  
+	
+Because $P > \alpha$ ($\alpha= 0.01$), we fail to reject the null hypothesis.  That is, at a 1\% level of significance, the evidence is insufficient to claim that there is a difference in the population mean hours per fish between boat- and shore-fishing.  
+} 
+
+\vfill 
+
+\item A veterinary nutritionist developed a diet for overweight dogs. The total volume of food consumed remains the same, but one-half of the dog food is replaced with a low-calorie ``filler", such as canned green beans. Six overweight dogs were randomly selected from her practice and were put on this program. Their initial weights were recorded, and they were weighed again 4 weeks later. At 0.01 level of significance, can it concluded that the diet was effective?
+
+\begin{center}
+\begin{tabular}{l|cccccc}
+    \textbf{Before} & 42 & 53 & 48 & 65 & 40 & 52 \\
+    \hline
+    \textbf{After}  & 39 & 45 & 40 & 58 & 42 & 47 \\
+\end{tabular}
+\end{center}
+
+{\answer $H_0: \mu_d = 0$ and $H_1: \mu_d > 0$ with $\mu_d$ is the mean weight before dieting minus weight after.
+This is a right-tailed test.  
+
+Assuming that the distribution of differences is approximately normal, we should use the Student's $t$ distribution.  
+
+With $L_3 = \mbox{ Before } - \mbox{ After}$, 
+\texttt{T-Test} with $\mu_0 = 0$, List $=L_3$, Freq = 1, $\mu: > \mu_0$ yields $P \approx 0.01405$.  
+	
+Because $P > \alpha$ ($\alpha= 0.01$), we fail to reject the null hypothesis.  That is, at a 1\% level of significance, there is insufficient evidence to claim that the diet is effective for the overweight dogs.} 
+
+\vfill
+
+\end{enumerate}

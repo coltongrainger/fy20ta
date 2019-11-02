@@ -1,0 +1,87 @@
+\begin{enumerate}
+
+%Section 8.3 #10
+\item Women athletes at the University of Colorado, Boulder, have a long-term graduation rate of 67\% (Source: {\em Chronicle of Higher Education}). Over the past several years, a random sample of 38 women athletes at the school showed that 21 eventually graduated. Does this indicate that 67\% is now an overestimate for the population proportion of women athletes who graduate from the University of Colorado, Boulder? Use a 5\% level of significance.
+	\begin{enumerate}
+	%
+	\item State the null and alternate hypothesis. 
+	
+	{\answer $H_0 : p = 0.67$ 
+	$H_1: p < 0.67$} 
+		
+	\item What sampling distribution should be used? Explain. 
+	
+	{\answer Because we considering a proportion of the population and both $np = (38)*(.67) = 25.46 >5$ and $nq = (38)*(.33) = 12.54 >5$, we should use the normal distribution as an approximation of the binomial distribution.} 
+	
+	\item Is this a right-tailed, a left-tailed, or two-tailed test? Find the $P$-value. 
+	
+	{\answer Because $H_1: p < 0.67$, this is a left-tailed test. 
+	Using \texttt{1-PropZTest} with $p_0: 0.67$, $x: 21$, $n:38$, and $\texttt{prop} < p_0$, we get $P = 0.061941703$.} 
+	 
+	\item Will you reject or fail to reject the null hypothesis? Explain and interpret this conclusion. 
+	
+	{\answer Because the $\alpha$-level was set at $\alpha = 0.05$, $P > \alpha$. Therefore, we fail to reject the null hypothesis. That is, at the 5\% level, the evidence is not strong enough to reject the statement that the graduation rate is 67\%.} 
+	%
+	\end{enumerate}
+
+%Section 8.3 #12
+\item A large survey of countries, including the United States, China, Russia, France, Turkey, Kenya, and others, indicated that most people prefer the color blue. In fact, about 24\% of the population claim blue as their favorite color. (Reference: Study by J.Bunge and A.Freeman-Gallant, Statistics Center, Cornell University).  
+Suppose a random sample of $n=56$ college students were surveyed and $r=12$ of them said that blue is their favorite color. Does this information imply that the color preference of all college students is different (either way) from that of the general population? Use $\alpha = 0.05$.
+	\begin{enumerate}
+	%
+	\item State the null and alternate hypothesis. 
+	
+	{\answer $H_0 : p = 0.24$ 
+	$H_1: p \neq 0.24$} 
+	
+	
+	\item What sampling distribution should be used? Explain. 
+	
+	{\answer Because we considering a proportion of the population and both $np = (56)*(.24) = 13.44 > 5$ and $nq = (56)*(.76) = 42.56 >5$, we should use the normal distribution as an approximation of the binomial distribution.} 
+	
+	\item Is this a right-tailed, a left-tailed, or two-tailed test? Find the $P$-value. 
+	
+	{\answer Because $H_1: p \neq 0.24$, this is a two-tailed test. 
+	Using \texttt{1-PropZTest} with $p_0: 0.24$, $x: 12$, $n:56$, and $\texttt{prop} \neq p_0$, we get $z=-0.4505635569$ and $P = 0.6523041776$.} 
+	 
+	 
+	\item Will you reject or fail to reject the null hypothesis? Explain and interpret this conclusion. 
+	
+	{\answer Because the $\alpha$-level was set at $\alpha = 0.05$, $P > \alpha$. Therefore, we fail to reject the null hypothesis. That is, at the 5\% level, the evidence is not strong enough to support the claim that the color preference of all college students is different from that of the general population.} 
+	 
+	%
+	\end{enumerate}
+
+\newpage
+
+%Section 8.3 #16
+\item {\em Symposium} is part of a larger work referred to as Plato's {\em Dialogues}. Wishart and Leach (in {\em Computer Studies of Humanities and Verbal Behavior}, Vol. 3, pp. 90-99) found that about 21.4\% of five-syllable sequences in {\em Symposium} of the type in which four are short and one is long. Suppose an antiques store in Athens has a very old manuscript that the owner claims is part of Plato's {\em Dialogues}. A random sample of 493 five-syllable sequences from this manuscript showed that 136 we of the type four short and one long. Do the data indicate that the population proportion of this type of five-syllable sequence is higher than that found in Plato's {\em Symposium}? Use $\alpha = 1\%$. 
+(Make sure that you are showing all relevant steps to the hypothesis test.) 
+
+{\answer $H_0: p = 0.214$ 
+$H_1: p > 0.214$ 
+Because $np = 493(0.214) = 105.502 >5$ and $nq = 493(0.786)=387.498 >5$, we should use the normal distribution as an approximation to the binomial distribution. 
+
+This is a right-tailed test and using \texttt{1-PropZTest} with $p_0: 0.214$, $x: 136$, $n: 493$, and $\texttt{prop} > p_0$, we get $z = 3.349112535$ and $P = 0.00040540943$. 
+
+Because $P < \alpha$, we reject the null hypothesis. That is, at the 1\% level, the evidence is strong enough to support the claim that the population proportion of this type of five-syllable sequence is higher than that found in Plato's {\em Symposium}. } 
+ 
+
+
+\item Suppose a hypothesis test is executed and the $P$-value is found. 
+	\begin{enumerate}
+	%
+	\item If the $P$-value is such that you can reject $H_0$ at the 1\% level of significance, can you always reject $H_0$ at the 5\% level of significance too? Explain. 
+	
+	{\answer If $P<0.01$, then it is also the case that $P<0.05$. So, you will always to able to reject at the 5\% level too. If the result is ``rare enough" to satisfy the 1\% level of significance, then it will also satisfy the 5\% level which does not require as rare a result.} 
+	 
+	
+	\item If the $P$-value is such that you can reject $H_0$ at the 5\% level of significance, can you always reject $H_0$ at the 1\% level of significance too? Explain. 
+	
+	{\answer Just because $P < 0.05$, that does not necessarily mean that $P < 0.01$ as well. So, you may not be able to reject $H_0$ at the 1\% level. In order to satisfy the 1\% level of significance, the sample must be ``more rare" than for the 5\% level of significance.}
+	 
+	%
+	\end{enumerate}
+
+
+\end{enumerate}

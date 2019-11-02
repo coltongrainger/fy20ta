@@ -1,0 +1,157 @@
+\documentclass{ccg-topic}
+
+\topic{Weeks 11 and 12}
+
+\institution{University of Colorado}
+\coursenum{MATH 2510}
+\coursename{Introduction to Statistics}
+\semester{Fall 2019}
+\author{Joseph Timmer (Edited by Colton Grainger)}
+\date{\today}
+\email{colton.grainger@colorado.edu}
+\thanks{This material corresponds to Chapter 8 of \emph{Understandable Statistics} [Brase and Brase, 2018].}
+
+\usepackage{graphicx, color}
+\newcommand{\answer}[1]{\color{white}#1}
+\begin{document}
+\frontstuff
+
+\setcounter{section}{-1}
+
+\section{Definitions}
+After reading through Brase and Brase Chapter 8, know the definitions of the following.%
+    \footnote{%
+``If you are like me,  you may also despise the memorization aspect of math.  I've always disliked how tests force you to memorize.  But we need a common and efficient language to speak of complex ideas, and this section is meant to make sure that you can communicate using the language on which English-speaking mathematicians have come to agree.  Moreover, I hope that some of these ideas become intuitive enough that you will even be able to guess the correct definition, based on how we have come to know these words.'' [Hiro Lee Tanaka, Algebra 122 Midterm Review Notes, 2014]
+    }
+
+    \begin{enumerate}
+    
+        \item null hypothesis
+        
+        \item alternate hypothesis
+        
+        \item $p$-value 
+
+        \item $\alpha$, the level of significance.
+        
+        \item error type
+        
+        \item test type (determined by $H_1$)
+        
+        \item $z$ (standard normal) tests
+
+        \item $t$ (student's $t$) tests
+
+        \item rejecting the null hypothesis $H_0$ when $p \le \alpha$
+            
+        \item paired versus unpaired data
+
+        \item tests for which $H_0: \mu = 0$ is \textbf{always} the null hypothesis
+            
+    \end{enumerate}
+
+\newpage
+\section{Lecture Outlines}
+\subsection*{Hypothesis Testing}
+
+In Chapter 7, we estimated the value of population parameters (mean and proportion) using confidence intervals. Another method of statistical inference is to make decisions concerning the value of a population parameter, which we do in Chapter 8 with hypothesis testing.
+
+\begin{enumerate}
+
+  \item Suppose that you roll a regular six-sided die 600 times. About how many times would you expect to see a 4 rolled within those 600?
+    
+    \begin{enumerate}
+    
+      \item If you saw 105 rolls that were 4, would this be surprising\ldots enough to question the fairness of the die?
+
+      \item What if you saw 595 rolls that were 4, would this be surprising\ldots enough to question the fairness of the die?
+
+      \item Where would you draw the line between ``not so surprising" and ``surprising"?
+      
+    \end{enumerate}
+    
+  \item The basic idea in hypothesis testing is to start with an assumption of what ''should" happen and to draw a line on what extreme outcomes would be ``surprising". If the random sample indicates a ''surprising" result, we have evidence to abandon our assumption\ldots if the ransom sample indicates a ``not so surprising" result, we do not have adequate evidence to abandon our assumption and we must stick with it.
+  
+  \item Note, as with the case of the rolls of the die, the result of the random sample may be very ``surprising" (595 of our 600 rolls were 4), but it will never serve as PROOF that our assumption is wrong (as it's possible that this 595/600 happens with a completely fair die).
+  
+\end{enumerate}
+
+\subsection*{8.1 Introduction to Statistical Tests}
+
+\begin{enumerate}
+
+  \item This section introduces the language and formalizes the concepts of ``drawing a line" and interpreting the results of the test.
+  
+  \item When reading, pay close attention to
+  
+    \begin{enumerate}
+    
+      \item The notation and definition/usage of the null hypothesis and the alternate hypothesis. 
+      
+      \item How we categorize the test as right-tailed, left-tailed, or two-tailed.
+      
+      \item What the P-value measures and how it is used to draw the conclusion of the test.
+      
+      \item The usage and meaning of the conventional language of ``Reject $H_0$" and ``Fail to Reject $H_0$".
+      
+    \end{enumerate}
+    
+\end{enumerate}
+
+\subsection*{8.2 Testing the Mean}
+
+\begin{enumerate}
+
+  \item The calculator functions that will be useful are \texttt{Z-Test} and \texttt{T-Test}. Like \texttt{Z-Interval} and \texttt{T-Interval}, one is used with $\sigma$ is known and the other when $\sigma$ is unknown.
+  
+  \item One may find the ``critical regions" method helpful in solidifying the concepts of hypothesis testing, but one will be required to compute and interpret P-values as well. So, this ``critical regions" method should be considered a secondary method.
+  
+\end{enumerate}
+
+\subsection*{8.3 Testing the Proportion}
+
+The calculator function that will be useful is \texttt{1-PropZTest}.
+
+\subsection*{8.4 Paired Data}
+
+\begin{enumerate}
+
+    \item A discussion of dependent (paired) versus independent data will need to be had.  We treat paired data quite differently than independent data.
+    
+    \item A good guideline is the following: If you implement two distinct processes on \textbf{the same group} of individuals, then the data is paired.
+    
+    \item When the data can be paired, the null hypothesis is always that the mean of the differences is 0 (there is no difference).
+    
+    \item One will need to created a ``new" data set that is the list of differences of the pairs---then use T-Test to complete the test. By typing $L_1 - L_2$ in the label of the stats editor will generate a difference column.
+    
+\end{enumerate}
+
+\subsection*{8.5 Independent Populations}
+
+\begin{enumerate}
+
+    \item Here the null hypothesis is always that the difference of the means (or proportions) is 0 (there is no difference).
+    
+    \item The \texttt{2-SampZTest}, \texttt{2-SampTTest}, and \texttt{2-PropZTest} are the key calculator functions.
+    
+    \item Computations are easy with the calculator\ldots reading and deciphering which function does the job for a specific problem is the tough part.
+
+\end{enumerate}
+
+\newpage
+\section{Worksheet: Testing the Mean}
+\input{Worksheet_Sec8_1_2.tex}
+
+\newpage
+\section{Worksheet: Testing the Proportion}
+\input{Worksheet_Sec8_3.tex}
+
+\newpage
+\section{Worksheet: Paired Data}
+\input{Worksheet_Sec8_4.tex}
+
+\newpage
+\section{Worksheet: Independent Populations}
+\input{Worksheet_Sec8_5.tex}
+
+\end{document}
