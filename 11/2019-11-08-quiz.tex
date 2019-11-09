@@ -1,5 +1,5 @@
 \documentclass{ccg-topic}
-
+\usepackage{enumitem}
 \topic{Quiz Week 11}
 
 \institution{University of Colorado}
@@ -21,10 +21,11 @@ Your name (print clearly in capital letters): \underline{\hspace{8cm}}
 \section*{Read Me Carefully}
 \begin{itemize}
     \item This quiz is out of 10 points. 
-    \item Please \textbf{answer each graded question}, return this quiz to me by \textbf{Friday, November 8th at 8:20am}.
-    \item You may complete any of the \emph{additional questions} to earn back points on either this quiz or the Week 10 quiz.
-    \item You should use your notes, a calculator, and a piece of scratch paper. You do not need to show work.
+    \item Please answer each graded question, and return this quiz to me by Friday, November 8th at \textbf{8:30am}.
+    \item You do not need to show work.
     \item You may not collaborate. 
+    \item Please use \emph{your notes, a calculator, and a piece of scratch paper}. 
+    \item You may complete any of the \emph{additional questions} to earn back points on either this quiz or the Week 10 quiz.
 \end{itemize}
 
 \section*{Graded Questions}
@@ -88,9 +89,11 @@ what is the probability at least one of them rejects the null hypothesis?
 
 
 
-(6 points possible) What are the mathematical expression for the respective margin of errors \[E = z^\star \times SE\] or \[E = t^\star \times SE\] in the third column of the following table? 
+\begin{enumerate}[resume]
+\item (6 points possible) What are \emph{mathematical expressions} for the respective margin of errors \[E = z^\star \times SE \qq{or} E = t^\star \times SE\] in the third column of the following table? 
+\end{enumerate}
+\vfill
 \begin{center}
-
 \begin{tabular}{| p{5cm} | p{2cm} | p{8cm} |}
 \hline
 \textbf{With a $c$-level of confidence, I want to estimate...} & \textbf{calculator function...} & \textbf{In this case, the margin of error $E$ is...} \\
@@ -109,7 +112,30 @@ A difference of population means $\mu_1 - \mu_2$ with known population standard 
 A difference of population proportions $p_1 - p_2$ &{\answer \texttt{2-PropZInt}} &\\[1.5cm]
 \hline
 \end{tabular}
-
 \end{center}
+
+\begin{enumerate}[resume]
+\vfill
+\item (4 points possible) Which is higher? In each part below, there is a value of interest and two scenarios (I and II). For each part, report if the value of interest is larger under scenario I, scenario II, or whether the value is equal under the scenarios.
+\begin{enumerate}
+\item The standard error of $\hat{p}$ when (I) $n = 125$ or (II) $n=500$.
+
+\framebox[2cm][l]{I or II?}
+\vfill
+\item The margin of error of a confidence interval when the confidence level is (I) $90\%$ or (II) $80\%$.
+
+\framebox[2cm][l]{I or II?}
+\vfill
+\item The p-value for a Z-statistic of 2.5 calculated based on (I) a sample with $n=500$, or on (II) a sample with $n=1000$.
+
+\framebox[2cm][l]{I or II?}
+\vfill
+\item The probability of making a Type $2$ Error when the alternative hypothesis is true and the significance level is (I) $0.05$ or (II) $0.10$.
+
+\framebox[2cm][l]{I or II?}
+\vfill
+\end{enumerate}
+
+\end{enumerate}
 
 \end{document}
