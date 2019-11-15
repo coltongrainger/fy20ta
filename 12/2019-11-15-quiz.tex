@@ -1,0 +1,100 @@
+\documentclass{ccg-topic}
+\usepackage{enumitem}
+\usepackage[varg]{txfonts}
+\usepackage[T1]{fontenc}
+
+\topic{Quiz Week 12}
+
+\institution{University of Colorado}
+\coursenum{2510-001}
+\coursename{Introduction to Statistics}
+\semester{Fall 2019}
+\author{Joseph Timmer (Updated by Colton Grainger for Fall 2019)}
+\date{2019-11-08}
+\email{colton.grainger@colorado.edu}
+
+\newcommand{\answer}[1]{} 
+
+\begin{document}
+
+\maketitle
+
+Your name (print clearly in capital letters): \underline{\hspace{10cm}}
+
+\section*{(4 points) Tylenol is placebo?!}
+
+To test the effectiveness of Tylenol for relieving flu symptoms, $200$ flu patients were randomly selected and divided into two groups. One group (of $n_1 = 100$ patients) was administered Tylenol while the complementary group (of $n_2 = 100$ patients) was given placebo. Surveys at $6$ hours after ingestion found that 
+\begin{equation*}
+    \text{$80$ of those patients who received Tylenol felt a ``positive'' effect, and}
+\end{equation*}
+\begin{equation*}
+    \text{$65$ of the patients who received placebo felt a ``positive'' effect.}
+\end{equation*}
+
+\begin{enumerate}
+
+\item What statistical test should one use to determine if Tylenol \emph{produced} a ``positive" effect in patients?
+
+\vfill
+
+\item Why is this test appropriate? 
+
+\vfill
+
+\item State the null and alternate hypotheses of your chosen test.
+
+\vfill
+
+\item Using a level of significance $\alpha = 0.05$, what is an appropriate conclusion of your chosen hypothesis test? 
+
+\vfill
+
+\end{enumerate}
+
+\newpage
+
+\section*{(4 points) Microsoft discriminates?!}
+
+A social scientist is interested in determining if the average salary of an openly LGBTQ+ employee at Microsoft differs from the salary of an employee who chooses not to identify as LGBTQ+. Independent random samples of 8 openly LGBTQ+ and 8 employees not identifying as LBGTQ+ yielded the following weekly salaries (in USD). 
+\begin{align*}
+    \texttt{openly\_LBGTQ\_salaries} &= (655, 621, 607, 705, 635, 661, 614, 665)\\
+    \texttt{not\_identifying\_salaries} &= (847, 720, 689, 702, 788, 783, 824, 681)
+\end{align*}
+
+Let $\mu_+$ be the population mean for \emph{openly LGBTQ+} employees' salaries and let $\mu_-$ be the population mean for \emph{not identifying as LGBTQ+} employees' salaries. 
+
+\begin{enumerate}
+\item What statistical test should one use to determine if openly LGBTQ+ employees at Microsoft have a \emph{different} mean salary than employees at Microsoft who do not identify as LGBTQ+?
+
+\vfill
+
+\item Why is this test appropriate? (In particular, are these random samples dependent or independent?)
+
+\vfill
+
+\item State the null and alternate hypotheses of your chosen test.
+
+\vfill
+
+\item Using a level of significance $\alpha = 0.05$, what is an appropriate conclusion of your chosen hypothesis test? 
+
+\vfill
+
+\end{enumerate}
+
+\section*{(2 points) Namaste in bed?!}
+
+ A researcher wishes to determine whether people with high blood pressure can lower their blood pressure by practicing yoga. A treatment group (of $n_1 = 100$ individuals) and a control group (of $n_2 = 100$ individuals) are randomly selected from American adults. Individuals in the treatment group practice yoga for 30 days, while individuals in the control group do nothing necessarily different from their usual routines for 30 days. The average systolic blood pressure of individuals practicing yoga over $30$ days was found to be $$\bar{x}_1 = 178 \text{ mmHg} \qq{with sample standard deviation} s_1 = 35 \text{ mmHg}.$$ Likewise, the average systolic blood pressure of individuals in the control group over $30$ days was found to be $$\bar{x}_2 = 193 \text{ mmHg} \qq{with sample standard deviation} s_2 = 37 \text{ mmHg}.$$
+Let $\mu_1$ be the mean systolic blood pressure of the population of American adults who practice yoga, and let $\mu_2$ be the mean systolic blood pressure of American adults who do not practice yoga. 
+
+\begin{enumerate}
+\item Centered at the point estimate $\bar{x}_1 - \bar{x}_2$, what is a \%90 confidence interval for the difference $\mu_1 - \mu_2$? (Hint: You may assume the critical $t$-value is $t_{0.9}=1.66$. What is the standard error $SE$ in this situation?)
+         
+\vfill
+ 
+\item Would you reject someone's claim that practicing yoga \emph{does not reduce} average systolic blood pressure in American adults? (Hint: Is $0$ contained in your confidence interval? Can you explain with \%90 confidence why this matters?)
+\vfill
+
+\end{enumerate}
+
+\end{document}
